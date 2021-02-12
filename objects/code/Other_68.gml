@@ -335,8 +335,10 @@ else if (type == network_type_data)
 			{
 			var _got_val = buffer_read(buffer, buffer_string);
 			var _got_val2 = buffer_read(buffer, buffer_string);
+			var _got_val3 = buffer_read(buffer, buffer_string);
 			global.rainy = real(_got_val);
 			global.wind_dir = real(_got_val2/100);
+			global.now_map = real(_got_val3);
 			}
 		break;
 		

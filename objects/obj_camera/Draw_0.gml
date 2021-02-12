@@ -8,6 +8,12 @@ var v_x_ = obj_camera.v_x/1280
 
 
 
+
+
+
+
+
+
 if global.shine_ef = 0
 {
 draw_set_color(c_white)
@@ -25,7 +31,7 @@ if room != menu
 {
 	if global.slow_motion = 0 && global.matching != 2
 	{
-	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+40*v_x_,"HP\nStemina",v_x_*76,-1,1,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
+	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+40*v_x_,"HP\nStemina",(1-v_x_)*76,-1,1,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
 	//draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+72*v_x_,"Stemina",v_x_*64,-1,1,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
 	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+101*v_x_,"Mental",v_x_*64,-1,1,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
 	
@@ -114,4 +120,8 @@ draw_set_color(c_black)
 draw_rectangle(xx,yy,xx+xxx,yy+global.playing_scene_black_bg*obj_camera.v_y/1000,0)
 draw_rectangle(xx,yy+yyy,xx+xxx,yy+yyy-global.playing_scene_black_bg*obj_camera.v_y/1000,0)
 }
+
+
+
+
 

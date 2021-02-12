@@ -793,6 +793,7 @@ buffer_seek(rain_buffer, buffer_seek_start, 0);
 buffer_write(rain_buffer, buffer_u8, DATA.WEATHER);
 buffer_write(rain_buffer, buffer_string, global.rainy);
 buffer_write(rain_buffer, buffer_string, floor(global.wind_dir*100));
+buffer_write(rain_buffer, buffer_string, global.now_map);
 send_all(rain_buffer);
 }
 

@@ -1,10 +1,29 @@
 /// @description Insert description here
 // You can write your code in this edito
 depth = 99999
+image_index = global.now_map
+
+if global.now_map = 0
+{
+	if instance_number(light_a) = 0
+	{
+	instance_create_depth(2045,737,obj_floor,light_a)
+	}
+	
+	if instance_number(bg_laser_1) > 0 && bg_laser_1 != noone
+	{
+	instance_destroy(bg_laser_1)
+	instance_destroy(bg_laser_2)
+	instance_destroy(bg_laser_3)
+	instance_destroy(bg_laser_4)
+	}
+}
+else
+{
+instance_destroy(light_a)
 
 
 laser_direction_time ++
-image_index = global.now_map
 var xx = obj_floor.x
 var yy = 1000//1312
 
@@ -94,4 +113,4 @@ var yy = 1000//1312
 	{
 	bg_laser_4.direction = laser_direction_1
 	}
-
+}
