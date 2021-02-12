@@ -18,6 +18,8 @@ is_server = false;
 
 show_sound_list = 0
 show_sound_list_y = 0
+
+global.now_map = 2
 show_sound_list_alpha = 0
 
 index = 0;

@@ -4,7 +4,7 @@ depth = 99999
 
 
 laser_direction_time ++
-image_index = 1
+image_index = global.now_map
 var xx = obj_floor.x
 var yy = 1000//1312
 
