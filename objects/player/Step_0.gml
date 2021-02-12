@@ -2902,7 +2902,11 @@ if global.never_move = 0 && keyboard_check_released(ord(string(global.e_key))) &
 					cannot_move = 1
 					global.stemina_cooltime = 0
 					global.rage_gauge -= 25
-				
+					
+						if global.awakening >= 1
+						{
+						global.awakening -= 0.25
+						}
 					alarm[5] = 10
 					}
 					else
