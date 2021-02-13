@@ -203,6 +203,15 @@ if is_server = true
 }
 
 
+if global.b_alpha >= 1
+{
+var _ran_val = percentage_k((global.matched_pl1_won+global.matched_pl2_won)*43)
+	if _ran_val = 1
+	{
+	global.rainy = 0
+	}
+}
+
 
 
 

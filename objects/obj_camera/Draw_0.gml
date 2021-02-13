@@ -27,6 +27,8 @@ draw_set_alpha(global.b_alpha)
 draw_rectangle(0,0,room_width,room_height,0)
 draw_set_alpha(1)
 
+
+
 if room != menu
 {
 	if global.slow_motion = 0 && global.matching != 2
