@@ -873,8 +873,14 @@ global.slow_motion += global.slow_motion*0.03
 		var _myp = get_my_player()
 			if instance_exists(_myp)
 			{
-			obj_camera.t_x = _myp.x;
-			obj_camera.t_y = _myp.y;
+				with(player)
+				{
+					if self.id != _myp
+					{
+					obj_camera.t_x = self.x;
+					obj_camera.t_y = self.y;
+					}
+				}
 			}
 		}
 	}

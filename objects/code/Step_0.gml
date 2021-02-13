@@ -249,6 +249,14 @@ global.light_scaling -= 0.001
 }
 
 
+if b_map != global.now_map
+{
+var sfx = audio_play_sound(critical_sfx,0,0)
+audio_sound_gain(sfx,0.12*global.master_volume*2*global.sfx_volume,0)
+global.w_alpha = 1.5
+b_map = global.now_map
+}
+
 if is_server = true
 {
 randomize()

@@ -20,6 +20,7 @@ show_sound_list = 0
 show_sound_list_y = 0
 
 global.now_map = 2
+b_map = global.now_map
 force_mapchange_ = 0
 show_sound_list_alpha = 0
 
