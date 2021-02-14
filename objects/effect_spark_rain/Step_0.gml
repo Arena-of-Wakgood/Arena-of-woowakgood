@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-for(var i = 6; i <= 16; i++)
+for(var i = 6; i <= 5; i++)
 {
 spark_x[i] += (x - spark_x[i])*0.08*i
 spark_y[i] += (y - spark_y[i])*0.08*i
@@ -20,7 +20,7 @@ time_s ++
 }
 
 
-repeat(32)
+repeat(16)
 {
 	if y > global.p_floor+27
 	{

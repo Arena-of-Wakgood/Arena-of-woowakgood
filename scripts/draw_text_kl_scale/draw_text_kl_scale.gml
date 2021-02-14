@@ -69,7 +69,7 @@ function draw_text_kl_scale(argument0, argument1, argument2, argument3, argument
 	{
 	//컬러설정
 	draw_set_color($FF191919&$ffffff);
-	for(var i = 1; i < argument10*4; i+= argument10)
+	for(var i = 1; i < argument10*3; i+= argument10*1.5)
 	{
 	//i = argument10
 	draw_text_ext_transformed(argument0+i,argument1,argument2,argument3,99999999999,argument10,argument11,argument12);
@@ -89,7 +89,7 @@ function draw_text_kl_scale(argument0, argument1, argument2, argument3, argument
 	if argument3 > 0 && argument4 > 0
 	{
 	draw_set_color($FF191919&$ffffff);
-	for(var i = 1; i < argument10*4; i+= argument10)
+	for(var i = 1; i < argument10*3; i+= argument10*1.5)
 	{
 
 	//i = argument10

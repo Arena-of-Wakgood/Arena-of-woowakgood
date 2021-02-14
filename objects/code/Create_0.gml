@@ -37,6 +37,9 @@ ping_checker_start[i] = 0
 }
 change_weather = 0
 change_weather_max = 0
+global.low_quality = 0
+
+global.imoji_cooldown = 0
 largely_before_gamemode = 0
 global.nickname = "아기 뺑띠"+string(irandom(999));
 global.n_sword = 0

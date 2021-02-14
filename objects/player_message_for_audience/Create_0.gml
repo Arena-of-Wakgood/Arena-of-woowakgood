@@ -14,3 +14,4 @@ des = 0
 
 special_voice_chat = 0
 
+alarm[3] = 1

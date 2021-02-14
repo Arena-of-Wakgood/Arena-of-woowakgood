@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-for(var i = 0; i <= 16; i++)
+for(var i = 0; i <= 5; i++)
 {
 spark_x[i] = x
 spark_y[i] = y

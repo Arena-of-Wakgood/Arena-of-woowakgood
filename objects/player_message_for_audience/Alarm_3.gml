@@ -1,8 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-
-
 if special_voice_chat = 0 && (string_pos("!BT",text) != 0 || string_pos("!bt",text) != 0)
 {
 var sfx = audio_play_sound(buy_item,0,0)

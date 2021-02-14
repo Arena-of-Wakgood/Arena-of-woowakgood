@@ -18,6 +18,12 @@ global.now_map = choose(0,2)
 }
 
 
+
+if global.slow_motion = 0 && fps < 55
+{
+global.low_quality = 1
+}
+
 if is_server = true
 {
 ping_c_timer ++

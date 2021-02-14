@@ -1,11 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-for(var i = 6; i <= 15; i++)
+
+draw_set_color($FFF0E9D8)
+draw_set_alpha((0.2-alpha)*0.1)
+for(var i = 6; i <= 4; i++)
 {
 	if point_distance(x,y,spark_x[i],spark_y[i]) < 32
 	{
-	draw_set_color($FFF0E9D8)
-	draw_set_alpha((0.2-alpha)*0.1)
 	draw_line_width(x,y,spark_x[i],spark_y[i],2)
 	}
 }
