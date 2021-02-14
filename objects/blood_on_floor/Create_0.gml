@@ -8,7 +8,14 @@ image_index = irandom_range(0,image_number-1)
 random_scale = irandom_range(100,150)/100
 
 a = 0
+if global.low_quality = 0
+{
 alarm[1] = 140
+}
+else
+{
+alarm[1] = 30
+}
 
 
 var sfx = audio_play_sound(footstep_sfx,0,0)

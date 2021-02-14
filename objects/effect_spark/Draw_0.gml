@@ -3,7 +3,7 @@
 draw_set_color(color_1)
 draw_set_alpha((0.2-alpha)*1.25)
 
-for(var i = 6; i <= 30; i++)
+for(var i = 6; i <= 19; i++)
 {
 	if point_distance(x,y,spark_x[i],spark_y[i]) < 32
 	{

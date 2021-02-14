@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-for(var i = 6; i <= 31; i++)
+for(var i = 6; i <= 20; i++)
 {
 spark_x[i] += (x - spark_x[i])*0.08*i
 spark_y[i] += (y - spark_y[i])*0.08*i

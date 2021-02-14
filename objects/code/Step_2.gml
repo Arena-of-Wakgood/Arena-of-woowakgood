@@ -883,15 +883,18 @@ global.slow_motion += global.slow_motion*0.03
 				}
 			}
 		room_speed = 60
-		var _myp = get_my_player()
-			if instance_exists(_myp)
+			if global.matching != 3
 			{
-				with(player)
+			var _myp = get_my_player()
+				if instance_exists(_myp)
 				{
-					if self.id != _myp
+					with(player)
 					{
-					obj_camera.t_x = self.x;
-					obj_camera.t_y = self.y;
+						if self.id != _myp
+						{
+						obj_camera.t_x = self.x;
+						obj_camera.t_y = self.y;
+						}
 					}
 				}
 			}

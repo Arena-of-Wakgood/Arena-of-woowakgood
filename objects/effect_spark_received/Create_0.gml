@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 random_alpha_m = irandom_range(10,50)/100
-for(var i = 0; i <= 31; i++)
+for(var i = 0; i <= 20; i++)
 {
 spark_x[i] = x
 spark_y[i] = y

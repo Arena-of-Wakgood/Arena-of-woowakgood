@@ -102,41 +102,25 @@ if (global.nickname == name) && just_come_check = 0
 	{
 		if global.rage_gauge = 100
 		{
-			if color_select = 0
-			{
-			cre_buble_ef(x+irandom_range(-16,16),y+irandom_range(-16,16),$FF6D52F2,$FF1C1CB2,irandom_range(-10,-30)/10,irandom_range(-8,-8)/10,0.1,0.1,0,0,1,1,1)
-			}
-		
-			if color_select = 1
-			{
-			cre_buble_ef(x+irandom_range(-16,16),y+irandom_range(-16,16),c_gray,c_black,irandom_range(-10,-30)/10,irandom_range(-8,-8)/10,0.1,0.1,0,0,1,1,1)
-			}
-		
-			if color_select = 2
-			{
-			cre_buble_ef(x+irandom_range(-16,16),y+irandom_range(-16,16),$FF7F9924,$FFDEFF23,irandom_range(-10,-30)/10,irandom_range(-8,-8)/10,0.1,0.1,0,0,1,1,1)
-			}
-		
-			if color_select = 3
-			{
-			cre_buble_ef(x+irandom_range(-16,16),y+irandom_range(-16,16),$FF994A81,$FFE47BFF,irandom_range(-10,-30)/10,irandom_range(-8,-8)/10,0.1,0.1,0,0,1,1,1)
-			}
-		}
-	
-		if image_blend = c_gray
-		{
-		cre_buble_ef(x+irandom_range(-16,16),y+irandom_range(-16,16),c_gray,c_black,irandom_range(-10,-30)/10,irandom_range(-8,-8)/10,0.1,0.1,0,0,1,1,1)
+		cre_buble_ef(x+irandom_range(-16,16),y+irandom_range(-16,16),$FF6D52F2,$FF1C1CB2,irandom_range(-10,-30)/10,irandom_range(-8,-8)/10,0.1,0.1,0,0,1,1,1)
 		}
 		else
 		{
-			if keep_winning_ >= 2 && keep_winning_ < 5
+			if image_blend = c_gray
 			{
-			cre_buble_ef(x+irandom_range(-16,16),y+irandom_range(-16,16),$FF7F9924,$FFDEFF23,irandom_range(-10,-30)/10,irandom_range(-8,-8)/10,0.1,0.1,0,0,1,1,1)
+			cre_buble_ef(x+irandom_range(-16,16),y+irandom_range(-16,16),c_gray,c_black,irandom_range(-10,-30)/10,irandom_range(-8,-8)/10,0.1,0.1,0,0,1,1,1)
 			}
-	
-			if keep_winning_ >= 5
+			else
 			{
-			cre_buble_ef(x+irandom_range(-16,16),y+irandom_range(-16,16),$FF994A81,$FFE47BFF,irandom_range(-10,-30)/10,irandom_range(-8,-8)/10,0.1,0.1,0,0,1,1,1)
+				if keep_winning_ >= 2 && keep_winning_ < 5
+				{
+				cre_buble_ef(x+irandom_range(-16,16),y+irandom_range(-16,16),$FF7F9924,$FFDEFF23,irandom_range(-10,-30)/10,irandom_range(-8,-8)/10,0.1,0.1,0,0,1,1,1)
+				}
+	
+				if keep_winning_ >= 5
+				{
+				cre_buble_ef(x+irandom_range(-16,16),y+irandom_range(-16,16),$FF994A81,$FFE47BFF,irandom_range(-10,-30)/10,irandom_range(-8,-8)/10,0.1,0.1,0,0,1,1,1)
+				}
 			}
 		}
 	}
@@ -251,6 +235,7 @@ returned_id = global.return_player_id;
 		image_xscale = -abs(image_xscale)
 		show_debug_message("b")
 		}
+		
 		
 		if show_first_action > 80
 		{
