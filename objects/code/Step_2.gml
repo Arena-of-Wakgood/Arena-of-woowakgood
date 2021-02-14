@@ -104,9 +104,15 @@ else
 }
 
 
+if global.show_challenger > 0
+{
+show_sound_list = 0.2
+}
+
+
 if global.matching = 3
 {
-	//매치 첫시작 선수 소개전 선수 위치 설정
+		//매치 첫시작 선수 소개전 선수 위치 설정
 		if global.show_challenger = 0 && global.t_b_alpha > 0 && global.b_alpha > 2
 		{
 		global.hp = 1000
@@ -173,6 +179,7 @@ if global.matching = 3
 	{
 		if (global.matched_pl1 != global.return_player_id && global.matched_pl2 != global.return_player_id)
 		{
+		global.show_challenger = 1
 		global.hp = 1000
 		global.rage_gauge = 0
 		global.awakening = 0
