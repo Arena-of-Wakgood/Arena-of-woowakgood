@@ -44,7 +44,10 @@ global.shake_time ++
 x += global.real_shake_x
 y += global.real_shake_y
 
-if room != menu
+
+
+
+if room != menu && global.show_challenger = 0
 {
 	if can_follow_p = 1
 	{
@@ -153,13 +156,7 @@ if global.show_challenger = 0
 	y += (t_y - y)*0.1
 	}
 }
-else
-{
-v_x = 1280*0.65
-v_y = 720*0.65
-x += (obj_floor.x - x)*0.1
-y += (903 - y)*0.1
-}
+
 
 
 

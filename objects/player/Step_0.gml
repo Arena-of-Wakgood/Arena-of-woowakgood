@@ -200,6 +200,42 @@ returned_id = global.return_player_id;
 	{
 	show_first_action ++
 	
+		if show_first_action >= 0 && show_first_action <= 1
+		{
+		obj_camera.x = obj_floor.x-350
+		obj_camera.y = 903
+		}
+		
+		if show_first_action >= 1 && show_first_action <= 120
+		{
+		obj_camera.v_x = 1280*0.5
+		obj_camera.v_y = 720*0.5
+		
+		obj_camera.x += (obj_floor.x-100 - obj_camera.x)*0.01
+		}
+		
+		if show_first_action >= 120 && show_first_action <= 121
+		{
+		obj_camera.x = obj_floor.x+400
+		obj_camera.y = 903
+		}
+		
+		if show_first_action >= 121 && show_first_action <= 210
+		{
+		obj_camera.v_x = 1280*0.5
+		obj_camera.v_y = 720*0.5
+		
+		obj_camera.x += (obj_floor.x+100 - obj_camera.x)*0.01
+		}
+		
+		if show_first_action >= 211 && show_first_action <= 298
+		{
+		obj_camera.x = obj_floor.x
+		obj_camera.y = 903
+		obj_camera.v_x += (1280*0.65 - obj_camera.v_x)*0.05
+		obj_camera.v_y += (720*0.65 - obj_camera.v_y)*0.05
+		}
+	
 		if x > obj_floor.x
 		{
 		image_index = 0
@@ -213,22 +249,21 @@ returned_id = global.return_player_id;
 		show_debug_message("b")
 		}
 		
-		if show_first_action > 90
+		if show_first_action > 80
 		{
-			if show_first_action = 91
+			if cancled_attack = 0 && abs(obj_camera.x - x) < 64
 			{
-			global.w_alpha = 1.1
-			w_alpha = 1.1
-			
-				if global.n_sword != -1
+				if sprite_index != guard_sprite
 				{
-				sfx_for_multiplayer(choose(swing_lightsaber_sfx1,swing_lightsaber_sfx2,swing_lightsaber_sfx3),0,0.1)
-				sfx_for_multiplayer(sparking_sound,0,0.1)
-				}
-			}
+				global.w_alpha = 1.1
+				w_alpha = 1.1
 			
-			if cancled_attack = 0
-			{
+					if global.n_sword != -1
+					{
+					sfx_for_multiplayer(choose(swing_lightsaber_sfx1,swing_lightsaber_sfx2,swing_lightsaber_sfx3),0,0.1)
+					sfx_for_multiplayer(sparking_sound,0,0.1)
+					}
+				}
 			sprite_index = guard_sprite
 			}
 		}
@@ -329,6 +364,9 @@ w_alpha += (-0.01 - w_alpha)*0.1
 			_fl_blood.sprite_index = sprite64
 			}
 			}
+		
+			sfx_for_multiplayer(choose(wakgood_hurt,wakgood_hurt2,gumseong_woowakgood,kiyahou),0,0.2)
+
 			buffer_seek(match_buffer, buffer_seek_start, 0);
 			buffer_write(match_buffer, buffer_u8, code.DATA.SLOW_MOTION);
 			send_all(match_buffer);
@@ -340,8 +378,6 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				global.w_alpha = 1;
 				room_speed = 15;
 				global.never_move = 1
-				var a___ = audio_play_sound(choose(wakgood_hurt,wakgood_hurt2),0,0)
-				audio_sound_gain(a___,0.2*global.master_volume*2*global.sfx_volume,0)
 				var a___ = audio_play_sound(last_scene,0,0)
 				audio_sound_gain(a___,0.7*global.master_volume*2*global.sfx_volume,0)
 				}
@@ -367,6 +403,8 @@ w_alpha += (-0.01 - w_alpha)*0.1
 						_fl_blood.sprite_index = sprite64
 						}
 						}
+						
+						sfx_for_multiplayer(choose(wakgood_hurt,wakgood_hurt2,gumseong_woowakgood,kiyahou),0,0.2)
 			
 						buffer_seek(match_buffer, buffer_seek_start, 0);
 						buffer_write(match_buffer, buffer_u8, code.DATA.SLOW_MOTION);
@@ -399,6 +437,8 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				_fl_blood.sprite_index = sprite64
 				}
 				}
+				
+				sfx_for_multiplayer(choose(wakgood_hurt,wakgood_hurt2,gumseong_woowakgood,kiyahou),0,0.2)
 				
 				buffer_seek(match_buffer, buffer_seek_start, 0);
 				buffer_write(match_buffer, buffer_u8, code.DATA.SLOW_MOTION);
@@ -1529,7 +1569,11 @@ w_alpha += (-0.01 - w_alpha)*0.1
 	
 	if gravity = 0
 	{
-	movement_speed += (0 - movement_speed)*0.03
+	movement_speed += (0 - movement_speed)*0.032
+		if global.rainy = 0
+		{
+		movement_speed += (0 - movement_speed)*0.01
+		}
 	
 		if abs(movement_speed) > 2
 		{

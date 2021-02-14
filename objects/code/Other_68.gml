@@ -348,8 +348,7 @@ else if (type == network_type_data)
 		global.w_alpha = 1.5;
 		room_speed = 15;
 		global.never_move = 1
-		var a___ = audio_play_sound(choose(wakgood_hurt,wakgood_hurt2,gumseong_woowakgood,kiyahou),0,0)
-		audio_sound_gain(a___,0.2*global.master_volume*2*global.sfx_volume,0)
+		
 		var a___ = audio_play_sound(last_scene,0,0)
 		audio_sound_gain(a___,0.7*global.master_volume*2*global.sfx_volume,0)
 		break;
@@ -856,6 +855,16 @@ else if (type == network_type_data)
 				bl_ef.image_yscale = _yscale/100;
 				bl_ef.t_x = __i/100;
 				bl_ef.attack_owner = _check_who_send;
+				}
+				break;
+				
+				case COMM.MUSIC_SYNC:
+				var _music_name = buffer_read(buffer, buffer_string);
+				
+				if is_server = false
+				{
+				show_sound_list = 3
+				global.bgm = audio_play_sound(asset_get_index(string(_music_name)),0,false)
 				}
 				break;
 				

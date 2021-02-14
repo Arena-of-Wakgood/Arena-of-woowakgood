@@ -12,6 +12,11 @@ show_sound_list_y += (-256 - show_sound_list_y)*0.1
 show_sound_list_alpha += (-0.01 - show_sound_list_alpha)*0.1
 }
 
+if global.show_challenger > 0 && global.b_alpha >= 1
+{
+global.now_map = choose(0,2)
+}
+
 
 if is_server = true
 {
@@ -251,25 +256,36 @@ global.light_scaling -= 0.001
 
 if b_map != global.now_map
 {
-var sfx = audio_play_sound(critical_sfx,0,0)
-audio_sound_gain(sfx,0.12*global.master_volume*2*global.sfx_volume,0)
 global.w_alpha = 1.5
 b_map = global.now_map
 }
 
-if is_server = true
+if is_server = true && global.b_alpha >= 1
 {
 randomize()
 change_weather ++
+
+	if (audio_is_playing(maser_bgm) || audio_is_playing(shake_it_bgm)) && global.rainy != 1
+	{
+	change_weather_max = 0
+	}
+
 	if change_weather_max < change_weather
 	{
 	global.wind_dir = choose(-1,1)*irandom_range(0,12)
-	global.rainy = irandom_range(0,2)
+		if audio_is_playing(maser_bgm) || audio_is_playing(shake_it_bgm)
+		{
+		global.rainy = 1
+		}
+		else
+		{
+		global.rainy = irandom_range(0,2)
+		}
 	change_weather_max = irandom_range(6000,8000)
 	change_weather = 0
 	}
 	
-	if global.gamemode_server = 5
+	if global.gamemode_server = 3
 	{
 	change_weather += 5
 		if (global.rainy = 0 || abs(global.wind_dir) < 23)
@@ -321,9 +337,18 @@ if global.matching > 0
 	{
 		if global.bgm = -4
 		{
-		randomize()
-		global.bgm = audio_play_sound(choose(gyu_seong_bu_whal,wakrio_bgm,maser_bgm,bamguy_bgm,shake_it_bgm,wak_surada,alzaltak,tong_tiring),0,false)
-		show_sound_list = 3
+			if is_server = true
+			{
+			randomize()
+			var music_selected = choose(gyu_seong_bu_whal,wakrio_bgm,maser_bgm,bamguy_bgm,shake_it_bgm,wak_surada,alzaltak,tong_tiring)
+			global.bgm = audio_play_sound(music_selected,0,false)
+			show_sound_list = 3
+
+			buffer_seek(effect_buffer, buffer_seek_start, 0);
+			buffer_write(effect_buffer, buffer_u8, COMM.MUSIC_SYNC);
+			buffer_write(effect_buffer, buffer_string, audio_get_name(string(music_selected)));
+			send_all(effect_buffer);
+			}
 		}
 		else
 		{

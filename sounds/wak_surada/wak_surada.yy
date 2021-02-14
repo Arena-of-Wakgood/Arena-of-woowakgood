@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "wak_surada.mp3",
-  "duration": 209.010712,
+  "duration": 187.720917,
   "parent": {
     "name": "소리",
     "path": "folders/소리.yy",

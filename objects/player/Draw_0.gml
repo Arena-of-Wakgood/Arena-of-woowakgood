@@ -83,7 +83,7 @@ if image_alpha > 0 && global.hp > 0
 		
 		//체력바
 		hp_bar_alpha += (1 - hp_bar_alpha)*0.1
-			if hp_bar_alpha > 0
+			if hp_bar_alpha > 0 && global.slow_motion = 0 && global.show_challenger = 0
 			{
 			draw_hp += (global.hp - draw_hp)*0.1
 			draw_sprite_ext(sprite20,0,xx+60*v_x,yy+32*v_x,5.2*v_x,2*v_x,0,c_white,hp_bar_alpha)
@@ -103,7 +103,7 @@ if image_alpha > 0 && global.hp > 0
 				}
 			}
 	
-			if hp_bar_alpha > 0
+			if hp_bar_alpha > 0 && global.slow_motion = 0 && global.show_challenger = 0
 			{
 			draw_stemina += (global.stemina-1 - draw_stemina)*0.1
 			draw_sprite_ext(sprite20,0,xx+60*v_x,yy+64*v_x,5.2*v_x,v_x*1.5,0,c_white,hp_bar_alpha)
@@ -113,7 +113,7 @@ if image_alpha > 0 && global.hp > 0
 				}
 			}
 	
-			if hp_bar_alpha > 0
+			if hp_bar_alpha > 0 && global.slow_motion = 0 && global.show_challenger = 0
 			{
 			draw_rage += (global.rage_gauge - draw_rage)*0.1
 			draw_sprite_ext(sprite20,0,xx+60*v_x,yy+96*v_x,2*v_x,2*v_x,0,c_white,hp_bar_alpha)
@@ -129,7 +129,7 @@ if image_alpha > 0 && global.hp > 0
 		{
 		//체력바
 		hp_bar_alpha = 1
-			if hp_bar_alpha > 0
+			if hp_bar_alpha > 0 && global.slow_motion = 0 && global.show_challenger = 0
 			{
 			draw_hp += (hp - draw_hp)*0.1
 			draw_sprite_ext(sprite20,0,x-20,y+32,1,1,0,c_white,hp_bar_alpha)
@@ -176,4 +176,4 @@ if image_alpha > 0 && global.hp > 0
 
 
 
-//draw_text_kl_scale(x,y-v_x*64,jump,v_x*64,-1,1,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);
+//draw_text_kl_scale(x,y-v_x*64,global.show_challenger,v_x*64,-1,1,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);

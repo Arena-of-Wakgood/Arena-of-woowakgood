@@ -1,17 +1,23 @@
 /// @description Insert description here
 // You can write your code in this editor
-//if global.revive_with_rage > 0
-//{
+if audio_is_playing(wakrio_bgm)
+{
 var color_1 = $FFF7D06D
 var color_2 = $FFF3BF00
 var color_3 = c_blue
-//}
-//else
-//{
+}
+else if audio_is_playing(shake_it_bgm)
+{
+var color_1 = $FF000000
+var color_2 = $FF191919
+var color_3 = $FF000000
+}
+else
+{
 var color_1 = $FFFF00FF
 var color_2 = $FF39206D
 var color_3 = c_red
-//}
+}
 
 if a = 0
 {

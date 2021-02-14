@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "tong_tiring.mp3",
-  "duration": 136.259689,
+  "duration": 88.03765,
   "parent": {
     "name": "소리",
     "path": "folders/소리.yy",

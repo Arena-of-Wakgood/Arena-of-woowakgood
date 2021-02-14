@@ -11,6 +11,7 @@ ip_for_calcul = ""
 
 ///////////////////////////////////////////////////////////////////////
 
+th_afas = 0
 room_speed = 60
 server_ip = "175.196.5.129";
 server_port = 12521;
@@ -89,7 +90,8 @@ enum COMM {
 	RUSH_ATTACK_EFFECT,
 	IMAGE_FOR_CAMERA,
 	PING_CHECK_RECEIVED_CLI,
-	PING_CHECK_RECEIVED_SERVER_AC
+	PING_CHECK_RECEIVED_SERVER_AC,
+	MUSIC_SYNC
 }
 ping_buffer = buffer_create(2, buffer_grow, 1);
 info_buffer = buffer_create(2, buffer_grow, 1);

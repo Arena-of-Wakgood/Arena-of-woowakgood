@@ -12,7 +12,13 @@ if is_server = true && auto_des <= 0
 		_mes_s.text = "매칭중..."
 		_mes_s.sub_text = "(잠시만 기다려 주세요)"
 		_mes_s.auto_destroy = 0
-		_mes_s.alarm[1] = 180
+		_mes_s.alarm[1] = 40
+		
+			if _mes_select_matching != -4
+			{
+			_mes_select_matching.alarm[1] = 1
+			_mes_select_matching = -4
+			}
 		}
 		else
 		{

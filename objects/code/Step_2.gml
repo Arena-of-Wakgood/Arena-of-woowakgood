@@ -199,7 +199,7 @@ if global.matching = 3
 				{
 					if returned_id = global.matched_pl1
 					{
-						if show_first_action > 180
+						if show_first_action > 300
 						{
 						global.matched_pl1_ready = 1
 			
@@ -212,7 +212,7 @@ if global.matching = 3
 		
 					if returned_id = global.matched_pl2
 					{
-						if show_first_action > 180
+						if show_first_action > 300
 						{
 						global.matched_pl2_ready = 1
 			
@@ -363,7 +363,7 @@ if global.matching = 3
 							{
 								if returned_id = global.matched_pl3
 								{
-									if show_first_action > 180
+									if show_first_action > 300
 									{
 									global.matched_pl3_ready = 1
 			
@@ -376,7 +376,7 @@ if global.matching = 3
 		
 								if returned_id = global.matched_pl4
 								{
-									if show_first_action > 180
+									if show_first_action > 300
 									{
 									global.matched_pl4_ready = 1
 			
@@ -501,7 +501,7 @@ if global.matching = 3
 							{
 								if returned_id = global.matched_pl1
 								{
-									if show_first_action > 180
+									if show_first_action > 300
 									{
 									global.matched_pl1_ready = 1
 			
@@ -514,7 +514,7 @@ if global.matching = 3
 		
 								if returned_id = global.matched_pl2
 								{
-									if show_first_action > 180
+									if show_first_action > 300
 									{
 									global.matched_pl2_ready = 1
 			
@@ -623,7 +623,7 @@ if global.matching = 3
 					{
 						if returned_id = global.matched_pl1
 						{
-							if show_first_action > 180
+							if show_first_action > 300
 							{
 							global.matched_pl1_ready = 1
 			
@@ -636,7 +636,7 @@ if global.matching = 3
 		
 						if returned_id = global.matched_pl2
 						{
-							if show_first_action > 180
+							if show_first_action > 300
 							{
 							global.matched_pl2_ready = 1
 			
@@ -649,7 +649,7 @@ if global.matching = 3
 						
 						if returned_id = global.matched_pl3
 						{
-							if show_first_action > 180
+							if show_first_action > 300
 							{
 							global.matched_pl3_ready = 1
 			
@@ -662,7 +662,7 @@ if global.matching = 3
 		
 						if returned_id = global.matched_pl4
 						{
-							if show_first_action > 180
+							if show_first_action > 300
 							{
 							global.matched_pl4_ready = 1
 			
@@ -863,12 +863,25 @@ global.slow_motion += 0.1
 global.slow_motion += global.slow_motion*0.03
 	if global.slow_motion < 45
 	{
+	th_afas = 0
 	room_speed = 15+global.slow_motion;
 	}
 	else
 	{
 		if room_speed != 5
 		{
+			if global.rainy = 1 && th_afas = 0
+			{
+			th_afas = 1
+			var random_val = percentage_k(40)
+			
+				if random_val = 1
+				{
+				var sfx_th = audio_play_sound(thunder_sfx,0,0)
+				audio_sound_gain(sfx_th,0.2*global.master_volume*2*global.sfx_volume,0)
+				global.w_alpha = 0.75
+				}
+			}
 		room_speed = 60
 		var _myp = get_my_player()
 			if instance_exists(_myp)

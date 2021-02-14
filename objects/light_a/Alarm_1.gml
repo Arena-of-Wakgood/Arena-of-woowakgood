@@ -15,17 +15,9 @@ if global.rainy = 0
 		}
 	}
 }
-else
-{
-scale = 0
-y = 737
-}
 
-if (global.matched_pl1_won + global.matched_pl2_won) < 1 && global.matching != 0
-{
-scale = 0
-y = 737
-}
+
+
 
 if global.b_alpha >= 1
 {

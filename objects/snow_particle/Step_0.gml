@@ -32,11 +32,30 @@ if global.rainy > 0
 }
 else
 {
-	if alpha > 0
+	if audio_is_playing(maser_bgm) || audio_is_playing(shake_it_bgm)
 	{
-	alpha -= 0.02
+		if alpha2 < 1
+		{
+		alpha2 += 0.02
+		}
 	}
 	else
+	{
+		if alpha > 0
+		{
+		alpha -= 0.02
+		}
+		
+		if alpha2 > 0
+		{
+		alpha2 -= 0.02
+		}
+	}
+}
+
+if global.rainy != 1
+{
+	if alpha <= 0
 	{
 		if sfx != -1
 		{
@@ -193,4 +212,3 @@ if random_var = 1
 	y = player.y
 	}
 }
-

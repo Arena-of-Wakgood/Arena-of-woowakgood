@@ -155,17 +155,17 @@ _playing_music_name = "Wakgood Records - Wak'rio"
 
 if audio_is_playing(shake_it_bgm)
 {
-_playing_music_name = "Gark - SHAKE IT"
+_playing_music_name = "Wakgood Records - Escape"
 }
 
 if audio_is_playing(tong_tiring)
 {
-_playing_music_name = "BLKFLAGZ - 통티리타랑통통"
+_playing_music_name = "Uoohbues - 붕붕붕 vs 빨리 접속하세요"
 }
 
 if audio_is_playing(wak_surada)
 {
-_playing_music_name = "badassgatsby - 왁스라다 리믹스"
+_playing_music_name = "Wakgood Records - Party Doo"
 }
 
 if audio_is_playing(alzaltak)
@@ -187,7 +187,7 @@ if show_sound_list_alpha > 0
 {
 	if _playing_music_name != ""
 	{
-	draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy+(show_sound_list_y)*v_x,"Now playing",32,-1,show_sound_list_alpha,c_yellow,0,0,font0,1/3.5*v_x,1/3.5*v_x,0)
-	draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy+(show_sound_list_y+35)*v_x,string(_playing_music_name),32,-1,show_sound_list_alpha,c_white,0,0,font0,1/2*v_x,1/2*v_x,0)
+	draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy+(show_sound_list_y)*v_x*1.5,"Now playing",32,-1,show_sound_list_alpha,c_yellow,0,0,font0,1/3.5*v_x,1/3.5*v_x,0)
+	draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy+(show_sound_list_y+35)*v_x*1.5,string(_playing_music_name),32,-1,show_sound_list_alpha,c_white,0,0,font0,1/2*v_x,1/2*v_x,0)
 	}
 }
