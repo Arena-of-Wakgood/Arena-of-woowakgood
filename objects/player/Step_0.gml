@@ -3402,6 +3402,11 @@ sting_attack += 0.3
 	y -= 1
 	sfx_for_multiplayer(charging_sfx,false,0.3)
 	attack_sting_sfx = 1
+	
+	var effect_ = instance_create_depth(x-global.movement_speed*13,y-16,player.depth+1,down_effect)
+	effect_.t_image_yscale = 0.4*3
+	effect_.t_image_xscale = 0.05*3
+	effect_.received = 0
 	}
 	
 	if image_angle < 6*image_xscale
@@ -4257,6 +4262,16 @@ movement_speed += (0 - movement_speed)*0.015
 				
 	sfx_for_multiplayer(charging_sfx,false,0.3)
 	attack_charge_sfx = 1
+	
+	var effect_ = instance_create_depth(x-global.movement_speed*8,y-12,player.depth+1,down_effect)
+	effect_.t_image_yscale = 0.4*3
+	effect_.t_image_xscale = 0.05*3
+	effect_.received = 0
+	
+	var effect_ = instance_create_depth(x-global.movement_speed*24,y-12,player.depth+1,down_effect)
+	effect_.t_image_yscale = 0.6*3
+	effect_.t_image_xscale = 0.1*3
+	effect_.received = 0
 	}
 
 	if charge_attack > 2.05 && charge_attack < 3
