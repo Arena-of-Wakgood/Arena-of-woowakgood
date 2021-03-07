@@ -19,7 +19,7 @@ draw_text_k_scale(xx,yy+v_x*220,string(string(global.matched_pl1)+" / "+string(g
 draw_text_k_scale(xx,yy+v_x*280,string(global.matched_pl1_ready)+" / "+string(global.matched_pl2_ready),v_x*64,-1,1,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);
 }
 
-if room = room_main && global.draw_partici = 0
+if room = room_main && global.draw_partici = 0 && global.select_dev_setting = 0
 {
 var xx = camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])*0.5
 var yy = camera_get_view_y(view_camera[0])
@@ -77,16 +77,18 @@ draw_text_kl_scale(xx,yy+v_x*(show_timer+64),string(gamemode_val_),v_x*64,-1,1,c
 
 
 var xx = camera_get_view_x(view_camera[0])
-var yy = camera_get_view_y(view_camera[0])+170
+var yy = camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])*0.35
 
 
 if global.select_dev_setting > 0
 {
 
 var n_setting = "unknown"
+var n_setting__ = "<                                  >"
 
 if global.select_dev_setting = 1
 {
+n_setting__ = "                                    >"
 n_setting = "매칭 시작"
 }
 
@@ -122,20 +124,35 @@ n_setting = "초대 코드 복사하기"
 
 if global.select_dev_setting = 8
 {
+n_setting__ = "<"
 n_setting = "창 닫기"
 }
 
 
-	for(var i = 0; i < 8; i ++)
+
+var aaa_text = "키보드 좌,우 방향키로 선택 및 F1키를 눌러 선택"
+
+
+	for(var i = 0; i < 48; i ++)
 	{
 	draw_set_color(c_black)
-	draw_set_alpha(setting_alpha_real*0.16)
-	draw_rectangle(xx,yy+i*3*v_x,xx+camera_get_view_width(view_camera[0]),yy+100-i*3,0)
+	draw_set_alpha(setting_alpha_real*0.1)
+	draw_rectangle(xx,yy+i*5*v_x,xx+camera_get_view_width(view_camera[0]),yy-i*5*v_x,0)
 	draw_set_alpha(1)
 	}
 	
-draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy+15*v_x,"관리자 세팅",32,-1,setting_alpha_real,c_yellow,0,0,font0,1/3*v_x,1/3*v_x,0)
-draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy+50*v_x,n_setting,32,-1,setting_alpha_real*setting_text_alpha,c_white,0,0,font0,1/2*v_x,1/2*v_x,0)
+draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy-80*v_x,"관리자 세팅",32,-1,setting_alpha_real,c_yellow,0,0,font0,1/3*v_x,1/3*v_x,0)
+draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy,n_setting,32,-1,setting_alpha_real*setting_text_alpha,c_white,0,0,font0,1/2*v_x,1/2*v_x,0)
+if n_setting__ = "<"
+{
+draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5-140*v_x,yy,n_setting__,32,-1,setting_alpha_real*setting_text_alpha,c_white,0,0,font0,1/2*v_x,1/2*v_x,0)
+}
+else
+{
+draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy,n_setting__,32,-1,setting_alpha_real*setting_text_alpha,c_white,0,0,font0,1/2*v_x,1/2*v_x,0)
+}
+
+draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy+100*v_x,aaa_text,32,-1,setting_alpha_real,c_gray,0,0,font0,1/3*v_x,1/3*v_x,0)
 }
 
 draw_text_kl_scale(camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])-v_x*16,camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])-40*v_x,"* "+string(global.dev_message),32,-1,global.dev_message_alpha,c_gray,0,1,font0,1/3*v_x,1/3*v_x,0)

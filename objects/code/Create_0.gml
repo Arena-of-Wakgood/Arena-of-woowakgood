@@ -13,7 +13,7 @@ ip_for_calcul = ""
 
 th_afas = 0
 room_speed = 60
-server_ip = "175.196.5.129";
+server_ip = "175.196.5.129";//"175.196.5.129";
 server_port = 12521;
 is_server = false;
 
@@ -22,13 +22,14 @@ show_sound_list_y = 0
 
 global.now_map = 2
 b_map = global.now_map
+global.m_hp = 1000
 force_mapchange_ = 0
 show_sound_list_alpha = 0
 
 index = 0;
 draw_set_font(font0);
 randomize()
-b_matching = -4
+
 ping_c_timer = 0
 for(var i = 0; i <= 25; i++)
 {

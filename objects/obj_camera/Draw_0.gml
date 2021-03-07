@@ -31,7 +31,7 @@ draw_set_alpha(1)
 
 if room != menu
 {
-	if global.slow_motion = 0 && global.show_challenger = 0 && global.matching != 2
+	if global.slow_motion = 0 && global.show_challenger = 0 && global.matching != 2 && global.select_dev_setting = 0
 	{
 	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+40*v_x_,"HP",(v_x_)*76,-1,1,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
 	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+72*v_x_,"Stemina",v_x_*64,-1,1,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);

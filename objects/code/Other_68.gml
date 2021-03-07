@@ -578,6 +578,7 @@ else if (type == network_type_data)
 				var _real_id_ = buffer_read(buffer, buffer_string);
 				var _kw_ = buffer_read(buffer, buffer_string);
 				var _s_sword_ = buffer_read(buffer, buffer_string);
+				var _m_hp = buffer_read(buffer, buffer_string);
 				if global.nickname != _check_who_send
 				{
 					with(player) 
@@ -589,6 +590,7 @@ else if (type == network_type_data)
 						if is_string(_hp)
 						{
 						hp = real(_hp)/100;
+						m_hp = real(_m_hp)/100;
 						}
 						
 						if is_real(_kw_)

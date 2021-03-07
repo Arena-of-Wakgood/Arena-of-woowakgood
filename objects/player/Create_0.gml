@@ -16,6 +16,7 @@ ping_kick_timer = 0
 fps_now = 0
 ping = 0
 room_sp_now = 0
+m_hp = 1000
 ping_checker = 0
 footstep_sound_played = 0
 using_certain_action = 0

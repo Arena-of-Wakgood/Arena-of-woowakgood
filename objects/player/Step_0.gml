@@ -71,6 +71,12 @@ if n_sword_ != -1
 
 if (global.nickname == name) && just_come_check = 0
 {
+	if hurt = 0
+	{
+	global.m_hp += (global.hp - global.m_hp)*0.1
+	}
+
+
 	if place_meeting(x,y,sword_attack_parents)
 	{
 		if sprite_index != move_sprite && sprite_index != spin_sprite && sprite_index != jump_sprite && sprite_index != attack_laser_sprite && sprite_index != attack_laser_sprite_sec && sprite_index != cancled_sprite && sprite_index != guard_sprite
@@ -4906,6 +4912,7 @@ double_pressed_right = 2
 	buffer_write(command_buffer, buffer_string, real(floor(returned_id)));
 	buffer_write(command_buffer, buffer_string, real(floor(global.keep_winning*100)));
 	buffer_write(command_buffer, buffer_string, real(floor(global.n_sword*100)));
+	buffer_write(command_buffer, buffer_string, real(floor(global.m_hp*100)));
 	send_all(command_buffer);
 
 	buffer_seek(command_buffer, buffer_seek_start, 0);

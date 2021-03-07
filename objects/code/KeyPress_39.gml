@@ -7,8 +7,8 @@ audio_sound_gain(sfx,0.02*global.master_volume*2*global.sfx_volume,0)
 
 setting_text_alpha = 0
 global.select_dev_setting ++
-	if global.select_dev_setting > 7
+	if global.select_dev_setting > 8
 	{
-	global.select_dev_setting = 7
+	global.select_dev_setting = 8
 	}
 }

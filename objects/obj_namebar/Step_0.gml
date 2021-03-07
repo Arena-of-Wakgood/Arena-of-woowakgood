@@ -52,7 +52,8 @@ if image_alpha < -2
 				save_data()
 				room_goto(room_main);
 				code.is_server = true;
-				dev_mes("F1키를 누르고 있는 상태로 마우스 휠 혹은 키보드 방향키를 통해 관리자 모드를 사용할 수 있습니다");
+				global.b_alpha = 1
+				dev_mes("F1키를 눌러 서버를 관리해주세요");
 				}
 			}
 		}
