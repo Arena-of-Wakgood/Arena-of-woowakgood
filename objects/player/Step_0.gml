@@ -71,7 +71,7 @@ if n_sword_ != -1
 
 if (global.nickname == name) && just_come_check = 0
 {
-	if hurt = 0
+	if hurt = 0 && sprite_index != pl_move_skeleton_charging
 	{
 	global.m_hp += (global.hp - global.m_hp)*0.1
 	}
