@@ -160,42 +160,42 @@ draw_text_kl_scale(camera_get_view_x(view_camera[0])+camera_get_view_width(view_
 var _playing_music_name = ""
 
 
-if audio_is_playing(maser_bgm)
+if global.now_music = maser_bgm
 {
 _playing_music_name = "Wakgood Records - Master (Don't Kill Me)"
 }
 
-if audio_is_playing(wakrio_bgm)
+if global.now_music = wakrio_bgm
 {
 _playing_music_name = "Wakgood Records - Wak'rio"
 }
 
-if audio_is_playing(shake_it_bgm)
+if global.now_music = shake_it_bgm
 {
 _playing_music_name = "Wakgood Records - Escape"
 }
 
-if audio_is_playing(tong_tiring)
+if global.now_music = tong_tiring
 {
 _playing_music_name = "Uoohbues - 붕붕붕 vs 빨리 접속하세요"
 }
 
-if audio_is_playing(wak_surada)
+if global.now_music = wak_surada
 {
 _playing_music_name = "Wakgood Records - Party Doo"
 }
 
-if audio_is_playing(alzaltak)
+if global.now_music = alzaltak
 {
 _playing_music_name = "Wakgood Records - Alzar Takkarsen"
 }
 
-if audio_is_playing(wak_rio)
+if global.now_music = wak_rio
 {
 _playing_music_name = "Wakgood Records - Wak'rio"
 }
 
-if audio_is_playing(bamguy_bgm)
+if global.now_music = bamguy_bgm
 {
 _playing_music_name = "badassgatsby - 밤가이!!"
 }

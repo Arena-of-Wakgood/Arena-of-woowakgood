@@ -234,8 +234,18 @@ else
 			_set_scale = 320
 			}
 	
-		tv_x = 1280*0.8+_set_scale*1.28
-		tv_y = 720*0.8+_set_scale*0.72
+			if global.use_final_skill != 1
+			{
+			tv_x = 1280*0.8+_set_scale*1.28
+			tv_y = 720*0.8+_set_scale*0.72
+			}
+			else
+			{
+			x = my_p.x
+			y = my_p.y
+			tv_x = 1280*0.5
+			tv_y = 720*0.5
+			}
 		}
 	}
 	else

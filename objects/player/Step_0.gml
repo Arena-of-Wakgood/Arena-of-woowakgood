@@ -69,12 +69,37 @@ if n_sword_ != -1
 }
 
 
+if timer__ > 0
+{
+timer__ ++
+	if timer__ > 65
+	{
+	global.use_final_skill = -1
+	timer__ = 0
+	}
+}
+
+
 if (global.nickname == name) && just_come_check = 0
 {
 	if hurt = 0 && sprite_index != pl_move_skeleton_charging
 	{
 	global.m_hp += (global.hp - global.m_hp)*0.1
 	}
+	
+	if (sprite_index = attack_laser_sprite || sprite_index = attack_laser_sprite_sec)
+	{
+		if global.use_final_skill = 0
+		{
+		global.use_final_skill = 1
+		timer__ = 1
+		}
+	}
+	else
+	{
+	global.use_final_skill = 0
+	}
+
 
 
 	if place_meeting(x,y,sword_attack_parents)
@@ -1282,6 +1307,76 @@ w_alpha += (-0.01 - w_alpha)*0.1
 					y -= 1
 					}
 				vspeed = -1
+				sfx_for_multiplayer(choose(global.hit_sfx_1,global.hit_sfx_2,global.hit_sfx_3),0,0.2)
+				}
+			}
+		}
+		
+		if place_meeting(x,y,effect_special_skill_thi_attacked)
+		{
+		
+		var _placed_obj = instance_place(x,y,effect_special_skill_thi_attacked)
+		var guarding_now = 0
+		var check_guard = sign(x - _placed_obj.x)
+			
+		if check_guard = 0
+		{
+		check_guard = choose(-1,1)
+		}
+				
+			if guarding > 0 && global.stemina >= 1.3 && check_guard = sign(image_xscale)
+			{
+			guarding_now = 1
+			}
+				
+			if guarding_now = 1 || charge_attack > 0
+			{
+			global.stemina -= 0.3
+		
+				if guard_cool_time = 0
+				{
+					if charge_attack <= 0
+					{
+					movement_speed = image_xscale
+					}
+				guarding = 2.5
+				w_alpha = 1
+				guard_cool_time = 1
+				sfx_for_multiplayer(guard,0,0.1)
+	
+				var random_dir = -image_xscale
+				if global.gamemode_server = 2
+				{
+				global.rage_gauge += 2
+				}
+				else
+				{
+				global.rage_gauge += 1
+				}
+					repeat(8)
+					{
+					var _ef = instance_create_depth(x-image_xscale*4,y+irandom_range(-13,0),depth-1,effect_spark)
+					_ef.hspeed = irandom_range(5,20)*random_dir
+					_ef.vspeed = irandom_range(-4,2)
+					}
+				}
+			}
+			else
+			{
+				if hurt_cooltime = 0
+				{
+				global.rage_gauge --
+				hurt = 1
+				hurt_cooltime = 3
+				movement_speed = -check_guard
+				hp_minus_for_player(32,_placed_obj)
+				
+				
+					if place_meeting(x,y+1,obj_floor)
+					{
+					y -= 1
+					}
+				vspeed -= 1
 				sfx_for_multiplayer(choose(global.hit_sfx_1,global.hit_sfx_2,global.hit_sfx_3),0,0.2)
 				}
 			}
@@ -2829,8 +2924,55 @@ if global.never_move = 0 && keyboard_check_released(ord(string(global.e_key))) &
 					audio_sound_gain(sfx,0.2*global.master_volume*2*global.sfx_volume,0)
 					}
 				}
+				
+				if global.nickname = "아버" && global.n_sword != -1 && !keyboard_check(vk_down) && !keyboard_check(vk_left) && !keyboard_check(vk_right) && keyboard_check(vk_up) && down_attack_with_rage = 0 && global.chat_activity = false && global.matching != 3
+				{
+					if attack_laser_thi = 0 && spin = 0 && hurt = 0 && hurt_little = 0 && global.rage_gauge >= 80
+					{
+					vspeed = 0
+					y -= 1
+					attack_laser_thi = 1
+					cooltime = 1
+					cannot_move = 1
+					jump = 0
+					jump_end_motion = 0
+					jump_vsp_up = 1
+					cooltime = 1
+					global.stemina_cooltime = 0
+					global.rage_gauge -= 80
+				
+					if skill_red_ball_effect = -1
+					{
+					skill_red_ball_effect = instance_create_depth(x+10*image_xscale,y+15,player.depth-1,red_circle_effect)
+					skill_red_ball_effect.image_xscale = 0.35
+					skill_red_ball_effect.image_yscale = 0.35
+					skill_red_ball_effect.t_scale = 0.35
+					}
+
 			
-				if global.n_sword != -1 && keyboard_check(vk_down) && !keyboard_check(vk_left) && !keyboard_check(vk_right) && down_attack_with_rage = 0 && global.chat_activity = false && global.matching != 3
+						if global.awakening >= 1
+						{
+						global.awakening -= 0.8
+						}
+			
+					sfx_for_multiplayer(laser_skill_ready,0,0.15)
+				
+					if global.voice_option = 0
+					{
+					sfx_for_multiplayer(ready_swording,0,0.35)
+					}
+
+			
+					sfx_for_multiplayer(choose(swing_lightsaber_sfx2,swing_lightsaber_sfx3),0,0.1)
+					}
+					else
+					{
+					var sfx = audio_play_sound(cannot_buy,0,0)
+					audio_sound_gain(sfx,0.2*global.master_volume*2*global.sfx_volume,0)
+					}
+				}
+			
+				if global.n_sword != -1 && keyboard_check(vk_down) && !keyboard_check(vk_left) && !keyboard_check(vk_right) && !keyboard_check(vk_up) && down_attack_with_rage = 0 && global.chat_activity = false && global.matching != 3
 				{
 					if attack_laser = 0 && cannot_move = 0 && cooltime = 0 && spin = 0 && hurt = 0 && hurt_little = 0 && global.rage_gauge >= 80
 					{
@@ -2878,7 +3020,7 @@ if global.never_move = 0 && keyboard_check_released(ord(string(global.e_key))) &
 				}
 			
 			
-				if !keyboard_check(vk_down) && (keyboard_check(vk_left) || keyboard_check(vk_right)) && down_attack_with_rage = 0 && global.chat_activity = false && global.matching != 3
+				if !keyboard_check(vk_down) && !keyboard_check(vk_up) && (keyboard_check(vk_left) || keyboard_check(vk_right)) && down_attack_with_rage = 0 && global.chat_activity = false && global.matching != 3
 				{
 					if attack_laser_sec = 0 && cannot_move = 0 && cooltime = 0 && spin = 0 && hurt = 0 && hurt_little = 0 && global.rage_gauge >= 80
 					{
@@ -3304,7 +3446,7 @@ ef.image_angle = image_angle;
 else
 {
 dont_shine = 0
-	if audio_is_playing(wak_rio)
+	if global.now_music = wak_rio
 	{
 	var ef = instance_create_depth(x,y,depth+1,gyu_seong_blue_ef);
 	var sprite = asset_get_index(string(sprite_get_name(string(sprite_index)))+"_white");
@@ -3952,7 +4094,7 @@ sprite_index = down_attack_sprite
 	}
 
 	
-	if audio_is_playing(wak_rio)
+	if global.now_music = wak_rio
 	{
 	audio_sound_gain(wakrio_bgm,0.3*global.master_volume*2*global.bgm_volume,0)
 	}
@@ -3994,6 +4136,133 @@ sprite_index = down_attack_sprite
 		}
 	}
 }
+
+
+
+
+
+if attack_laser_thi > 0 && spin_attack = 0
+{
+vspeed = 0
+cannot_move = 1
+global.never_move = 1
+global.movement_speed = 0
+attack_laser_thi += 0.1
+
+if skill_red_ball_effect != -1
+{
+	if floor(image_index) < 1
+	{
+	skill_red_ball_effect.x = x+10*image_xscale
+	skill_red_ball_effect.y = y+15
+	}
+	
+	if floor(image_index) >= 1 && floor(image_index) < 2
+	{
+	skill_red_ball_effect.x = x+16*image_xscale
+	skill_red_ball_effect.y = y+10
+	}
+	
+	if floor(image_index) >= 2 && floor(image_index) <= 4
+	{
+	skill_red_ball_effect.x = x+14*image_xscale
+	skill_red_ball_effect.y = y-6
+	}
+	
+	if floor(image_index) >= 5 && floor(image_index) <= 7
+	{
+	skill_red_ball_effect.x = x+14*image_xscale
+	skill_red_ball_effect.y = y-5
+	}
+	
+	if floor(image_index) >= 8 && floor(image_index) <= 9
+	{
+	skill_red_ball_effect.x = x+14*image_xscale
+	skill_red_ball_effect.y = y-4
+	}
+	
+	if floor(image_index) >= 10
+	{
+	skill_red_ball_effect.x = x-9*image_xscale
+	skill_red_ball_effect.y = y+15
+	skill_red_ball_effect.des = 1
+	skill_red_ball_effect = -1
+	}
+}
+	
+sprite_index = attack_laser_sprite
+if attack_laser_thi < 13
+{
+image_index = floor(attack_laser_thi)
+}
+else
+{
+image_index = 12
+}
+
+	if floor(image_index) >= 11 && attack_laser_sfx = 0
+	{
+	attack_laser_sfx = 1
+	
+	
+	var effect_ = instance_create_depth(x-image_xscale*16,y-18,player.depth+1,down_effect_for_laser)
+	effect_.image_blend = c_black
+	effect_.t_image_xscale = 0.3*4*image_yscale/2
+	effect_.t_image_yscale = 0.05*3*image_yscale/2
+	effect_.image_xscale = 2.5/2
+	effect_.image_yscale = 0.8/2
+	effect_.alarm[1] = 2
+	if image_xscale = -1
+	{
+	effect_.image_angle = 90
+	}
+	else
+	{
+	effect_.image_angle = 270
+	}
+
+		
+	sfx_for_multiplayer(laser_sfx_sec,0,0.09)
+
+	
+	attack_target_x = x
+	
+	sfx_for_multiplayer(choose(swing_lightsaber_sfx2,swing_lightsaber_sfx3),0,0.1)
+	}
+	
+	if floor(image_index) > 11 && attack_laser_sfx = 1
+	{
+	attack_laser_sfx = 2
+	var _aaa = instance_create_depth(x-image_xscale*24,y+16,player.depth-1,effect_special_skill_thi)
+		if image_xscale = 1
+		{
+		_aaa.image_angle = 90
+		}
+		else
+		{
+		_aaa.image_angle = 270
+		}
+	}
+	
+	if attack_laser_thi > 18
+	{
+	attack_laser_sfx = 0
+	down_attack_plusing = 0
+	attack_laser_thi = 0
+	down_attack_with_rage_dis = 0
+	cannot_move = 0
+	cooltime = 0
+	sprite_index = move_sprite
+	image_index = 0
+	global.never_move = 0
+	}
+}
+
+
+
+
+
+
 
 
 

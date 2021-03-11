@@ -865,6 +865,7 @@ else if (type == network_type_data)
 				
 				if is_server = false
 				{
+				global.now_music = asset_get_index(string(_music_name))
 				global.bgm = audio_play_sound(asset_get_index(string(_music_name)),0,false)
 				}
 				break;

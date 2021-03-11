@@ -1465,7 +1465,7 @@ ef.image_angle = image_angle;
 else
 {
 dont_shine = 0
-	if audio_is_playing(wak_rio) || global.revived_once = 1
+	if global.now_music = wak_rio || global.revived_once = 1
 	{
 	var ef = instance_create_depth(x,y,depth+1,gyu_seong_blue_ef);
 	var sprite = asset_get_index(string(sprite_get_name(string(sprite_index)))+"_white");
@@ -2157,7 +2157,7 @@ sprite_index = down_attack_sprite
 		}
 	}
 	
-	if audio_is_playing(wak_rio)
+	if global.now_music = wak_rio
 	{
 	audio_sound_gain(wakrio_bgm,0.3*global.master_volume*2*global.bgm_volume,0)
 	}
@@ -2168,7 +2168,7 @@ sprite_index = down_attack_sprite
 		if down_attack_motion_dilay > 4
 		{
 			
-		if !audio_is_playing(wak_rio) && instance_number(revive_with_rage_scene) > 0 && slow_motion = 0 && global.revived_once = 1
+		if !global.now_music = wak_rio && instance_number(revive_with_rage_scene) > 0 && slow_motion = 0 && global.revived_once = 1
 		{
 		global.w_alpha2 = 2
 		w_alpha = 2

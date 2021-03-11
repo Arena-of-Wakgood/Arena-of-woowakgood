@@ -1,12 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-if audio_is_playing(wakrio_bgm)
+if global.now_music = wakrio_bgm
 {
 var color_1 = $FFF7D06D
 var color_2 = $FFF3BF00
 var color_3 = c_blue
 }
-else if audio_is_playing(shake_it_bgm)
+else if global.now_music = shake_it_bgm
 {
 var color_1 = $FF000000
 var color_2 = $FF191919

@@ -4,11 +4,18 @@ image_index = 0
 image_speed = 0
 movement_speed = 0
 
+if global.guide_message_chat = 0
+{
+dev_mes("Enter키를 눌러 채팅창을 열어보세요!")
+}
+
+global.guide_message_chat = 1
 
 color_select = 0
 
 hp_bar_alpha = 0
 draw_hp = 0
+timer__ = 0
 max_hp = 1000
 guard_cool_time = 0
 p_mes = -1
@@ -66,6 +73,7 @@ can_cre_effect = 0
 attack_laser = 0
 attack_laser_sfx = 0
 attack_laser_sec = 0
+attack_laser_thi = 0
 down_attack_with_rage_dis = 0
 skill_red_ball_effect = -1
 w_alpha = 0

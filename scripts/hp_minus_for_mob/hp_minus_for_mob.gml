@@ -11,7 +11,7 @@ function hp_minus_for_mob(argument0) {
 	}
 	
 	
-	if audio_is_playing(wak_rio)
+	if global.now_music = wak_rio
 	{
 	var damage_calcul = ((argument0+random_plus_damage)*1.5)/armored_level;
 	}

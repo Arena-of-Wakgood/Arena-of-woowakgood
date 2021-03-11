@@ -271,7 +271,7 @@ if is_server = true && global.b_alpha >= 1
 randomize()
 change_weather ++
 
-	if (audio_is_playing(maser_bgm) || audio_is_playing(shake_it_bgm)) && global.rainy != 1
+	if (global.now_music = maser_bgm || global.now_music = shake_it_bgm) && global.rainy != 1
 	{
 	change_weather_max = 0
 	}
@@ -279,7 +279,7 @@ change_weather ++
 	if change_weather_max < change_weather
 	{
 	global.wind_dir = choose(-1,1)*irandom_range(0,12)
-		if audio_is_playing(maser_bgm) || audio_is_playing(shake_it_bgm)
+		if global.now_music = maser_bgm || global.now_music = shake_it_bgm
 		{
 		global.rainy = 1
 		}
@@ -349,6 +349,7 @@ if global.matching > 0
 			var music_selected = choose(gyu_seong_bu_whal,wakrio_bgm,maser_bgm,bamguy_bgm,shake_it_bgm,wak_surada,alzaltak,tong_tiring)
 			global.bgm = audio_play_sound(music_selected,0,false)
 			show_sound_list = 3
+			global.now_music = music_selected
 
 			buffer_seek(effect_buffer, buffer_seek_start, 0);
 			buffer_write(effect_buffer, buffer_u8, COMM.MUSIC_SYNC);
@@ -358,7 +359,7 @@ if global.matching > 0
 		}
 		else
 		{
-			if audio_is_playing(gyu_seong_bu_whal) || audio_is_playing(wakrio_bgm) || audio_is_playing(maser_bgm) || audio_is_playing(shake_it_bgm) || audio_is_playing(bamguy_bgm) || audio_is_playing(tong_tiring) || audio_is_playing(wak_surada) || audio_is_playing(alzaltak)
+			if audio_is_playing(gyu_seong_bu_whal) || global.now_music = wakrio_bgm || global.now_music = maser_bgm || global.now_music = shake_it_bgm || global.now_music = bamguy_bgm || global.now_music = tong_tiring || global.now_music = wak_surada || global.now_music = alzaltak
 			{
 			audio_sound_gain(global.bgm,global.bgm_volume*global.master_volume*0.32*global.auto_volume_down,0)
 			}

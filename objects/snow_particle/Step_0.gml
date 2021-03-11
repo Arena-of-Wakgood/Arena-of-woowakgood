@@ -32,7 +32,7 @@ if global.rainy > 0
 }
 else
 {
-	if audio_is_playing(maser_bgm) || audio_is_playing(shake_it_bgm)
+	if global.now_music = maser_bgm || global.now_music = shake_it_bgm
 	{
 		if alpha2 < 1
 		{
