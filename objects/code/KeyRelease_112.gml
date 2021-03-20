@@ -22,42 +22,36 @@ if is_server = true && auto_des <= 0
 		}
 		else
 		{
-		show_debug_message("can not matching")
+		dev_mes("매칭이 불가능 합니다")
 		}
 	}
 	
-	if global.select_dev_setting = 2
+	if global.for_kick_player >= 0
 	{
-		if global.gamemode_server != 3 && global.gamemode_server != 4
+		if (global.select_dev_setting = 12 || global.select_dev_setting = 13)
 		{
-			if is_server = true && global.client_num >= 1
+			if global.pinged_player_num < 3
 			{
-			certain_matching ++
-
-				if certain_matching > 1
+			global.pinged_player[global.for_kick_player] *= -1
+				if global.pinged_player[global.for_kick_player] = -1
 				{
-				certain_matching = 0
-				}
-
-				if certain_matching = 1
-				{
-				_mes_select_matching = instance_create_depth(x,y,-999,message_)
-				_mes_select_matching.t_image_alpha = 1
-				_mes_select_matching.text = "특정한 매칭!"
-				_mes_select_matching.sub_text = "(특정 플레이어를 매칭 시킵니다)"
-				_mes_select_matching.auto_destroy = 0
+				global.pinged_player_num --
 				}
 				else
 				{
-					if _mes_select_matching != -4
-					{
-					_mes_select_matching.alarm[1] = 1
-					_mes_select_matching = -4
-					}
+				global.pinged_player_num ++
 				}
+			dev_mes(string(global.pinged_player_num)+" / "+string(global.for_kick_player)+" / "+string(global.pinged_player[global.for_kick_player]))
+			}
+			else
+			{
+			global.pinged_player_num --
+			global.pinged_player[global.for_kick_player] = -1
+			dev_mes("최대 4명까지 설정 가능 합니다")
 			}
 		}
 	}
+	
 	
 	
 	
@@ -93,13 +87,7 @@ if is_server = true && auto_des <= 0
 
 	var _text1 = "Match End!"
 	var _text2 = "게임 강제 종료"
-
-	var _mes = instance_create_depth(x,y,-999,message_);
-	_mes.t_image_alpha = 1;
-	_mes.text = _text1
-	_mes.sub_text = _text2
-	_mes.auto_destroy = 0;
-	_mes.alarm[1] = 180;
+	dev_mes(string(_text1)+" / "+string(_text2))
 
 	global.hp = 1000
 	global.matched_pl1_ready = 0
@@ -122,17 +110,31 @@ if is_server = true && auto_des <= 0
 	
 	
 	
-	if global.select_dev_setting = 4
+	if global.select_dev_setting = 14
 	{
-	var _kicked_player = (get_string("킥할 플레이어를 지정해주세요", ""));
-
-		if _kicked_player != ""
+		if global.for_kick_player != 0
 		{
+		var __aaa = string("Kicked by "+string(global.nickname))
 		buffer_seek(kick_buffer, buffer_seek_start, 0);
 		buffer_write(kick_buffer, buffer_u8, DATA.KICK_PLAYER);
-		buffer_write(kick_buffer, buffer_string, real(_kicked_player));
-		buffer_write(kick_buffer, buffer_string, string("Kicked by "+string(global.nickname)));
+		buffer_write(kick_buffer, buffer_string, real(global.for_kick_player));
+		buffer_write(kick_buffer, buffer_string, __aaa);
 		send_all(kick_buffer);
+	
+		var name_a = ""
+		with(player)
+		{
+			if playerID = global.for_kick_player
+			{
+			name_a = string(name)
+			}
+		}
+	
+		chat_up(string(name_a)+"이/가 서버에서 추방 당했습니다. (사유 : "+string(__aaa)+")",0,0)
+		}
+		else
+		{
+		dev_mes("자기 자신은 추방 할 수 없습니다!")
 		}
 	}
 	
@@ -177,10 +179,47 @@ if is_server = true && auto_des <= 0
 	clipboard_set_text(_friend_code)
 	dev_mes("초대 코드가 복사 되었습니다!")
 	}
-	
+
+
+if global.select_dev_setting = 4
+{
+auto_des = 25
+setting_alpha = 1
+global.for_kick_player = 0
+global.select_dev_setting = 14
+dev_mes("킥할 플레이어를 선택해주세요")
+}
+else if global.select_dev_setting = 2
+{
+	if global.gamemode_server != 3 && global.gamemode_server != 4
+	{
+	global.select_dev_setting = 12
+	}
+	else
+	{
+	global.select_dev_setting = 13
+	}
+}
+else if (global.select_dev_setting = 12 || global.select_dev_setting = 13)
+{
+auto_des = 25
+setting_alpha = 1
+	if global.for_kick_player = -1
+	{
+	global.for_kick_player = 0
+	setting_alpha = -0.01
+	auto_des = 0
+	global.select_dev_setting = 0
+	}
+}
+else
+{
 setting_alpha = -0.01
-global.select_dev_setting = 0
 auto_des = 0
+global.select_dev_setting = 0
+}
+
+
 
 var sfx = audio_play_sound(message_sfx,0,0)
 audio_sound_gain(sfx,0.12*global.master_volume*2*global.sfx_volume,0)

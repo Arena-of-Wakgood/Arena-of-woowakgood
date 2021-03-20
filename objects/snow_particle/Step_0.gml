@@ -32,7 +32,7 @@ if global.rainy > 0
 }
 else
 {
-	if global.now_music = maser_bgm || global.now_music = shake_it_bgm
+	if global.now_music = bgm_ff3 || global.now_music = shake_it_bgm
 	{
 		if alpha2 < 1
 		{

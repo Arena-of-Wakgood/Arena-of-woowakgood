@@ -19,7 +19,7 @@ global.now_map = choose(0,2)
 
 
 
-if global.slow_motion = 0 && fps < 55
+if global.slow_motion = 0 && fps_real < 50
 {
 global.low_quality = 1
 }
@@ -271,7 +271,7 @@ if is_server = true && global.b_alpha >= 1
 randomize()
 change_weather ++
 
-	if (global.now_music = maser_bgm || global.now_music = shake_it_bgm) && global.rainy != 1
+	if (global.now_music = bgm_ff3 || global.now_music = shake_it_bgm) && global.rainy != 1
 	{
 	change_weather_max = 0
 	}
@@ -279,7 +279,7 @@ change_weather ++
 	if change_weather_max < change_weather
 	{
 	global.wind_dir = choose(-1,1)*irandom_range(0,12)
-		if global.now_music = maser_bgm || global.now_music = shake_it_bgm
+		if global.now_music = bgm_ff3 || global.now_music = shake_it_bgm
 		{
 		global.rainy = 1
 		}
@@ -331,6 +331,21 @@ injured_effect += (-0.01 - injured_effect)*0.1
 }
 
 
+if is_server = true
+{
+	if music_selected != b_music_selected
+	{
+	buffer_seek(music__buffer, buffer_seek_start, 0);
+	buffer_write(music__buffer, buffer_u8, DATA.COMMAND);
+	buffer_write(music__buffer, buffer_u8, my_ID);
+	buffer_write(music__buffer, buffer_u8, COMM.MUSIC_SYNC);
+	buffer_write(music__buffer, buffer_string, string(music_selected));
+	send_all(music__buffer);
+	
+	b_music_selected = music_selected
+	}
+}
+
 
 if global.b_alpha <= 0.1 || global.t_auto_volume_down <= 0
 {
@@ -346,20 +361,15 @@ if global.matching > 0
 			if is_server = true
 			{
 			randomize()
-			var music_selected = choose(gyu_seong_bu_whal,wakrio_bgm,maser_bgm,bamguy_bgm,shake_it_bgm,wak_surada,alzaltak,tong_tiring)
+			music_selected = choose(bgm_ff1,bgm_ff2,bgm_ff3,bgm_ff4,shake_it_bgm,wak_surada,alzaltak,tong_tiring)
 			global.bgm = audio_play_sound(music_selected,0,false)
 			show_sound_list = 3
 			global.now_music = music_selected
-
-			buffer_seek(effect_buffer, buffer_seek_start, 0);
-			buffer_write(effect_buffer, buffer_u8, COMM.MUSIC_SYNC);
-			buffer_write(effect_buffer, buffer_string, audio_get_name(string(music_selected)));
-			send_all(effect_buffer);
 			}
 		}
 		else
 		{
-			if audio_is_playing(gyu_seong_bu_whal) || global.now_music = wakrio_bgm || global.now_music = maser_bgm || global.now_music = shake_it_bgm || global.now_music = bamguy_bgm || global.now_music = tong_tiring || global.now_music = wak_surada || global.now_music = alzaltak
+			if audio_is_playing(bgm_ff1) || audio_is_playing(bgm_ff2) || audio_is_playing(bgm_ff3) || audio_is_playing(shake_it_bgm) || audio_is_playing(bgm_ff4) || audio_is_playing(tong_tiring) || audio_is_playing(wak_surada) || audio_is_playing(alzaltak)
 			{
 			audio_sound_gain(global.bgm,global.bgm_volume*global.master_volume*0.32*global.auto_volume_down,0)
 			}
@@ -384,14 +394,14 @@ else
 	
 	if global.auto_volume_down <= 0 && global.t_auto_volume_down <= 0
 	{
-	audio_stop_sound(gyu_seong_bu_whal)
-	audio_stop_sound(maser_bgm)
-	audio_stop_sound(wakrio_bgm)
+	audio_stop_sound(bgm_ff1)
+	audio_stop_sound(bgm_ff3)
+	audio_stop_sound(bgm_ff2)
 	audio_stop_sound(shake_it_bgm)
 	audio_stop_sound(wak_surada)
 	audio_stop_sound(tong_tiring)
 	audio_stop_sound(alzaltak)
-	audio_stop_sound(bamguy_bgm)
+	audio_stop_sound(bgm_ff4)
 	global.bgm = -4
 	}
 }

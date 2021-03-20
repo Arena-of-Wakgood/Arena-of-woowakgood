@@ -257,7 +257,7 @@ else if (type == network_type_data)
 		var _name = buffer_read(buffer, buffer_string);
 		var _reason = buffer_read(buffer, buffer_string);
 
-			if (global.nickname = _name || global.return_player_id = _name)
+			if (global.nickname = _name || global.return_player_id = real(_name))
 			{
 				if string(_reason) = "Anti cheating"
 				{
@@ -862,11 +862,12 @@ else if (type == network_type_data)
 				
 				case COMM.MUSIC_SYNC:
 				var _music_name = buffer_read(buffer, buffer_string);
-				
+				show_debug_message(_music_name)
 				if is_server = false
 				{
-				global.now_music = asset_get_index(string(_music_name))
-				global.bgm = audio_play_sound(asset_get_index(string(_music_name)),0,false)
+				global.now_music = string(_music_name)
+				global.bgm = audio_play_sound((string(_music_name)),0,false)
+				show_sound_list = 3
 				}
 				break;
 				

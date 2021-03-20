@@ -43,6 +43,7 @@ draw_text_k_scale(xx+camera_get_view_width(view_camera[0])*0.5-v_x*32,yy+playerI
 if x > cm_x && x < cm_x+cm_width && y > yy && y < yy+cm_height
 {
 var p_floor = 903
+
 draw_sprite_ext(spr_shadow,0,x,p_floor+27,1-abs(y-p_floor)/48,1-abs(y-p_floor)/64,0,c_white,(1-abs(y-p_floor)/48)*0.3*image_alpha)
 draw_sprite_ext(sprite_index,image_index,floor(x),floor(y),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 }

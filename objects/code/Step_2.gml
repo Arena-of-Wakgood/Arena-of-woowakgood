@@ -128,14 +128,14 @@ if global.matching = 3
 				{
 				x = obj_floor.x - 230
 				y = 903
-				show_debug_message("a")
+				//show_debug_message("a")
 				}
 				
 				if returned_id = global.matched_pl2
 				{
 				x = obj_floor.x + 230
 				y = 903
-				show_debug_message("b")
+				//show_debug_message("b")
 				}
 
 				if global.gamemode_server = 3
@@ -1377,12 +1377,55 @@ var player3_exists = 1
 var player4_exists = 1
 randomize()
 var selected_p1 = irandom_range(0,global.to_return_player_id)
+randomize()
 var selected_p2 = irandom_range(0,global.to_return_player_id)
+randomize()
 var selected_p3 = irandom_range(0,global.to_return_player_id)
+randomize()
 var selected_p4 = irandom_range(0,global.to_return_player_id)
 
-	if _mes_select_matching = -4
+var _set_p1 = 0
+var _set_p2 = 0
+var _set_p3 = 0
+var _set_p4 = 0
+for(var i = 0; i < 40; i++)
+{
+show_debug_message(string(i))
+	if global.pinged_player[i] > 0
 	{
+		if _set_p1 = 0
+		{
+		selected_p1 = i
+		_set_p1 = 1
+		show_debug_message(string(i))
+		}
+		
+		if _set_p2 = 0 && selected_p1 != i
+		{
+		selected_p2 = i
+		_set_p2 = 1
+		show_debug_message(string(i))
+		}
+		
+		if _set_p3 = 0 && selected_p1 != i && selected_p2 != i
+		{
+		selected_p3 = i
+		_set_p3 = 1
+		show_debug_message(string(i))
+		}
+		
+		if _set_p4 = 0 && selected_p1 != i && selected_p2 != i && selected_p3 != i
+		{
+		selected_p4 = i
+		_set_p4 = 1
+		show_debug_message(string(i))
+		break;
+		}
+	}
+}
+
+
+
 		repeat(99999)
 		{
 			if selected_p1 = selected_p2
@@ -1421,33 +1464,11 @@ var selected_p4 = irandom_range(0,global.to_return_player_id)
 				}
 			}
 		}
-	}
-	else
-	{
-		if (global.gamemode_server = 3 || global.gamemode_server = 4)
-		{
-		selected_p3 = irandom_range(0,global.to_return_player_id)
-		selected_p4 = irandom_range(0,global.to_return_player_id)
-		}
-		else
-		{
-		var __f1 = (get_string("플레이어1을 지정해주세요", ""));
-		var __f2 = (get_string("플레이어2을 지정해주세요", ""));
+		
+
+show_debug_message(string(selected_p1)+" / "+string(selected_p2)+" / "+string(selected_p3)+" / "+string(selected_p4))
+
 	
-		if __f1 = ""
-		{
-		__f1 = 0
-		}
-	
-		if __f2 = ""
-		{
-		__f2 = 1
-		}
-	
-		selected_p1 = __f1;
-		selected_p2 = __f2;
-		}
-	}
 	
 	if selected_p1 != selected_p2
 	{

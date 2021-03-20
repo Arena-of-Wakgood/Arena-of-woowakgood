@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.now_music = wakrio_bgm
+if global.now_music = bgm_ff2
 {
 var color_1 = $FFF7D06D
 var color_2 = $FFF3BF00

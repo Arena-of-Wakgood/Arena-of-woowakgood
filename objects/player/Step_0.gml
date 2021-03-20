@@ -264,7 +264,7 @@ returned_id = global.return_player_id;
 		{
 		image_index = 0
 		image_xscale = -abs(image_xscale)
-		show_debug_message("b")
+		//show_debug_message("b")
 		}
 		
 		
@@ -3954,16 +3954,6 @@ global.movement_speed = 0
 		sfx_for_multiplayer(jump_attack_sfx,0,0.6)
 		
 		sfx_for_multiplayer(choose(swing_lightsaber_sfx2,swing_lightsaber_sfx3),0,0.1)
-
-		
-		var random_val = choose(1,0,0)
-			if random_val = 1
-			{
-				if global.voice_option = 0
-				{
-				sfx_for_multiplayer(choose(yayaya,yayaya),0,0.2)
-				}
-			}
 		}
 	
 	jump_attack += 0.12
@@ -4096,7 +4086,7 @@ sprite_index = down_attack_sprite
 	
 	if global.now_music = wak_rio
 	{
-	audio_sound_gain(wakrio_bgm,0.3*global.master_volume*2*global.bgm_volume,0)
+	audio_sound_gain(bgm_ff2,0.3*global.master_volume*2*global.bgm_volume,0)
 	}
 	
 	if down_attack_plusing > 0

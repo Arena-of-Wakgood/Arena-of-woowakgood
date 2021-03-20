@@ -19,7 +19,7 @@ is_server = false;
 
 show_sound_list = 0
 show_sound_list_y = 0
-
+global.for_kick_player = 0
 global.now_map = 2
 b_map = global.now_map
 global.guide_message_chat = 0
@@ -28,6 +28,12 @@ global.use_final_skill = 0
 global.now_music = 0
 force_mapchange_ = 0
 show_sound_list_alpha = 0
+
+global.pinged_player_num = 0
+for(var i = 0; i < 40; i++)
+{
+global.pinged_player[i] = -1
+}
 
 index = 0;
 draw_set_font(font0);
@@ -111,19 +117,22 @@ matching_buffer = buffer_create(2, buffer_grow, 1);
 connection_buffer = buffer_create(2, buffer_grow, 1);
 kick_buffer = buffer_create(2, buffer_grow, 1);
 effect_buffer = buffer_create(2, buffer_grow, 1);
+music__buffer = buffer_create(2, buffer_grow, 1);
 gamemode_select_buffer = buffer_create(2, buffer_grow, 1);
 gamemode_select = 0
 max_gamemode_select = 0
 max_gamemode_select_sfx = 0
 b_gamemode = 1
 _mes_gamemode = -4
+music_selected = -4
+b_music_selected = -4
 my_ID = 0;
 global.my_instance_id = 0;
 global.clients = ds_list_create();
 list_names = ds_list_create();
 list_vals = ds_list_create();
 list_types = ds_list_create();
-music_pitch = 0
+
 depth = -99999
 
 global.master_volume = 1

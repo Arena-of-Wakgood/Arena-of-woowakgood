@@ -78,10 +78,11 @@ draw_text_kl_scale(xx,yy+v_x*(show_timer+64),string(gamemode_val_),v_x*64,-1,1,c
 
 var xx = camera_get_view_x(view_camera[0])
 var yy = camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])*0.35
-
+var t_color_ = c_white
 
 if global.select_dev_setting > 0
 {
+var aaa_text = "키보드 좌,우 방향키로 선택 및 F1키를 눌러 선택"
 
 var n_setting = "unknown"
 var n_setting__ = "<                                  >"
@@ -94,7 +95,7 @@ n_setting = "매칭 시작"
 
 if global.select_dev_setting = 2
 {
-n_setting = "임의 플레이어 매칭"
+n_setting = "특정 플레이어 고정 매칭"
 }
 
 if global.select_dev_setting = 3
@@ -128,9 +129,50 @@ n_setting__ = "<"
 n_setting = "창 닫기"
 }
 
+if global.select_dev_setting = 14 || global.select_dev_setting = 12 || global.select_dev_setting = 13
+{
+	if global.for_kick_player <= -1
+	{
+	n_setting__ = "                                    >"
+	}
+	else if global.for_kick_player > global.to_return_player_id
+	{
+	n_setting__ = "<"
+	}
+	else
+	{
+	var n_setting__ = "<                                  >"
+	}
+
+var name_a = "창 닫기"
+
+	if global.for_kick_player != 0
+	{
+		with(player)
+		{
+			if playerID = global.for_kick_player
+			{
+			name_a = string(name)+" ("+string(global.for_kick_player)+")"
+			}
+		}
+	}
+	else
+	{
+	name_a = string(global.nickname)+" ("+string(global.for_kick_player)+")"
+	}
+n_setting = string(name_a)
+
+	if global.for_kick_player >= 0
+	{
+		if global.pinged_player[global.for_kick_player] > 0
+		{
+		t_color_ = $FF7D47EE
+		}
+	}
+}
 
 
-var aaa_text = "키보드 좌,우 방향키로 선택 및 F1키를 눌러 선택"
+
 
 
 	for(var i = 0; i < 48; i ++)
@@ -142,7 +184,7 @@ var aaa_text = "키보드 좌,우 방향키로 선택 및 F1키를 눌러 선택
 	}
 	
 draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy-80*v_x,"관리자 세팅",32,-1,setting_alpha_real,c_yellow,0,0,font0,1/3*v_x,1/3*v_x,0)
-draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy,n_setting,32,-1,setting_alpha_real*setting_text_alpha,c_white,0,0,font0,1/2*v_x,1/2*v_x,0)
+draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy,n_setting,32,-1,setting_alpha_real*setting_text_alpha,t_color_,0,0,font0,1/2*v_x,1/2*v_x,0)
 if n_setting__ = "<"
 {
 draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5-140*v_x,yy,n_setting__,32,-1,setting_alpha_real*setting_text_alpha,c_white,0,0,font0,1/2*v_x,1/2*v_x,0)
@@ -160,42 +202,42 @@ draw_text_kl_scale(camera_get_view_x(view_camera[0])+camera_get_view_width(view_
 var _playing_music_name = ""
 
 
-if global.now_music = maser_bgm
+if audio_get_name(global.now_music) = audio_get_name(bgm_ff3)
 {
 _playing_music_name = "Wakgood Records - Master (Don't Kill Me)"
 }
 
-if global.now_music = wakrio_bgm
+if audio_get_name(global.now_music) = audio_get_name(bgm_ff2)
 {
 _playing_music_name = "Wakgood Records - Wak'rio"
 }
 
-if global.now_music = shake_it_bgm
+if audio_get_name(global.now_music) = audio_get_name(shake_it_bgm)
 {
 _playing_music_name = "Wakgood Records - Escape"
 }
 
-if global.now_music = tong_tiring
+if audio_get_name(global.now_music) = audio_get_name(tong_tiring)
 {
 _playing_music_name = "Uoohbues - 붕붕붕 vs 빨리 접속하세요"
 }
 
-if global.now_music = wak_surada
+if audio_get_name(global.now_music) = audio_get_name(wak_surada)
 {
 _playing_music_name = "Wakgood Records - Party Doo"
 }
 
-if global.now_music = alzaltak
+if audio_get_name(global.now_music) = audio_get_name(alzaltak)
 {
 _playing_music_name = "Wakgood Records - Alzar Takkarsen"
 }
 
-if global.now_music = wak_rio
+if audio_get_name(global.now_music) = audio_get_name(wak_rio)
 {
 _playing_music_name = "Wakgood Records - Wak'rio"
 }
 
-if global.now_music = bamguy_bgm
+if audio_get_name(global.now_music) = audio_get_name(bgm_ff4)
 {
 _playing_music_name = "badassgatsby - 밤가이!!"
 }

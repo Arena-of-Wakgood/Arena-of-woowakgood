@@ -3,7 +3,7 @@
 alpha1 -= 0.1
 image_angle = 0
 
-if image_index > 41
+if image_index > 40
 {
 instance_destroy()
 }
