@@ -30,7 +30,7 @@ image_index = 0
 
 
 
-	if place_meeting(x+movement_speed*0.7-16*image_xscale,obj_floor.y,obj_floor)
+	if place_meeting(x+movement_speed*0.7-16*image_xscale,1056,obj_floor)
 	{
 		if !place_meeting(x-image_xscale*16,y-1,obj_floor)
 		{
@@ -50,7 +50,7 @@ image_index = 0
 
 
 
-if place_meeting(x,obj_floor.y+1,obj_floor) && knocked_down_ef = 0
+if place_meeting(x,1056+1,obj_floor) && knocked_down_ef = 0
 {
 movement_speed += (0 - movement_speed)*0.05
 }

@@ -23,6 +23,9 @@ global.t_shake_y = 0
 global.b_alpha = 0
 global.t_b_alpha = 0
 
+global.b_alpha_prt = 0
+global.t_b_alpha_prt = 0
+
 global.w_alpha2 = 0
 global.w_alpha = 0
 global.real_shake_x = 0

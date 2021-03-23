@@ -50,6 +50,11 @@ image_xscale -= image_xscale*0.1
 	}
 }
 
+if global.in_practice > 0
+{
+instance_destroy()
+}
+
 
 
 if a = 1

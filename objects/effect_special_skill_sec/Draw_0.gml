@@ -5,7 +5,7 @@ var spr_2 = Sprite140142
 var spr_3 = Sprite140
 var spr_4 = Sprite143151
 
-if global.now_music = bgm_ff2
+if global.now_music = wakrio_bgm
 {
 var color_1 = $FFF7D06D
 var color_2 = $FFF3BF00

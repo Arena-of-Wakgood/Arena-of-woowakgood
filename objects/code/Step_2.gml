@@ -126,14 +126,16 @@ if global.matching = 3
 			{
 				if returned_id = global.matched_pl1
 				{
-				x = obj_floor.x - 230
+				global.in_practice = 0
+				x = 2048 - 230
 				y = 903
 				//show_debug_message("a")
 				}
 				
 				if returned_id = global.matched_pl2
 				{
-				x = obj_floor.x + 230
+				global.in_practice = 0
+				x = 2048 + 230
 				y = 903
 				//show_debug_message("b")
 				}
@@ -142,14 +144,16 @@ if global.matching = 3
 				{
 					if returned_id = global.matched_pl3
 					{
-					x = obj_floor.x - 230
+					global.in_practice = 0
+					x = 2048 - 230
 					y = 903
 					show_debug_message("c")
 					}
 		
 					if returned_id = global.matched_pl4
 					{
-					x = obj_floor.x + 230
+					global.in_practice = 0
+					x = 2048 + 230
 					y = 903
 					show_debug_message("d")
 					}
@@ -159,14 +163,16 @@ if global.matching = 3
 				{
 					if returned_id = global.matched_pl3
 					{
-					x = obj_floor.x + 230+82
+					global.in_practice = 0
+					x = 2048 + 230+82
 					y = 903
 					show_debug_message("c")
 					}
 		
 					if returned_id = global.matched_pl4
 					{
-					x = obj_floor.x + 230+82+82
+					global.in_practice = 0
+					x = 2048 + 230+82+82
 					y = 903
 					show_debug_message("d")
 					}
@@ -206,6 +212,7 @@ if global.matching = 3
 				{
 					if returned_id = global.matched_pl1
 					{
+					global.in_practice = 0
 						if show_first_action > 300
 						{
 						global.matched_pl1_ready = 1
@@ -219,6 +226,7 @@ if global.matching = 3
 		
 					if returned_id = global.matched_pl2
 					{
+					global.in_practice = 0
 						if show_first_action > 300
 						{
 						global.matched_pl2_ready = 1
@@ -252,7 +260,7 @@ if global.matching = 3
 					if global.matched_pl1 = global.return_player_id
 					{
 					my_p.sprite_index = my_p.move_sprite
-					my_p.x = obj_floor.x - 230
+					my_p.x = 2048 - 230
 					my_p.y = 903
 					
 						repeat(choose(6,7,7,8,8,9,9,9,10,10,11,12))
@@ -273,7 +281,7 @@ if global.matching = 3
 					if global.matched_pl2 = global.return_player_id
 					{
 					my_p.sprite_index = my_p.move_sprite
-					my_p.x = obj_floor.x + 230
+					my_p.x = 2048 + 230
 					my_p.y = 903
 					
 						repeat(choose(6,7,7,8,8,9,9,9,10,10,11,12))
@@ -370,6 +378,7 @@ if global.matching = 3
 							{
 								if returned_id = global.matched_pl3
 								{
+								global.in_practice = 0
 									if show_first_action > 300
 									{
 									global.matched_pl3_ready = 1
@@ -383,6 +392,7 @@ if global.matching = 3
 		
 								if returned_id = global.matched_pl4
 								{
+								global.in_practice = 0
 									if show_first_action > 300
 									{
 									global.matched_pl4_ready = 1
@@ -416,7 +426,7 @@ if global.matching = 3
 								if global.matched_pl3 = global.return_player_id
 								{
 								my_p.sprite_index = my_p.move_sprite
-								my_p.x = obj_floor.x - 230
+								my_p.x = 2048 - 230
 								my_p.y = 903
 								
 									repeat(choose(6,7,7,8,8,9,9,9,10,10,11,12))
@@ -437,7 +447,7 @@ if global.matching = 3
 								if global.matched_pl4 = global.return_player_id
 								{
 								my_p.sprite_index = my_p.move_sprite
-								my_p.x = obj_floor.x + 230
+								my_p.x = 2048 + 230
 								my_p.y = 903
 								
 									repeat(choose(6,7,7,8,8,9,9,9,10,10,11,12))
@@ -508,6 +518,7 @@ if global.matching = 3
 							{
 								if returned_id = global.matched_pl1
 								{
+								global.in_practice = 0
 									if show_first_action > 300
 									{
 									global.matched_pl1_ready = 1
@@ -521,6 +532,7 @@ if global.matching = 3
 		
 								if returned_id = global.matched_pl2
 								{
+								global.in_practice = 0
 									if show_first_action > 300
 									{
 									global.matched_pl2_ready = 1
@@ -551,7 +563,7 @@ if global.matching = 3
 								if global.matched_pl1 = global.return_player_id
 								{
 								my_p.sprite_index = my_p.move_sprite
-								my_p.x = obj_floor.x - 230
+								my_p.x = 2048 - 230
 								my_p.y = 903
 								
 									repeat(choose(6,7,7,8,8,9,9,9,10,10,11,12))
@@ -572,7 +584,7 @@ if global.matching = 3
 								if global.matched_pl2 = global.return_player_id
 								{
 								my_p.sprite_index = my_p.move_sprite
-								my_p.x = obj_floor.x + 230
+								my_p.x = 2048 + 230
 								my_p.y = 903
 								
 									repeat(choose(6,7,7,8,8,9,9,9,10,10,11,12))
@@ -630,6 +642,7 @@ if global.matching = 3
 					{
 						if returned_id = global.matched_pl1
 						{
+						global.in_practice = 0
 							if show_first_action > 300
 							{
 							global.matched_pl1_ready = 1
@@ -643,6 +656,7 @@ if global.matching = 3
 		
 						if returned_id = global.matched_pl2
 						{
+						global.in_practice = 0
 							if show_first_action > 300
 							{
 							global.matched_pl2_ready = 1
@@ -656,6 +670,7 @@ if global.matching = 3
 						
 						if returned_id = global.matched_pl3
 						{
+						global.in_practice = 0
 							if show_first_action > 300
 							{
 							global.matched_pl3_ready = 1
@@ -669,6 +684,7 @@ if global.matching = 3
 		
 						if returned_id = global.matched_pl4
 						{
+						global.in_practice = 0
 							if show_first_action > 300
 							{
 							global.matched_pl4_ready = 1
@@ -699,7 +715,7 @@ if global.matching = 3
 						if global.matched_pl1 = global.return_player_id
 						{
 						my_p.sprite_index = my_p.move_sprite
-						my_p.x = obj_floor.x - 230
+						my_p.x = 2048 - 230
 						my_p.y = 903
 						
 							repeat(choose(6,7,7,8,8,9,9,9,10,10,11,12))
@@ -720,7 +736,7 @@ if global.matching = 3
 						if global.matched_pl2 = global.return_player_id
 						{
 						my_p.sprite_index = my_p.move_sprite
-						my_p.x = obj_floor.x + 230
+						my_p.x = 2048 + 230
 						my_p.y = 903
 						
 							repeat(choose(6,7,7,8,8,9,9,9,10,10,11,12))
@@ -741,7 +757,7 @@ if global.matching = 3
 						if global.matched_pl3 = global.return_player_id
 						{
 						my_p.sprite_index = my_p.move_sprite
-						my_p.x = obj_floor.x + 230 + 82
+						my_p.x = 2048 + 230 + 82
 						my_p.y = 903
 						
 							repeat(choose(6,7,7,8,8,9,9,9,10,10,11,12))
@@ -762,7 +778,7 @@ if global.matching = 3
 						if global.matched_pl4 = global.return_player_id
 						{
 						my_p.sprite_index = my_p.move_sprite
-						my_p.x = obj_floor.x + 230 + 82 + 82
+						my_p.x = 2048 + 230 + 82 + 82
 						my_p.y = 903
 						
 							repeat(choose(6,7,7,8,8,9,9,9,10,10,11,12))
@@ -955,13 +971,13 @@ global.slow_motion += global.slow_motion*0.03
 				{
 					if global.matched_pl1 = returned_id
 					{
-					x = obj_floor.x - 230
+					x = 2048 - 230
 					y = 903;
 					}
 			
 					if global.matched_pl2 = returned_id
 					{
-					x = obj_floor.x + 230
+					x = 2048 + 230
 					y = 903;
 					}
 				}
@@ -1060,7 +1076,7 @@ global.slow_motion += global.slow_motion*0.03
 			{
 				if returned_id = global.matched_pl1 && global.matched_pl1_ready = 0
 				{
-				x = obj_floor.x - 230
+				x = 2048 - 230
 				y = 903;
 				
 				global.matched_pl1_ready = 1
@@ -1073,7 +1089,7 @@ global.slow_motion += global.slow_motion*0.03
 			
 				if returned_id = global.matched_pl2 && global.matched_pl2_ready = 0
 				{
-				x = obj_floor.x + 230
+				x = 2048 + 230
 				y = 903;
 				
 				global.matched_pl2_ready = 1
@@ -1086,7 +1102,7 @@ global.slow_motion += global.slow_motion*0.03
 				
 				if returned_id = global.matched_pl3 && global.matched_pl3_ready = 0
 				{
-				x = obj_floor.x + 230 +82
+				x = 2048 + 230 +82
 				y = 903;
 				
 				global.matched_pl3_ready = 1
@@ -1099,7 +1115,7 @@ global.slow_motion += global.slow_motion*0.03
 				
 				if returned_id = global.matched_pl4 && global.matched_pl4_ready = 0
 				{
-				x = obj_floor.x + 230 +82+82
+				x = 2048 + 230 +82+82
 				y = 903;
 				
 				global.matched_pl4_ready = 1
@@ -1196,13 +1212,13 @@ global.slow_motion += global.slow_motion*0.03
 					{
 						if global.matched_pl1 = returned_id || global.matched_pl3 = returned_id
 						{
-						x = obj_floor.x - 230
+						x = 2048 - 230
 						y = 903;
 						}
 			
 						if global.matched_pl2 = returned_id || global.matched_pl4 = returned_id
 						{
-						x = obj_floor.x + 230
+						x = 2048 + 230
 						y = 903;
 						}
 					}
@@ -1210,25 +1226,25 @@ global.slow_motion += global.slow_motion*0.03
 					{
 						if global.matched_pl1 = returned_id
 						{
-						x = obj_floor.x - 230
+						x = 2048 - 230
 						y = 903;
 						}
 			
 						if global.matched_pl2 = returned_id
 						{
-						x = obj_floor.x + 230
+						x = 2048 + 230
 						y = 903;
 						}
 						
 						if global.matched_pl3 = returned_id
 						{
-						x = obj_floor.x + 230+82
+						x = 2048 + 230+82
 						y = 903;
 						}
 			
 						if global.matched_pl4 = returned_id
 						{
-						x = obj_floor.x + 230+82+82
+						x = 2048 + 230+82+82
 						y = 903;
 						}
 					}
@@ -1563,7 +1579,7 @@ show_debug_message(string(selected_p1)+" / "+string(selected_p2)+" / "+string(se
 	var random_cre = percentage_k(60-(instance_number(obj_andience1)+instance_number(obj_andience11)+instance_number(obj_andience111))*5)
 		if random_cre = 1
 		{
-		instance_create_depth(obj_floor.x+64*i,903-48,obj_floor.depth-1,choose(obj_andience1,obj_andience11,obj_andience111))
+		instance_create_depth(2048+64*i,903-48,obj_floor.depth-2,choose(obj_andience1,obj_andience11,obj_andience111))
 		}
 	}
 		

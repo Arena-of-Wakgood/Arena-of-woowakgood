@@ -129,7 +129,7 @@ if (global.nickname == name) && just_come_check = 0
 	
 	
 	
-	if image_alpha > 0
+	if image_alpha > 0 && global.in_practice = 0
 	{
 		if global.rage_gauge = 100
 		{
@@ -220,7 +220,7 @@ returned_id = global.return_player_id;
 	
 		if show_first_action >= 0 && show_first_action <= 1
 		{
-		obj_camera.x = obj_floor.x-350
+		obj_camera.x = 2048-350
 		obj_camera.y = 903
 		}
 		
@@ -229,12 +229,12 @@ returned_id = global.return_player_id;
 		obj_camera.v_x = 1280*0.5
 		obj_camera.v_y = 720*0.5
 		
-		obj_camera.x += (obj_floor.x-100 - obj_camera.x)*0.01
+		obj_camera.x += (2048-100 - obj_camera.x)*0.01
 		}
 		
 		if show_first_action >= 120 && show_first_action <= 121
 		{
-		obj_camera.x = obj_floor.x+400
+		obj_camera.x = 2048+400
 		obj_camera.y = 903
 		}
 		
@@ -243,24 +243,24 @@ returned_id = global.return_player_id;
 		obj_camera.v_x = 1280*0.5
 		obj_camera.v_y = 720*0.5
 		
-		obj_camera.x += (obj_floor.x+100 - obj_camera.x)*0.01
+		obj_camera.x += (2048+100 - obj_camera.x)*0.01
 		}
 		
 		if show_first_action >= 211 && show_first_action <= 298
 		{
-		obj_camera.x = obj_floor.x
+		obj_camera.x = 2048
 		obj_camera.y = 903
 		obj_camera.v_x += (1280*0.65 - obj_camera.v_x)*0.05
 		obj_camera.v_y += (720*0.65 - obj_camera.v_y)*0.05
 		}
 	
-		if x > obj_floor.x
+		if x > 2048
 		{
 		image_index = 0
 		image_xscale = abs(image_xscale)
 		}
 		
-		if x < obj_floor.x
+		if x < 2048
 		{
 		image_index = 0
 		image_xscale = -abs(image_xscale)
@@ -337,7 +337,7 @@ returned_id = global.return_player_id;
 	
 	
 w_alpha += (-0.01 - w_alpha)*0.1
-	if global.matching = 2
+	if global.matching = 2 && global.in_practice = 0
 	{
 	global.never_move = 1
 	global.hp = 1000;
@@ -357,7 +357,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 	
 	if image_alpha != 0
 	{
-		if global.hp <= 0 && global.matching > 0 && global.slow_motion = 0 && global.never_move = 0
+		if global.hp <= 0 && global.matching > 0 && global.in_practice = 0 && global.slow_motion = 0 && global.never_move = 0
 		{
 			if hurt = 0
 			{
@@ -1797,7 +1797,14 @@ w_alpha += (-0.01 - w_alpha)*0.1
 			}
 			
 		y = 903
+		if global.in_practice = 0
+		{
 		x = 2040+irandom_range(-200,200)
+		}
+		else
+		{
+		x = 5568+irandom_range(-200,200)
+		}
 		
 			repeat(choose(6,7,7,8,8,9,9,9,10,10,11,12))
 			{
@@ -4086,7 +4093,7 @@ sprite_index = down_attack_sprite
 	
 	if global.now_music = wak_rio
 	{
-	audio_sound_gain(bgm_ff2,0.3*global.master_volume*2*global.bgm_volume,0)
+	audio_sound_gain(wakrio_bgm,0.3*global.master_volume*2*global.bgm_volume,0)
 	}
 	
 	if down_attack_plusing > 0
@@ -5160,6 +5167,8 @@ double_pressed_right = 2
 	hp = global.hp
 	keep_winning_ = global.keep_winning
 	
+	if global.in_practice = 0
+	{
 	buffer_seek(command_buffer, buffer_seek_start, 0);
 	buffer_write(command_buffer, buffer_u8, code.DATA.COMMAND);
 	buffer_write(command_buffer, buffer_u8, code.my_ID);
@@ -5187,6 +5196,7 @@ double_pressed_right = 2
 	buffer_write(command_buffer, buffer_string, floor(w_alpha*100));
 	buffer_write(command_buffer, buffer_string, floor(image_alpha*100));
 	send_all(command_buffer);
+	}
 }
 
 

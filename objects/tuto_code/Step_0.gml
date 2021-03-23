@@ -311,7 +311,7 @@ show_timer += (-128 - show_timer)*0.1
 }
 
 
-var xx = obj_floor.x
+var xx = 2048
 var yy = 903
 if time = 32 && p_mes = -1
 {

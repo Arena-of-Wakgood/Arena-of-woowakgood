@@ -8,6 +8,11 @@ if image_index > 40
 instance_destroy()
 }
 
+if global.in_practice > 0
+{
+instance_destroy()
+}
+
 
 if a = 0 && time > 1
 {

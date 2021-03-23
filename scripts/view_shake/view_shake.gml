@@ -38,7 +38,7 @@ function view_shake(argument0, argument1, argument2)
 		}
 		
 global.can_send_shake++
-	if global.can_send_shake <= 15
+	if global.in_practice = 0 && global.can_send_shake <= 15
 	{
 	buffer_seek(command_buffer, buffer_seek_start, 0);
 	buffer_write(command_buffer, buffer_u8, code.DATA.COMMAND);

@@ -35,31 +35,31 @@ function hp_minus_for_mob(argument0) {
 	
 	
 	
-	if argument0+random_plus_damage <= argument0
-	{
-	d_ef.image_blend = $FF1E9DFF
-	view_shake(3,4,2)
-	}
-	else
-	{
-	var sfx = audio_play_sound(critical_sfx,0,0)
-	audio_sound_gain(sfx,0.05*global.master_volume*2*global.sfx_volume,0)
+		if argument0+random_plus_damage <= argument0
+		{
+		d_ef.image_blend = $FF1E9DFF
+		view_shake(3,4,2)
+		}
+		else
+		{
+		var sfx = audio_play_sound(critical_sfx,0,0)
+		audio_sound_gain(sfx,0.05*global.master_volume*2*global.sfx_volume,0)
 
-	d_ef.image_blend = $FF6D19FF
-	view_shake(4,6.8,4)
-	d_ef.image_xscale = 1.1
-	d_ef.image_yscale = 1.1
+		d_ef.image_blend = $FF6D19FF
+		view_shake(4,6.8,4)
+		d_ef.image_xscale = 1.1
+		d_ef.image_yscale = 1.1
 	
 	
-	var __i = choose(-1,1)
-	var bl_ef = instance_create_depth(x,y,depth-1,ef_blood)
-	var img_scale = -__i*irandom_range(8,15)/5
-	bl_ef.image_xscale = img_scale
-	bl_ef.image_yscale = abs(img_scale)
-	bl_ef.t_x = __i
-	bl_ef.image_angle = irandom_range(-90,90)
-	global.w_alpha = 1
-	}
+		var __i = choose(-1,1)
+		var bl_ef = instance_create_depth(x,y,depth-1,ef_blood)
+		var img_scale = -__i*irandom_range(8,15)/5
+		bl_ef.image_xscale = img_scale
+		bl_ef.image_yscale = abs(img_scale)
+		bl_ef.t_x = __i
+		bl_ef.image_angle = irandom_range(-90,90)
+		global.w_alpha = 1
+		}
 	}
 
 

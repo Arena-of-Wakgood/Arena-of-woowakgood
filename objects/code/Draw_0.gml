@@ -185,6 +185,8 @@ n_setting = string(name_a)
 	
 draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy-80*v_x,"관리자 세팅",32,-1,setting_alpha_real,c_yellow,0,0,font0,1/3*v_x,1/3*v_x,0)
 draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy,n_setting,32,-1,setting_alpha_real*setting_text_alpha,t_color_,0,0,font0,1/2*v_x,1/2*v_x,0)
+
+draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy+v_x*256,"아래 채팅창 명령어를 활용해 보세요! \n\n\n /chatban [닉네임], /pvpban [닉네임], /kick [닉네임]",32,-1,setting_alpha_real*setting_text_alpha,t_color_,0,0,font0,1/2*v_x,1/2*v_x,0)
 if n_setting__ = "<"
 {
 draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5-140*v_x,yy,n_setting__,32,-1,setting_alpha_real*setting_text_alpha,c_white,0,0,font0,1/2*v_x,1/2*v_x,0)
@@ -202,12 +204,12 @@ draw_text_kl_scale(camera_get_view_x(view_camera[0])+camera_get_view_width(view_
 var _playing_music_name = ""
 
 
-if audio_get_name(global.now_music) = audio_get_name(bgm_ff3)
+if audio_get_name(global.now_music) = audio_get_name(maser_bgm)
 {
 _playing_music_name = "Wakgood Records - Master (Don't Kill Me)"
 }
 
-if audio_get_name(global.now_music) = audio_get_name(bgm_ff2)
+if audio_get_name(global.now_music) = audio_get_name(wakrio_bgm)
 {
 _playing_music_name = "Wakgood Records - Wak'rio"
 }
@@ -237,7 +239,7 @@ if audio_get_name(global.now_music) = audio_get_name(wak_rio)
 _playing_music_name = "Wakgood Records - Wak'rio"
 }
 
-if audio_get_name(global.now_music) = audio_get_name(bgm_ff4)
+if audio_get_name(global.now_music) = audio_get_name(bamguy_bgm)
 {
 _playing_music_name = "badassgatsby - 밤가이!!"
 }

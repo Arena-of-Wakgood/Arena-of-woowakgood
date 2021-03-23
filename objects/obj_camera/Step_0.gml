@@ -17,6 +17,18 @@ global.draw_now_rank -= 0.03
 }
 
 
+if global.in_practice > 0
+{
+global.t_b_alpha = 0
+}
+
+if global.matching > 0
+{
+pl_practice.entering_now = 0
+global.t_b_alpha_prt = 0
+global.b_alpha_prt = 0
+}
+
 
 if global.t_shake_x <= 0.01
 	{
@@ -273,4 +285,5 @@ global.w_alpha -= 0.15
 
 
 global.b_alpha += (global.t_b_alpha - global.b_alpha)*0.05
+global.b_alpha_prt += (global.t_b_alpha_prt - global.b_alpha_prt)*0.05
 

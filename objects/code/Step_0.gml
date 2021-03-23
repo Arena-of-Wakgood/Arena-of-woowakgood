@@ -18,10 +18,28 @@ global.now_map = choose(0,2)
 }
 
 
-
-if global.slow_motion = 0 && fps_real < 50
+if global.in_practice > 0 && instance_exists(pl_practice)
 {
-global.low_quality = 1
+	if instance_number(hyumpanchi_banana) <= 0
+	{
+		repeat(3)
+		{
+		instance_create_depth(5568+irandom_range(-200,200),903,player.depth-1,hyumpanchi_banana)
+		}
+	}
+}
+
+if global.slow_motion = 0 && fps_real < 55 && room_speed >= 60
+{
+stack_lcq ++
+	if stack_lcq > 30
+	{
+	global.low_quality = 1
+	}
+}
+else
+{
+stack_lcq = 0
 }
 
 if is_server = true
@@ -169,7 +187,7 @@ if is_server = true
 
 
 
-		if forced_end_game > 200
+		if forced_end_game > 220
 		{
 			if (global.matched_pl1_ready = 0 || global.matched_pl2_ready = 0 || global.matched_pl3_ready = 0 || global.matched_pl4_ready = 0)
 			{
@@ -271,7 +289,7 @@ if is_server = true && global.b_alpha >= 1
 randomize()
 change_weather ++
 
-	if (global.now_music = bgm_ff3 || global.now_music = shake_it_bgm) && global.rainy != 1
+	if (global.now_music = wakrio_bgm || global.now_music = shake_it_bgm) && global.rainy != 1
 	{
 	change_weather_max = 0
 	}
@@ -279,7 +297,7 @@ change_weather ++
 	if change_weather_max < change_weather
 	{
 	global.wind_dir = choose(-1,1)*irandom_range(0,12)
-		if global.now_music = bgm_ff3 || global.now_music = shake_it_bgm
+		if global.now_music = wakrio_bgm || global.now_music = shake_it_bgm
 		{
 		global.rainy = 1
 		}
@@ -361,7 +379,7 @@ if global.matching > 0
 			if is_server = true
 			{
 			randomize()
-			music_selected = choose(bgm_ff1,bgm_ff2,bgm_ff3,bgm_ff4,shake_it_bgm,wak_surada,alzaltak,tong_tiring)
+			music_selected = choose(bamguy_bgm,wakrio_bgm,wakrio_bgm,bamguy_bgm,shake_it_bgm,wak_surada,alzaltak,tong_tiring)
 			global.bgm = audio_play_sound(music_selected,0,false)
 			show_sound_list = 3
 			global.now_music = music_selected
@@ -369,7 +387,7 @@ if global.matching > 0
 		}
 		else
 		{
-			if audio_is_playing(bgm_ff1) || audio_is_playing(bgm_ff2) || audio_is_playing(bgm_ff3) || audio_is_playing(shake_it_bgm) || audio_is_playing(bgm_ff4) || audio_is_playing(tong_tiring) || audio_is_playing(wak_surada) || audio_is_playing(alzaltak)
+			if audio_is_playing(bamguy_bgm) || audio_is_playing(wakrio_bgm) || audio_is_playing(wakrio_bgm) || audio_is_playing(shake_it_bgm) || audio_is_playing(bamguy_bgm) || audio_is_playing(tong_tiring) || audio_is_playing(wak_surada) || audio_is_playing(alzaltak)
 			{
 			audio_sound_gain(global.bgm,global.bgm_volume*global.master_volume*0.32*global.auto_volume_down,0)
 			}
@@ -394,14 +412,14 @@ else
 	
 	if global.auto_volume_down <= 0 && global.t_auto_volume_down <= 0
 	{
-	audio_stop_sound(bgm_ff1)
-	audio_stop_sound(bgm_ff3)
-	audio_stop_sound(bgm_ff2)
+	audio_stop_sound(bamguy_bgm)
+	audio_stop_sound(wakrio_bgm)
+	audio_stop_sound(wakrio_bgm)
 	audio_stop_sound(shake_it_bgm)
 	audio_stop_sound(wak_surada)
 	audio_stop_sound(tong_tiring)
 	audio_stop_sound(alzaltak)
-	audio_stop_sound(bgm_ff4)
+	audio_stop_sound(bamguy_bgm)
 	global.bgm = -4
 	}
 }

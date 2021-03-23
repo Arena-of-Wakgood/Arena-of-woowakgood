@@ -32,6 +32,11 @@ effect_index += 0.005
 time ++
 }
 
+if global.in_practice > 0
+{
+instance_destroy()
+}
+
 
 if a = 0 && time > 1
 {

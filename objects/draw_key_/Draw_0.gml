@@ -58,6 +58,16 @@ if image_index = 16
 string_ = "E"
 }
 
+if image_index = 22
+{
+string_ = "D"
+}
+
+if image_index = 23
+{
+string_ = "D"
+}
+
 if image_index = 6
 {
 draw_text_kl_scale(xx+13*cm_vx,yy,string(string_),16,9999,image_alpha,image_blend,-1,0,font0,cm_vx*1/2.5,cm_vx*1/2.5,-90)
@@ -76,7 +86,7 @@ else if (image_index = 13 || image_index = 14)
 }
 else
 {
-draw_text_kl_scale(xx,yy-18*cm_vx,string(string_),16,9999,image_alpha,image_blend,-1,0,font0,cm_vx*1/2.5,cm_vx*1/2.5,image_angle)
+draw_text_kl_scale(xx,yy-10*cm_vx,string(string_),16,9999,image_alpha,image_blend,-1,0,font0,cm_vx*1/2.5,cm_vx*1/2.5,image_angle)
 }
 
 
@@ -148,6 +158,16 @@ draw_text_kl_scale(camera_get_view_x(view_camera[0])+camera_get_view_width(view_
 if image_index = 15
 {
 draw_text_kl_scale(xx,yy+85*cm_vx,"회전 베기\n\n\n\n[스테미나 소비]",16,9999,1,image_blend,0,0,font0,cm_vx*1/3,cm_vx*1/3,image_angle)
+}
+
+if image_index = 22
+{
+draw_text_kl_scale(xx,yy+85*cm_vx,"연습장 입장",16,9999,1,image_blend,0,0,font0,cm_vx*1/3,cm_vx*1/3,image_angle)
+}
+
+if image_index = 23
+{
+draw_text_kl_scale(xx,yy+85*cm_vx,"연습장 나가기",16,9999,1,image_blend,0,0,font0,cm_vx*1/3,cm_vx*1/3,image_angle)
 }
 
 

@@ -24,7 +24,7 @@ instance_destroy(light_a)
 
 
 laser_direction_time ++
-var xx = obj_floor.x
+var xx = 2048
 var yy = 1000//1312
 
 	if laser_direction_time > 300

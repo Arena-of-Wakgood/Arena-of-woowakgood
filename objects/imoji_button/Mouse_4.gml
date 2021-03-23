@@ -2,42 +2,42 @@
 // You can write your code in this editor
 if image_index = 0
 {
-keyboard_string = string(keyboard_string)+"!BT"
+keyboard_string = "!BT"
 }
 
 if image_index = 1
 {
-keyboard_string = string(keyboard_string)+"!GZ"
+keyboard_string = "!GZ"
 }
 
 if image_index = 2
 {
-keyboard_string = string(keyboard_string)+"!DC"
+keyboard_string = "!DC"
 }
 
 if image_index = 3
 {
-keyboard_string = string(keyboard_string)+"!SAD"
+keyboard_string = "!SAD"
 }
 
 if image_index = 4
 {
-keyboard_string = string(keyboard_string)+"!CH"
+keyboard_string = "!CH"
 }
 
 if image_index = 5
 {
-keyboard_string = string(keyboard_string)+"!SB"
+keyboard_string = "!SB"
 }
 
 if image_index = 6
 {
-keyboard_string = string(keyboard_string)+"!BS"
+keyboard_string = "!BS"
 }
 
 if image_index = 7
 {
-keyboard_string = string(keyboard_string)+"!JC"
+keyboard_string = "!JC"
 }
 
 global.imoji_cooldown = 1

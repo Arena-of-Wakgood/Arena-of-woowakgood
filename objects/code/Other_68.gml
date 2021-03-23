@@ -100,14 +100,79 @@ else if (type == network_type_data)
 		case DATA.CHAT:
 			str = buffer_read(buffer, buffer_string);
 			var _sender = buffer_read(buffer, buffer_string);
+			var _is_server__ = buffer_read(buffer, buffer_string);
 			
-			if global.matching > 0
+			if _is_server__ = 1
 			{
-			chat_up(str,_sender,-1);
+				if string_pos("/chatban",str) != 0
+				{
+				dev_mes("채팅 권한이 변경되었습니다")
+				var converted_text__ = string_replace_all(str,"/chatban","")
+				converted_text__ = string_replace_all(converted_text__,string(_sender),"")
+				converted_text__ = string_replace_all(converted_text__,":","")
+				converted_text__ = string_replace_all(converted_text__," ","")
+				
+					if global.nickname = converted_text__
+					{
+					global.blocked_chat ++
+						if global.blocked_chat > 1
+						{
+						global.blocked_chat = 0
+						}
+					}
+				}
+				else if string_pos("/kick",str) != 0
+				{
+				var converted_text__ = string_replace_all(str,"/kick","")
+				converted_text__ = string_replace_all(converted_text__,string(_sender),"")
+				converted_text__ = string_replace_all(converted_text__,":","")
+				converted_text__ = string_replace_all(converted_text__," ","")
+
+					if global.nickname = converted_text__
+					{
+					chat_up(string(global.nickname)+"이/가 서버에서 추방 당했습니다. (사유 : "+string("Kick command")+")",0,0)
+					alarm[11] = 1
+					}
+				}
+				else if string_pos("/pvpban",str) != 0
+				{
+				dev_mes("PVP 권한이 변경되었습니다")
+				var converted_text__ = string_replace_all(str,"/pvpban","")
+				converted_text__ = string_replace_all(converted_text__,string(_sender),"")
+				converted_text__ = string_replace_all(converted_text__,":","")
+				converted_text__ = string_replace_all(converted_text__," ","")
+
+					if global.nickname = converted_text__
+					{
+					global.blocked_pvp ++
+						if global.blocked_pvp > 1
+						{
+						global.blocked_pvp = 0
+						}
+					}
+				}
+				else
+				{
+					if global.matching > 0
+					{
+					chat_up(str,_sender,-1);
+					}
+					else
+					{
+					chat_up(str,_sender,1);
+					}
+				}
 			}
 			else
 			{
-			chat_up(str,_sender,1);
+				if global.matching > 0
+				{
+				chat_up(str,_sender,-1);
+				}
+				else
+				{
+				chat_up(str,_sender,1);
+				}
 			}
 		break;
 		
@@ -401,7 +466,7 @@ else if (type == network_type_data)
 				var random_cre = percentage_k(20)
 					if random_cre = 1
 					{
-					instance_create_depth(obj_floor.x+64*i,903-48,obj_floor.depth-1,choose(obj_andience1,obj_andience11,obj_andience111))
+					instance_create_depth(2048+64*i,903-48,obj_floor.depth-2,choose(obj_andience1,obj_andience11,obj_andience111))
 					}
 				}
 			}

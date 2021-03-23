@@ -9,6 +9,7 @@ if(global.chat_activity)
 	buffer_write(chat_buffer, buffer_u8, DATA.CHAT);
 	buffer_write(chat_buffer, buffer_string,string(global.nickname)+" : "+keyboard_string);
 	buffer_write(chat_buffer, buffer_string,global.nickname);
+	buffer_write(chat_buffer, buffer_string,code.is_server);
 	
 	send_all(chat_buffer);
 		if (code.is_server)

@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if global.low_quality = 1
 {
-image_alpha -= 0.1;
+image_alpha -= 0.01;
 }
 else
 {

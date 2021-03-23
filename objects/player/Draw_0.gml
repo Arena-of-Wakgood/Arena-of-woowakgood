@@ -40,6 +40,8 @@ draw_text_k_scale(xx+camera_get_view_width(view_camera[0])*0.5-v_x*100,yy+player
 draw_text_k_scale(xx+camera_get_view_width(view_camera[0])*0.5-v_x*32,yy+playerID*v_x*32+v_x*64,string(name),v_x*64,-1,1,c_white,0,-1,font0,v_x*0.35,v_x*0.35,0);
 }
 
+
+
 if x > cm_x && x < cm_x+cm_width && y > yy && y < yy+cm_height
 {
 var p_floor = 903

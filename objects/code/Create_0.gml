@@ -28,6 +28,8 @@ global.use_final_skill = 0
 global.now_music = 0
 force_mapchange_ = 0
 show_sound_list_alpha = 0
+global.blocked_pvp = 0
+global.blocked_chat = 0
 
 global.pinged_player_num = 0
 for(var i = 0; i < 40; i++)
@@ -47,6 +49,7 @@ ping_checker_start[i] = 0
 }
 change_weather = 0
 change_weather_max = 0
+stack_lcq = 0
 global.low_quality = 0
 
 global.imoji_cooldown = 0
@@ -139,7 +142,7 @@ global.master_volume = 1
 global.sfx_volume = 1
 global.bgm_volume = 1
 global.fps_draw = 0
-
+global.in_practice = 0
 
 global.test_mode = 1
 global.build_ver = 24;
@@ -168,7 +171,7 @@ global.skill_jump_attack = 2
 global.w_key = "W"
 global.q_key = "Q"
 global.a_key = "A"
-global.run_key = "Non"
+global.run_key = vk_shift
 global.e_key = "E"
 global.s_key = "S"
 global.rage_gauge = 0
