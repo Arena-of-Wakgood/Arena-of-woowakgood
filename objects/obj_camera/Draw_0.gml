@@ -60,6 +60,17 @@ var __alpha_set = 1-global.b_alpha_prt-global.b_alpha
 			}
 		draw_text_k_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+128*v_x_,"Rank : "+string(floor(global.draw_rank)),v_x_*64,-1,global.draw_now_rank-global.b_alpha_prt-global.b_alpha,_color,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
 		}
+		
+	
+		for(var i = 0; i < global.matched_pl1_won; i++)
+		{
+		draw_sprite_ext(spr_winning_point,0,camera_get_view_x(view_camera[0])+v_x_*(32+48*i),yy+170*v_x_,v_x_*0.6,v_x_*0.6,0,c_white,__alpha_set)
+		}
+		
+		for(var i = 0; i < global.matched_pl2_won; i++)
+		{
+		draw_sprite_ext(spr_winning_point,1,camera_get_view_x(view_camera[0])+v_x_*(32+48*i),yy+210*v_x_,v_x_*0.6,v_x_*0.6,0,c_white,__alpha_set)
+		}
 	}
 
 	
@@ -133,4 +144,22 @@ draw_rectangle(xx,yy+yyy,xx+xxx,yy+yyy-global.playing_scene_black_bg*obj_camera.
 
 
 
-
+if code.ability_choosing_time > 0
+{
+ab_alpha += (0.5 - ab_alpha)*0.1
+var _xx = camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])*0.5
+var _yy = camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])*0.8
+code.ability_choosing_time_f_d += (code.ability_choosing_time - code.ability_choosing_time_f_d)*0.1
+var _calc = (600-code.ability_choosing_time_f_d)/2
+if _calc < 0
+{
+_calc = 0
+}
+draw_set_color(c_white)
+draw_set_alpha(ab_alpha)
+draw_line_width(_xx-_calc,_yy,_xx+_calc,_yy,24*v_x_)
+}
+else
+{
+ab_alpha += (-0.01 - ab_alpha)*0.1
+}

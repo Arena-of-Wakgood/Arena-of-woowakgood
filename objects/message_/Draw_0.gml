@@ -41,7 +41,7 @@ draw_set_alpha(1)
 
 		if gamemode_val_ = 5
 		{
-		gamemode_val_ = "강풍 (1 vs 1)"
+		gamemode_val_ = "특수 능력 대전 (1 vs 1)"
 		}
 		
 		if gamemode_val_ = 6

@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 command_buffer = buffer_create(3, buffer_grow, 1);
-if !place_meeting(x,y+1,obj_floor)
+if !place_meeting(x,y+1,obj_floor) && !place_meeting(x,y+1,obj_platform)
 {
 instance_destroy()
 }

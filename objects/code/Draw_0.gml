@@ -51,8 +51,8 @@ setting_buff = "보스로 선택된 플레이어의 방어력 및 데미지 대�
 
 if gamemode_val_ = 5
 {
-gamemode_val_ = "강풍 (1 vs 1)"
-setting_buff = "강풍에 의해 플레이어가 밀려나며, 일정 시간 마다 강풍의 방향이 바뀝니다"
+gamemode_val_ = "특수 능력 대전 (1 vs 1)"
+setting_buff = "매 라운드 마다 진 팀은 특수한 능력 하나를 획득 합니다"
 }
 
 if gamemode_val_ = 6
@@ -252,3 +252,4 @@ if show_sound_list_alpha > 0
 	draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy+(show_sound_list_y+35)*v_x*1.5,string(_playing_music_name),32,-1,show_sound_list_alpha,c_white,0,0,font0,1/2*v_x,1/2*v_x,0)
 	}
 }
+

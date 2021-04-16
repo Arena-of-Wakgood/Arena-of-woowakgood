@@ -4,6 +4,26 @@ yy += (t_y - yy)*0.1
 var _my_p = get_my_player()
 depth = obj_floor.depth-1
 
+
+if global.now_map = 3 && global.in_practice = 0
+{
+x = xstart-500
+}
+else
+{
+x = xstart
+}
+
+
+if global.matching > 0
+{
+	if can_enter != noone
+	{
+	instance_destroy(can_enter)
+	can_enter = noone
+	}
+}
+
 if global.b_alpha_prt < 0.2 && global.chat_activity = false
 {
 	if global.matching = 0

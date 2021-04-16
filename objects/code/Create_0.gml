@@ -8,15 +8,19 @@ my_ip = "" //Initialize ip variable
 error = "" //Initialize error variable
 text_color = 0 //Initialize text color variable
 ip_for_calcul = ""
+created_platfrom = 0
 
 ///////////////////////////////////////////////////////////////////////
 
 th_afas = 0
 room_speed = 60
-server_ip = "175.196.5.129";//"175.196.5.129";
-server_port = 12521;
+server_ip = "175.196.5.134";//"175.196.5.129";
+server_port = 12524;
 is_server = false;
 
+check_winner = 0
+ability_choosing_time = 0
+ability_choosing_time_f_d = 0
 show_sound_list = 0
 show_sound_list_y = 0
 global.for_kick_player = 0
@@ -107,7 +111,8 @@ enum COMM {
 	IMAGE_FOR_CAMERA,
 	PING_CHECK_RECEIVED_CLI,
 	PING_CHECK_RECEIVED_SERVER_AC,
-	MUSIC_SYNC
+	MUSIC_SYNC,
+	PLATFORM_T
 }
 ping_buffer = buffer_create(2, buffer_grow, 1);
 info_buffer = buffer_create(2, buffer_grow, 1);
@@ -254,5 +259,24 @@ global.camera_vx = 0
 global.client_num = 0;
 alarm[2] = 5
 
+
+
+
+
+
+global.max_stemina_plus = 0 //최대 스테미나 증가 +10%
+global.movementspeed_plus = 0 //이동 속도 증가 +5%
+global.jump_plus = 0 //점프력 증가 +15%
+global.low_gravity_plus = 0 //중력 감소 -10%
+global.mental_plus = 0 //멘탈 게이지 충전량 +5%
+global.max_hp_plus = 0 //최대 체력 증가 +5%
+global.damage_plus = 0 //데미지 증가 +20%
+global.full_mental_plus = 0 //다음 라운드 시작시 멘탈게이지 100% (1회용)
+global.taking_hp_plus = 0 //상대 공격시 체력 흡혈 +5%
+global.laser_num_plus = 0 //레이저 스킬의 레이저 갯수 증가
+global.critical_plus = 0 //크리티컬 데미지 확률 증가 +10%
+global.ignore_falling_plus = 0 //낙사 무시 +1회
+global.mental_attack_sp_plus = 0 //멘탈 게이지 스킬 시전 속도 +10%
+global.automatic_guard_plus = 0 //공격 자동 방어 확률 +10%
 
 load_data()

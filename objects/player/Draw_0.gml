@@ -44,7 +44,13 @@ draw_text_k_scale(xx+camera_get_view_width(view_camera[0])*0.5-v_x*32,yy+playerI
 
 if x > cm_x && x < cm_x+cm_width && y > yy && y < yy+cm_height
 {
+
+	
 var p_floor = 903
+if on_platform = 1 && instance_exists(obj_platform)
+{
+p_floor = obj_platform.y-27
+}
 
 draw_sprite_ext(spr_shadow,0,x,p_floor+27,1-abs(y-p_floor)/48,1-abs(y-p_floor)/64,0,c_white,(1-abs(y-p_floor)/48)*0.3*image_alpha)
 draw_sprite_ext(sprite_index,image_index,floor(x),floor(y),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
@@ -158,15 +164,37 @@ if image_alpha > 0 && global.hp > 0
 
 	if show_my_sword <= 0
 	{
-		if abs(x-obj_camera.x) <= 450 && global.tutorial != 0
+		if abs(x-obj_camera.x) <= 600 && global.tutorial != 0
 		{
 			if keep_winning_ <= 1
 			{
-			draw_text_kl_scale(x,y-55,string(name),v_x*64,-1,draw_my_name,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);
+				if (global.matched_pl1_name = name || global.matched_pl3_name = name)
+				{
+				draw_text_kl_scale(x,y-55,string(name),v_x*64,-1,draw_my_name,$FF4B4AE7,0,0,font0,v_x*0.35,v_x*0.35,0);
+				}
+				else if (global.matched_pl2_name = name || global.matched_pl4_name = name)
+				{
+				draw_text_kl_scale(x,y-55,string(name),v_x*64,-1,draw_my_name,$FFFBCA67,0,0,font0,v_x*0.35,v_x*0.35,0);
+				}
+				else
+				{
+				draw_text_kl_scale(x,y-55,string(name),v_x*64,-1,draw_my_name,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);
+				}
 			}
 			else
 			{
-			draw_text_kl_scale(x,y-55,string(name)+" ("+string(keep_winning_)+"연승 중)",v_x*64,-1,draw_my_name,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);
+				if (global.matched_pl1_name = name || global.matched_pl3_name = name)
+				{
+				draw_text_kl_scale(x,y-55,string(name)+" ("+string(keep_winning_)+"연승 중)",v_x*64,-1,draw_my_name,$FF4B4AE7,0,0,font0,v_x*0.35,v_x*0.35,0);
+				}
+				else if (global.matched_pl2_name = name || global.matched_pl4_name = name)
+				{
+				draw_text_kl_scale(x,y-55,string(name)+" ("+string(keep_winning_)+"연승 중)",v_x*64,-1,draw_my_name,$FFFBCA67,0,0,font0,v_x*0.35,v_x*0.35,0);
+				}
+				else
+				{
+				draw_text_kl_scale(x,y-55,string(name)+" ("+string(keep_winning_)+"연승 중)",v_x*64,-1,draw_my_name,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);
+				}
 			}
 			
 			if image_blend = c_gray

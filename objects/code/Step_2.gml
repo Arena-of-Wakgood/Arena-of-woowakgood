@@ -827,16 +827,18 @@ if global.slow_motion > 0
 	{
 		with(player)
 		{
-			if global.gamemode != 3
+			if global.gamemode_server != 3
 			{
 				if global.matched_pl1 = returned_id
 				{
 					if hp > 0
 					{
+					code.check_winner = 1
 					global.matched_pl1_won ++
 					}
 					else
 					{
+					code.check_winner = 2
 					global.matched_pl2_won ++
 					}
 				}
@@ -849,10 +851,12 @@ if global.slow_motion > 0
 					{
 						if hp > 0
 						{
+						code.check_winner = 1
 						global.matched_pl1_won ++
 						}
 						else
 						{
+						code.check_winner = 2
 						global.matched_pl2_won ++
 						}
 					}
@@ -863,10 +867,12 @@ if global.slow_motion > 0
 					{
 						if hp > 0
 						{
+						code.check_winner = 1
 						global.matched_pl1_won ++
 						}
 						else
 						{
+						code.check_winner = 2
 						global.matched_pl2_won ++
 						}
 					}
@@ -887,7 +893,10 @@ global.slow_motion += global.slow_motion*0.03
 	if global.slow_motion < 45
 	{
 	th_afas = 0
-	room_speed = 15+global.slow_motion;
+		if global.t_b_alpha <= 0
+		{
+		room_speed = 15+global.slow_motion;
+		}
 	}
 	else
 	{
@@ -928,26 +937,72 @@ global.slow_motion += global.slow_motion*0.03
 	{
 		if global.t_b_alpha > 0 && global.b_alpha > 2 && (global.matched_pl1 = global.return_player_id || global.matched_pl2 = global.return_player_id) && global.slow_motion > 45
 		{
-			with(player)
+		room_speed = 60
+		
+			if global.gamemode_server != 5
 			{
-				if returned_id = global.matched_pl1 && global.matched_pl1_ready = 0
+				with(player)
 				{
-				global.matched_pl1_ready = 1
+					if returned_id = global.matched_pl1 && global.matched_pl1_ready = 0
+					{
+					global.matched_pl1_ready = 1
 		
-				buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-				buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
-				buffer_write(code.matching_buffer, buffer_string, returned_id);
-				send_all(code.matching_buffer);
-				}
+					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
+					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_string, returned_id);
+					send_all(code.matching_buffer);
+					}
 			
-				if returned_id = global.matched_pl2 && global.matched_pl2_ready = 0
-				{
-				global.matched_pl2_ready = 1
+					if returned_id = global.matched_pl2 && global.matched_pl2_ready = 0
+					{
+					global.matched_pl2_ready = 1
 		
-				buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-				buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
-				buffer_write(code.matching_buffer, buffer_string, returned_id);
-				send_all(code.matching_buffer);
+					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
+					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_string, returned_id);
+					send_all(code.matching_buffer);
+					}
+				}
+			}
+			else
+			{
+				with(player)
+				{
+					if returned_id = global.matched_pl1 && global.matched_pl1_ready = 0 && code.check_winner = 2
+					{
+					global.matched_pl1_ready = 1
+		
+					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
+					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_string, returned_id);
+					send_all(code.matching_buffer);
+					}
+			
+					if returned_id = global.matched_pl2 && global.matched_pl2_ready = 0 && code.check_winner = 1
+					{
+					global.matched_pl2_ready = 1
+		
+					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
+					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_string, returned_id);
+					send_all(code.matching_buffer);
+					}
+				
+					if (code.check_winner = 1 && returned_id = global.matched_pl1) || (code.check_winner = 2 && returned_id = global.matched_pl2)
+					{
+					code.ability_choosing_time ++
+						if code.ability_choosing_time > 600
+						{
+						global.matched_pl1_ready = 1
+						global.matched_pl2_ready = 1
+						code.ability_choosing_time = 0
+		
+						buffer_seek(code.matching_buffer, buffer_seek_start, 0);
+						buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+						buffer_write(code.matching_buffer, buffer_string, returned_id);
+						send_all(code.matching_buffer);
+						}
+					}
 				}
 			}
 		}
@@ -1571,6 +1626,22 @@ show_debug_message(string(selected_p1)+" / "+string(selected_p2)+" / "+string(se
 	//두 플레이어 둘다 존재하는 경우
 	if (player1_exists = 1 && player2_exists = 1 && player3_exists = 1 && player4_exists = 1)
 	{
+		if global.in_practice > 0
+		{
+		var _my_p = get_my_player()
+		pl_practice.entering_now = 0
+		pl_practice.changed_prt = 0
+		global.t_b_alpha_prt = -0.01
+		_my_p.x = 2048
+		_my_p.y = 903
+		obj_camera.x = 2048
+		obj_camera.y = 903
+			with(hyumpanchi_banana)
+			{
+			hp = -1
+			}
+		global.in_practice = 0
+		}
 	global.t_b_alpha = 2.01
 	global.matching = 3
 	
@@ -1579,7 +1650,7 @@ show_debug_message(string(selected_p1)+" / "+string(selected_p2)+" / "+string(se
 	var random_cre = percentage_k(60-(instance_number(obj_andience1)+instance_number(obj_andience11)+instance_number(obj_andience111))*5)
 		if random_cre = 1
 		{
-		instance_create_depth(2048+64*i,903-48,obj_floor.depth-2,choose(obj_andience1,obj_andience11,obj_andience111))
+		instance_create_depth(choose(2448,1648)+64*i,903-48,obj_floor.depth-2,choose(obj_andience1,obj_andience11,obj_andience111))
 		}
 	}
 		

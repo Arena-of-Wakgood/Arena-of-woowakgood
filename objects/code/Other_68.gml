@@ -106,7 +106,6 @@ else if (type == network_type_data)
 			{
 				if string_pos("/chatban",str) != 0
 				{
-				dev_mes("채팅 권한이 변경되었습니다")
 				var converted_text__ = string_replace_all(str,"/chatban","")
 				converted_text__ = string_replace_all(converted_text__,string(_sender),"")
 				converted_text__ = string_replace_all(converted_text__,":","")
@@ -114,11 +113,16 @@ else if (type == network_type_data)
 				
 					if global.nickname = converted_text__
 					{
+					dev_mes("채팅 권한이 변경되었습니다")
 					global.blocked_chat ++
 						if global.blocked_chat > 1
 						{
 						global.blocked_chat = 0
 						}
+					}
+					else
+					{
+					chat_up(string(converted_text__)+"의 채팅 권한이 변경되었습니다",0,0)
 					}
 				}
 				else if string_pos("/kick",str) != 0
@@ -130,13 +134,12 @@ else if (type == network_type_data)
 
 					if global.nickname = converted_text__
 					{
-					chat_up(string(global.nickname)+"이/가 서버에서 추방 당했습니다. (사유 : "+string("Kick command")+")",0,0)
+					chat_up(string(converted_text__)+"이/가 서버에서 추방 당했습니다. (사유 : "+string("Kick command")+")",0,0)
 					alarm[11] = 1
 					}
 				}
 				else if string_pos("/pvpban",str) != 0
 				{
-				dev_mes("PVP 권한이 변경되었습니다")
 				var converted_text__ = string_replace_all(str,"/pvpban","")
 				converted_text__ = string_replace_all(converted_text__,string(_sender),"")
 				converted_text__ = string_replace_all(converted_text__,":","")
@@ -144,11 +147,16 @@ else if (type == network_type_data)
 
 					if global.nickname = converted_text__
 					{
+					dev_mes("PVP 권한이 변경되었습니다")
 					global.blocked_pvp ++
 						if global.blocked_pvp > 1
 						{
 						global.blocked_pvp = 0
 						}
+					}
+					else
+					{
+					chat_up(string(converted_text__)+"의 PVP 권한이 변경되었습니다",0,0)
 					}
 				}
 				else
@@ -459,6 +467,23 @@ else if (type == network_type_data)
 			global.never_move = 1;
 			global.t_b_alpha = 2.01;
 			
+			if global.in_practice > 0
+			{
+			var _my_p = get_my_player()
+			pl_practice.entering_now = 0
+			pl_practice.changed_prt = 0
+			global.t_b_alpha_prt = -0.01
+			_my_p.x = 2048
+			_my_p.y = 903
+			obj_camera.x = 2048
+			obj_camera.y = 903
+				with(hyumpanchi_banana)
+				{
+				hp = -1
+				}
+			global.in_practice = 0
+			}
+			
 			global.matching = 3
 			
 				for(var i = -6; i <= 6; i++)
@@ -466,7 +491,7 @@ else if (type == network_type_data)
 				var random_cre = percentage_k(20)
 					if random_cre = 1
 					{
-					instance_create_depth(2048+64*i,903-48,obj_floor.depth-2,choose(obj_andience1,obj_andience11,obj_andience111))
+					instance_create_depth(choose(2448,1648)+64*i,903-48,obj_floor.depth-2,choose(obj_andience1,obj_andience11,obj_andience111))
 					}
 				}
 			}
@@ -486,6 +511,10 @@ else if (type == network_type_data)
 		case DATA.MATCH_END:
 			if is_server = false
 			{
+			global.matched_pl1_name = -4
+			global.matched_pl2_name = -4
+			global.matched_pl3_name = -4
+			global.matched_pl4_name = -4
 			var _winner = buffer_read(buffer, buffer_string);
 			var _loser = buffer_read(buffer, buffer_string);
 			var _bet_point = buffer_read(buffer, buffer_string);
@@ -644,6 +673,7 @@ else if (type == network_type_data)
 				var _kw_ = buffer_read(buffer, buffer_string);
 				var _s_sword_ = buffer_read(buffer, buffer_string);
 				var _m_hp = buffer_read(buffer, buffer_string);
+				var _on_platform = buffer_read(buffer, buffer_string);
 				if global.nickname != _check_who_send
 				{
 					with(player) 
@@ -665,6 +695,10 @@ else if (type == network_type_data)
 
 						n_sword_ = real(string(_s_sword_))/100;
 						returned_id = real(_real_id_);
+						if is_real(_on_platform)
+						{
+						on_platform = real(string(_on_platform));
+						}
 						}
 					}
 				}
@@ -847,6 +881,15 @@ else if (type == network_type_data)
 				view_shake_received(_a,_b,_c);
 				}
 				break;
+				
+				case COMM.PLATFORM_T:
+				var _on_platform_ = buffer_read(buffer, buffer_string);
+				if instance_exists(obj_platform)
+				{
+				obj_platform.time_s = real(string(_on_platform_));
+				}
+				break;
+				
 				
 				case COMM.ATTACK_EFFECT:
 				var _check_who_send = buffer_read(buffer, buffer_string);

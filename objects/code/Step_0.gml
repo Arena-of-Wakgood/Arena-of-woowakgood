@@ -14,9 +14,48 @@ show_sound_list_alpha += (-0.01 - show_sound_list_alpha)*0.1
 
 if global.show_challenger > 0 && global.b_alpha >= 1
 {
-global.now_map = choose(0,2)
+created_platfrom = 0
+global.now_map = choose(0,2,3)
 }
 
+if global.matching = 0
+{
+global.matched_pl1_name = -4
+global.matched_pl2_name = -4
+global.matched_pl3_name = -4
+global.matched_pl4_name = -4
+}
+
+
+if !instance_exists(obj_platform)
+{
+	if created_platfrom = 0
+	{
+		if global.now_map = 2
+		{
+		created_platfrom = 1
+		var random_val = percentage_k(35)
+			if random_val = 1
+			{
+			instance_create_depth(2048,768,999,obj_platform)
+			}
+		}
+	
+		if global.now_map = 3
+		{
+		created_platfrom = 0
+		instance_create_depth(2048,768,999,obj_platform)
+		}
+	}
+}
+else
+{
+	if global.now_map = 2
+	{
+	created_platfrom = 0
+	instance_destroy(obj_platform)
+	}
+}
 
 if global.in_practice > 0 && instance_exists(pl_practice)
 {
@@ -197,6 +236,7 @@ if is_server = true
 			buffer_write(matching_buffer, buffer_string, global.matched_pl2);
 			buffer_write(matching_buffer, buffer_string, floor(0));
 			send_all(matching_buffer);
+			
 
 			var _text1 = "Forced Match End!"
 			
@@ -307,24 +347,6 @@ change_weather ++
 		}
 	change_weather_max = irandom_range(6000,8000)
 	change_weather = 0
-	}
-	
-	if global.gamemode_server = 3
-	{
-	change_weather += 5
-		if (global.rainy = 0 || abs(global.wind_dir) < 23)
-		{
-		change_weather = 0
-		global.wind_dir = choose(-1,1)*irandom_range(23,30)
-		global.rainy = choose(1,2)
-		}
-	}
-	else
-	{
-		if (abs(global.wind_dir) >= 23)
-		{
-		change_weather_max = 0
-		}
 	}
 }
 

@@ -334,6 +334,10 @@ returned_id = global.return_player_id;
 	
 	
 	
+	if !instance_exists(obj_platform)
+	{
+	on_platform = 0
+	}
 	
 	
 w_alpha += (-0.01 - w_alpha)*0.1
@@ -488,7 +492,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 	if hurt_little > 0
 	{
 	cannot_move = 1
-		if !place_meeting(x,y+5,obj_floor)
+		if (!place_meeting(x,y+5,obj_floor) && on_platform = 0)
 		{
 		hurt = 1
 		hurt_little = 0
@@ -976,7 +980,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				hp_minus_for_player(21,_placed_obj)
 				
 				
-					if place_meeting(x,y+1,obj_floor)
+					if place_meeting(x,y+1,obj_floor) || on_platform = 1
 					{
 					y -= 1
 					}
@@ -1170,7 +1174,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				hp_minus_for_player(19,_placed_obj)
 				
 				
-					if place_meeting(x,y+1,obj_floor)
+					if place_meeting(x,y+1,obj_floor) || on_platform = 1
 					{
 					y -= 1
 					}
@@ -1236,7 +1240,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				hp_minus_for_player(26,_placed_obj)
 				
 				
-					if place_meeting(x,y+1,obj_floor)
+					if place_meeting(x,y+1,obj_floor) || on_platform = 1
 					{
 					y -= 1
 					}
@@ -1302,7 +1306,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				hp_minus_for_player(92,_placed_obj)
 				
 				
-					if place_meeting(x,y+1,obj_floor)
+					if place_meeting(x,y+1,obj_floor) || on_platform = 1
 					{
 					y -= 1
 					}
@@ -1372,7 +1376,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				hp_minus_for_player(32,_placed_obj)
 				
 				
-					if place_meeting(x,y+1,obj_floor)
+					if place_meeting(x,y+1,obj_floor) || on_platform = 1
 					{
 					y -= 1
 					}
@@ -1442,7 +1446,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				hp_minus_for_player(32,_placed_obj)
 				
 				
-					if place_meeting(x,y+1,obj_floor)
+					if place_meeting(x,y+1,obj_floor) || on_platform = 1
 					{
 					y -= 1
 					}
@@ -1513,7 +1517,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				hp_minus_for_player(22,_placed_obj)
 				
 				
-					if place_meeting(x,y+1,obj_floor)
+					if place_meeting(x,y+1,obj_floor) || on_platform = 1
 					{
 					y -= 1
 					}
@@ -1531,7 +1535,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 	
 	if keyboard_check_pressed(vk_space) && global.chat_activity = false && global.matching != 3
 	{
-		if global.never_move = 0 && place_meeting(x,y+1,obj_floor)
+		if global.never_move = 0 && gravity = 0
 		{
 			if jump = 0 && cannot_move = 0 && cooltime = 0
 			{
@@ -1548,6 +1552,10 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				dust.image_alpha = 0.4
 				}
 	
+			if instance_exists(obj_platform)
+			{
+			obj_platform.on_platform = 0
+			}
 			vspeed = -6
 			jump = 0
 			jump_end_motion = 0
@@ -1576,7 +1584,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 	{
 		if global.never_move = 0
 		{
-			if place_meeting(x,y+2,obj_floor)
+			if place_meeting(x,y+2,obj_floor) || on_platform = 1
 			{
 				if spin = 0 && cannot_move = 0 && cooltime = 0 && down_attack = 0 && down_attack_plusing = 0 && hurt = 0 && hurt_little = 0 && abs(global.movement_speed) > 1
 				{
@@ -1705,10 +1713,19 @@ w_alpha += (-0.01 - w_alpha)*0.1
 	movement_speed += (0 - movement_speed)*0.01
 	}
 	
-	if !place_meeting(x-image_xscale*32,y,obj_floor)
+	for(var i = abs(movement_speed); i > 0; i--)
 	{
-	x += movement_speed
+		if !place_meeting(x+sign(movement_speed)*(3+i),y-1,obj_floor)
+		{
+		x += movement_speed
+		break;
+		}
+		else
+		{
+		x += i
+		}
 	}
+
 	
 	if abs(movement_speed) < 0.1
 	{
@@ -1729,7 +1746,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 	global.movement_speed += (0 - global.movement_speed)*0.1
 	}
 
-		if place_meeting(x,y+1,obj_floor)
+		if place_meeting(x,y+1,obj_floor) || on_platform = 1
 		{
 		image_index = 1
 	
@@ -1799,7 +1816,15 @@ w_alpha += (-0.01 - w_alpha)*0.1
 		y = 903
 		if global.in_practice = 0
 		{
-		x = 2040+irandom_range(-200,200)
+			if global.now_map = 3
+			{
+			x = obj_platform.x+irandom_range(-64,64)
+			y = obj_platform.y-27
+			}
+			else
+			{
+			x = 2040+irandom_range(-200,200)
+			}
 		}
 		else
 		{
@@ -1872,7 +1897,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 	
 	if keyboard_check_pressed(vk_down) && global.chat_activity = false && global.matching != 3
 	{
-		if place_meeting(x,y+2,obj_floor) && hurt = 0 && hurt_little = 0
+		if (place_meeting(x,y+2,obj_floor) || on_platform = 1) && hurt = 0 && hurt_little = 0
 		{
 		skill_combo = 0
 		fast_guarding = 0
@@ -2040,7 +2065,7 @@ if (attack_ > 4 && attack_ <= 5) || (attack_ > 6.5 && attack_ <= 9) || (attack_ 
 	
 	if keyboard_check_pressed(vk_down) && global.chat_activity = false && global.matching != 3
 	{
-		if place_meeting(x,y+2,obj_floor) && hurt = 0 && hurt_little = 0
+		if (place_meeting(x,y+2,obj_floor) || on_platform = 1) && hurt = 0 && hurt_little = 0
 		{
 		attack_ = 0
 		keep_attack = 0
@@ -2183,7 +2208,7 @@ if down_attack > 13
 	
 	if keyboard_check_pressed(vk_down) && global.chat_activity = false && global.matching != 3
 	{
-		if place_meeting(x,y+2,obj_floor) && hurt = 0 && hurt_little = 0
+		if (place_meeting(x,y+2,obj_floor) || on_platform = 1) && hurt = 0 && hurt_little = 0
 		{
 		cooltime = 0
 		down_attack_motion_dilay = 0
@@ -2302,7 +2327,7 @@ if dash_attack >= 4.6
 	
 	if keyboard_check_pressed(vk_down) && global.chat_activity = false && global.matching != 3
 	{
-		if place_meeting(x,y+2,obj_floor) && hurt = 0 && hurt_little = 0
+		if (place_meeting(x,y+2,obj_floor) || on_platform = 1) && hurt = 0 && hurt_little = 0
 		{
 		dash_attack = 0
 		double_pressed_left = 0
@@ -2358,7 +2383,7 @@ if dash_attack >= 4.6
 		{
 			if global.never_move = 0 && hurt = 0 && hurt_little = 0
 			{
-				if place_meeting(x,y+1,obj_floor)
+				if gravity = 0
 				{
 					repeat(3)
 					{
@@ -2379,6 +2404,10 @@ if dash_attack >= 4.6
 					ef.image_angle = image_angle
 					}
 					
+					if instance_exists(obj_platform)
+					{
+					obj_platform.on_platform = 0
+					}
 				dash_attack = 0
 				double_pressed_left = 0
 				double_pressed_right = 0
@@ -2721,7 +2750,7 @@ skill_combo = 0
 
 if global.never_move = 0 && keyboard_check_pressed(ord(string(global.a_key))) && global.chat_activity = false && global.matching != 3
 {
-	if (attack_in_air < 7 && gravity > 0 && cooltime = 0 && hurt = 0 && hurt_little = 0 && attack_in_air_cool = 0 && (!place_meeting(x,y+38,obj_floor) || vspeed < 0)) && charge_attack <= 0
+	if (attack_in_air < 7 && gravity > 0 && cooltime = 0 && hurt = 0 && hurt_little = 0 && attack_in_air_cool = 0 && ((!place_meeting(x,y+38,obj_floor) || vspeed < 0))) && charge_attack <= 0
 	{
 		if cancled_attack = 0
 		{
@@ -2873,7 +2902,7 @@ if global.never_move = 0 && keyboard_check_released(ord(string(global.e_key))) &
 				movement_speed += (0 - movement_speed)*0.02
 				}
 			
-			if place_meeting(x,y+38,obj_floor) && gravity <= 0
+			if (place_meeting(x,y+38,obj_floor) || on_platform = 1) && gravity <= 0
 			{
 				if !keyboard_check(vk_down) && !keyboard_check(vk_left) && !keyboard_check(vk_right) && attack_laser = 0 && global.chat_activity = false && global.matching != 3
 				{
@@ -2882,6 +2911,10 @@ if global.never_move = 0 && keyboard_check_released(ord(string(global.e_key))) &
 					vspeed = 0
 					vspeed = -6
 					y -= 1
+						if instance_exists(obj_platform)
+						{
+						obj_platform.on_platform = 0
+						}
 					down_attack_with_rage = 1
 					cooltime = 1
 					cannot_move = 1
@@ -3076,7 +3109,7 @@ if global.never_move = 0 && keyboard_check_released(ord(string(global.e_key))) &
 				}
 			}
 			
-			if gravity > 0 && (!place_meeting(x,y+38,obj_floor) || vspeed < 0)
+			if gravity > 0 && ((!place_meeting(x,y+38,obj_floor) || vspeed < 0))
 			{
 				if down_attack_with_rage = 0 && global.chat_activity = false && global.matching != 3
 				{
@@ -3140,7 +3173,7 @@ if global.skill_turning_attack > 0 && turning_attack_used < global.skill_turning
 			cooltime = 1
 			global.stemina_cooltime = 0
 			global.stemina -= 2.8
-				if place_meeting(x,y+2,obj_floor)
+				if place_meeting(x,y+2,obj_floor) || on_platform = 1
 				{
 				spin_attack = 1
 				gravity = 0.2
@@ -3162,7 +3195,7 @@ if global.skill_turning_attack > 0 && turning_attack_used < global.skill_turning
 	
 	
 
-		if !place_meeting(x,y+10,obj_floor) && hurt = 0 && hurt_little = 0
+		if (!place_meeting(x,y+10,obj_floor)) && hurt = 0 && hurt_little = 0
 		{
 			if global.stemina > 3.8
 			{
@@ -3538,7 +3571,7 @@ repeat(100)
 	}
 }
 
-if !place_meeting(x,y+1,obj_floor) && hurt = 0 && hurt_little = 0
+if (!place_meeting(x,y+1,obj_floor) && on_platform = 0) && hurt = 0 && hurt_little = 0
 {
 	if jump = 0 && spin_attack = 0 && jump_attack = 0 && down_attack = 0
 	{
@@ -3609,7 +3642,7 @@ sting_attack += 0.3
 	
 	
 	
-	if place_meeting(x,y+1,obj_floor) && sting_attack > 1
+	if (place_meeting(x,y+1,obj_floor) || on_platform = 1) && sting_attack > 1
 	{
 	image_angle = 0
 	image_index = 0
@@ -3646,7 +3679,7 @@ sting_attack += 0.3
 
 if spin_attack = 0 && jump_attack = 0 && down_attack = 0 && sting_attack = 0
 {
-	if place_meeting(x,y+1,obj_floor)
+	if place_meeting(x,y+1,obj_floor) || on_platform = 1
 	{
 	jump_attack_used = 0
 	turning_attack_used = 0
@@ -4051,13 +4084,13 @@ sprite_index = down_attack_sprite
 	{
 	gravity = 0.36
 		
-		if !place_meeting(x-image_xscale*32,y,obj_floor) && down_attack_with_rage < 4
+		if (!place_meeting(x-image_xscale*32,y,obj_floor)) && down_attack_with_rage < 4
 		{
 		x += (-image_xscale)*0.67
 		}
 	}
 	
-	if place_meeting(x,y+vspeed,obj_floor) || place_meeting(x,y+1,obj_floor)
+	if place_meeting(x,y+vspeed,obj_floor) || place_meeting(x,y+1,obj_floor) || on_platform = 1
 	{
 		if down_attack_sfx_on != 1
 		{
@@ -4468,8 +4501,8 @@ image_index = 12
 	down_attack_plusing ++
 		if down_attack_plusing > 34
 		{
-		instance_create_depth(attack_target_x+down_attack_with_rage_dis,global.p_floor+32,player.depth-1,effect_special_skill)
-		instance_create_depth(attack_target_x-down_attack_with_rage_dis,global.p_floor+32,player.depth-1,effect_special_skill)
+		instance_create_depth(attack_target_x+down_attack_with_rage_dis,903+32,player.depth-1,effect_special_skill)
+		instance_create_depth(attack_target_x-down_attack_with_rage_dis,903+32,player.depth-1,effect_special_skill)
 		
 		down_attack_plusing = 3
 		down_attack_with_rage_dis += 151
@@ -4629,7 +4662,7 @@ global.movement_speed = 0
 		down_attack_gravity += 0.2
 		}
 		
-		if !place_meeting(x-image_xscale*32,y,obj_floor) && down_attack < 4
+		if (!place_meeting(x-image_xscale*32,y,obj_floor)) && down_attack < 4
 		{
 		x += (-image_xscale)*0.67
 		}
@@ -4653,7 +4686,7 @@ global.movement_speed = 0
 	image_index = 4
 	}
 	
-	if place_meeting(x,y+vspeed,obj_floor) || place_meeting(x,y+1,obj_floor)
+	if place_meeting(x,y+vspeed,obj_floor) || place_meeting(x,y+1,obj_floor) || on_platform = 1
 	{
 		if down_attack_sfx_on != 1
 		{
@@ -5164,8 +5197,12 @@ double_pressed_right = 2
 	}
 }
 	
-	hp = global.hp
-	keep_winning_ = global.keep_winning
+if instance_exists(obj_platform)
+{
+on_platform = obj_platform.on_platform
+}
+hp = global.hp
+keep_winning_ = global.keep_winning
 	
 	if global.in_practice = 0
 	{
@@ -5195,6 +5232,7 @@ double_pressed_right = 2
 	buffer_write(command_buffer, buffer_string, floor(image_angle*100));
 	buffer_write(command_buffer, buffer_string, floor(w_alpha*100));
 	buffer_write(command_buffer, buffer_string, floor(image_alpha*100));
+	buffer_write(command_buffer, buffer_string, floor(on_platform));
 	send_all(command_buffer);
 	}
 }
@@ -5221,7 +5259,7 @@ else
 check_discon = 0
 }
 
-if gravity > 0 && !place_meeting(x,y+1.5,obj_floor) && attack_ <= 0 && attack_laser <= 0 && attack_in_air <= 0 && jump_attack <= 0 && spin_attack <= 0 && down_attack <= 0 && dash_attack <= 0 && attack_laser <= 0 && charge_attack <= 0 && sting_attack <= 0 && sprite_index = jump_sprite
+if gravity > 0 && (!place_meeting(x,y+1.5,obj_floor) && on_platform = 0) && attack_ <= 0 && attack_laser <= 0 && attack_in_air <= 0 && jump_attack <= 0 && spin_attack <= 0 && down_attack <= 0 && dash_attack <= 0 && attack_laser <= 0 && charge_attack <= 0 && sting_attack <= 0 && sprite_index = jump_sprite
 {
 	if image_index < 7
 	{

@@ -11,6 +11,7 @@ can_follow_p = 0
 can_follow_p_2 = 0
 t_x = -4
 t_y = -4
+ab_alpha = 0
 
 //복구 뷰
 tv_x = 1280

@@ -10,7 +10,6 @@ if global.matching <= 0
 instance_destroy()
 }
 
-
 if instance_number(down_effect) > 0
 {
 	if gravity = 0

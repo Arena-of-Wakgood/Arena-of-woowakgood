@@ -18,6 +18,7 @@ draw_hp = 0
 timer__ = 0
 max_hp = 1000
 guard_cool_time = 0
+on_platform = 0
 p_mes = -1
 ping_kick_timer = 0
 fps_now = 0
