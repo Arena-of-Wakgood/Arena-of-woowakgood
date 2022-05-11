@@ -11,4 +11,4 @@
 
 테스트 진행할 당시엔 15명 정도로만 테스트했는데 당시에 테스터들이랑 재미지게 게임 했음
 
-<iframe width="956" height="538" src="https://youtu.be/dbzp09Ly1CY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/dbzp09Ly1CY?list=PL9MkDV2aN6dEwlK50AzdWnWVZDnj3wkES" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
