@@ -41,7 +41,7 @@ if image_alpha < -2
 			{
 			var sfx = audio_play_sound(message_sfx,0,0)
 			audio_sound_gain(sfx,0.2*global.master_volume*2*global.sfx_volume,0)
-			code.server = network_create_server(network_socket_tcp, code.server_port, 12);
+			code.server = network_create_server(network_socket_tcp, code.server_port, 10);
 		
 				if (code.server < 0) 
 				{

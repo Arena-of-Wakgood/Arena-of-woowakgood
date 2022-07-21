@@ -890,6 +890,16 @@ else if (type == network_type_data)
 				}
 				break;
 				
+				case COMM.P_DAMAGE:
+				var _p_damage_ = buffer_read(buffer, buffer_string);
+				var _p_damage_critical = buffer_read(buffer, buffer_string);
+				if is_real(_p_damage_)
+				{
+				global.damage_plus_multi = real(string(_p_damage_));
+				global.critical_plus_multi = real(string(_p_damage_critical));
+				}
+				break;
+				
 				
 				case COMM.ATTACK_EFFECT:
 				var _check_who_send = buffer_read(buffer, buffer_string);
@@ -1130,11 +1140,16 @@ else if (type == network_type_data)
 
 					if global.gamemode_server = 2
 					{
-					global.rage_gauge += real(_rage_gage)/50;
+					global.rage_gauge += real(_rage_gage)/50+real(_rage_gage)/500;
 					}
 					else
 					{
-					global.rage_gauge += real(_rage_gage)/100;
+					global.rage_gauge += real(_rage_gage)/100+real(_rage_gage)/1000*global.mental_plus;
+					
+						if global.taking_hp_plus > 0
+						{
+						global.hp += (real(_damage)*global.taking_hp_plus)/20
+						}
 					}
 				}
 				break;

@@ -1046,7 +1046,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				hp_minus_for_player(18,_placed_obj)
 				
 
-				gravity = 0.36
+				gravity = 0.36/global.low_gravity_plus
 				vspeed += 4
 				sfx_for_multiplayer(choose(global.hit_sfx_1,global.hit_sfx_2,global.hit_sfx_3),0,0.2)
 				}
@@ -1129,6 +1129,13 @@ w_alpha += (-0.01 - w_alpha)*0.1
 		{
 		check_guard = choose(-1,1)
 		}
+		
+		if global.automatic_guard_plus > 0
+		{
+		guarding_now = percentage_k(global.automatic_guard_plus*10)
+		}
+		
+
 				
 			if guarding > 0 && global.stemina >= 1.7 && check_guard = sign(image_xscale)
 			{
@@ -1556,7 +1563,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 			{
 			obj_platform.on_platform = 0
 			}
-			vspeed = -6
+			vspeed = -6-global.jump_plus
 			jump = 0
 			jump_end_motion = 0
 			b_movement_speed = 0
@@ -1653,9 +1660,9 @@ w_alpha += (-0.01 - w_alpha)*0.1
 		global.stemina += 0.04
 		}
 
-		if global.stemina > 11
+		if global.stemina > 11+global.max_stemina_plus
 		{
-		global.stemina = 11
+		global.stemina = 11+global.max_stemina_plus
 		}
 	}
 	else
@@ -1855,10 +1862,29 @@ w_alpha += (-0.01 - w_alpha)*0.1
 	{
 		if y > room_height && fallen = 0
 		{
-		movement_speed = 0
-		global.movement_speed = 0
-		fallen = 1
-		global.hp = 0
+			if global.ignore_falling_check > 0
+			{
+			y = room_height
+			global.ignore_falling_check--
+			hurt = 100
+			hurt_little = 100
+			vspeed = -32
+				if x > obj_floor.x
+				{
+				movement_speed = -16
+				}
+				else
+				{
+				movement_speed = 16
+				}
+			}
+			else
+			{
+			movement_speed = 0
+			global.movement_speed = 0
+			fallen = 1
+			global.hp = 0
+			}
 		}
 		
 		if global.hp > 0 && y < room_height
@@ -2432,7 +2458,7 @@ if dash_attack >= 4.6
 					dust.image_alpha = 0.4
 					}
 	
-				vspeed = -6
+				vspeed = -6-global.jump_plus
 				jump_end_motion = 0
 				global.stemina_cooltime = 0
 				y -= 1.2
@@ -3176,7 +3202,7 @@ if global.skill_turning_attack > 0 && turning_attack_used < global.skill_turning
 				if place_meeting(x,y+2,obj_floor) || on_platform = 1
 				{
 				spin_attack = 1
-				gravity = 0.2
+				gravity = 0.2/global.low_gravity_plus
 				vspeed = -4
 				}
 				else
@@ -3672,7 +3698,7 @@ sting_attack += 0.3
 	}
 	else
 	{
-	gravity = 0.2
+	gravity = 0.2/global.low_gravity_plus
 	}
 }
 
@@ -3713,7 +3739,7 @@ if spin_attack = 0 && jump_attack = 0 && down_attack = 0 && sting_attack = 0
 	}
 	else
 	{
-	gravity = 0.2
+	gravity = 0.2/global.low_gravity_plus
 	}
 }
 
@@ -3834,7 +3860,7 @@ image_index = 7
 	
 		if vspeed > 0
 		{
-		gravity = 0.21
+		gravity = 0.21/global.low_gravity_plus
 		}
 		
 		spin_attack_angle_p = 1
@@ -4077,12 +4103,12 @@ sprite_index = down_attack_sprite
 		x += (-image_xscale)*2.2
 		}
 	
-	gravity = 0.05
+	gravity = 0.05/global.low_gravity_plus
 	down_attack_motion_dilay = 1
 	}
 	else
 	{
-	gravity = 0.36
+	gravity = 0.36/global.low_gravity_plus
 		
 		if (!place_meeting(x-image_xscale*32,y,obj_floor)) && down_attack_with_rage < 4
 		{
@@ -4302,7 +4328,7 @@ vspeed = 0
 cannot_move = 1
 global.never_move = 1
 global.movement_speed = 0
-attack_laser_sec += 0.12
+attack_laser_sec += 0.12+(global.mental_attack_sp_plus)/2
 
 if skill_red_ball_effect != -1
 {
@@ -4397,6 +4423,19 @@ image_index = 12
 		{
 		_aaa.image_angle = 270
 		}
+		
+		for(var i = 0; i < global.laser_num_plus; i++)
+		{
+		var _aaa = instance_create_depth(x-image_xscale*24,y-16,player.depth-1,effect_special_skill_sec)
+			if image_xscale = 1
+			{
+			_aaa.image_angle = 90-i*(50/global.laser_num_plus)
+			}
+			else
+			{
+			_aaa.image_angle = 270+i*(50/global.laser_num_plus)
+			}
+		}
 	}
 	
 	if attack_laser_sec > 18
@@ -4423,7 +4462,7 @@ vspeed = 0
 cannot_move = 1
 global.never_move = 1
 global.movement_speed = 0
-attack_laser += 0.1
+attack_laser += 0.1+(global.mental_attack_sp_plus)/2
 
 if skill_red_ball_effect != -1
 {
@@ -4649,12 +4688,12 @@ global.movement_speed = 0
 		image_index = down_attack
 		}
 	
-	gravity = 0.05
+	gravity = 0.05/global.low_gravity_plus
 	down_attack_motion_dilay = 1
 	}
 	else
 	{
-	gravity = 0.36
+	gravity = 0.36/global.low_gravity_plus
 		
 		if down_attack_gravity < 1
 		{
@@ -5099,7 +5138,7 @@ double_pressed_right = 2
 			
 			if double_pressed_left < 2
 			{
-				if global.movement_speed > -5 && global.movement_speed <= 0
+				if global.movement_speed > -5-global.movementspeed_plus && global.movement_speed <= 0
 				{
 				global.movement_speed -= 0.12
 				global.movement_speed += global.movement_speed*0.05
@@ -5110,12 +5149,12 @@ double_pressed_right = 2
 					{
 					global.movement_speed = global.movement_speed/4
 					}
-				global.movement_speed += (-5 - global.movement_speed)*0.05
+				global.movement_speed += (-5-global.movementspeed_plus - global.movement_speed)*0.05
 				}
 			}
 			else
 			{
-				if global.movement_speed > -(8+sign(floor(global.awakening))*0.5)
+				if global.movement_speed > -(8+global.movementspeed_plus+sign(floor(global.awakening))*0.5)
 				{
 				global.movement_speed -= 0.2
 					if global.movement_speed < 0
@@ -5125,7 +5164,7 @@ double_pressed_right = 2
 				}
 				else
 				{
-				global.movement_speed = -(8+sign(floor(global.awakening))*0.5)
+				global.movement_speed = -(8+global.movementspeed_plus+sign(floor(global.awakening))*0.5)
 				}
 			}
 		}
@@ -5139,7 +5178,7 @@ double_pressed_right = 2
 			
 			if double_pressed_right < 2
 			{
-				if global.movement_speed < 5 && global.movement_speed >= 0
+				if global.movement_speed < 5+global.movementspeed_plus && global.movement_speed >= 0
 				{
 				global.movement_speed += 0.12
 				global.movement_speed += global.movement_speed*0.05
@@ -5150,12 +5189,12 @@ double_pressed_right = 2
 					{
 					global.movement_speed = global.movement_speed/4
 					}
-				global.movement_speed += (5 - global.movement_speed)*0.05
+				global.movement_speed += (5+global.movementspeed_plus - global.movement_speed)*0.05
 				}
 			}
 			else
 			{
-				if global.movement_speed < (8+sign(floor(global.awakening))*0.5)
+				if global.movement_speed < (8+global.movementspeed_plus+sign(floor(global.awakening))*0.5)
 				{
 				global.movement_speed += 0.2
 					if global.movement_speed > 0
@@ -5165,7 +5204,7 @@ double_pressed_right = 2
 				}
 				else
 				{
-				global.movement_speed = (8+sign(floor(global.awakening))*0.5)
+				global.movement_speed = (8+global.movementspeed_plus+sign(floor(global.awakening))*0.5)
 				}
 			}
 		}

@@ -2,7 +2,7 @@
 // You can write your code in this editor
 image_alpha = 0
 command_buffer = buffer_create(3, buffer_grow, 1);
-
+surf_screen = surface_create(1280,720)
 wait_follow_observe = 0
 my_cer_p = -4
 v_x = 1280

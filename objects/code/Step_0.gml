@@ -18,6 +18,8 @@ created_platfrom = 0
 global.now_map = choose(0,2,3)
 }
 
+
+
 if global.matching = 0
 {
 global.matched_pl1_name = -4

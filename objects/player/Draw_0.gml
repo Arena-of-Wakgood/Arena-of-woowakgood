@@ -115,9 +115,9 @@ if image_alpha > 0 && global.hp > 0
 	
 			if hp_bar_alpha > 0 && global.slow_motion = 0 && global.show_challenger = 0
 			{
-			draw_stemina += (global.stemina-1 - draw_stemina)*0.1
+			draw_stemina += (global.stemina-1-global.max_stemina_plus - draw_stemina)*0.1
 			draw_sprite_ext(sprite20,0,xx+60*v_x,yy+64*v_x,5.2*v_x,v_x*1.5,0,c_white,hp_bar_alpha)
-				if global.stemina/10 > 0
+				if global.stemina/(10+global.max_stemina_plus) > 0
 				{
 				draw_sprite_ext(sprite20,4,xx+64*v_x,yy+64*v_x,(draw_stemina/10)*5.5*v_x,v_x*1.5,0,c_white,hp_bar_alpha)
 				}
@@ -205,6 +205,7 @@ if image_alpha > 0 && global.hp > 0
 		}
 	}
 }
+
 
 
 

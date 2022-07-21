@@ -968,8 +968,10 @@ global.slow_motion += global.slow_motion*0.03
 			{
 				with(player)
 				{
-					if returned_id = global.matched_pl1 && global.matched_pl1_ready = 0 && code.check_winner = 2
+					if returned_id = global.matched_pl1 && global.matched_pl1_ready = 0 && code.check_winner = 1
 					{
+					code.ability_choosing_time = 1
+					global.waiting_choosing = 1
 					global.matched_pl1_ready = 1
 		
 					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
@@ -978,9 +980,11 @@ global.slow_motion += global.slow_motion*0.03
 					send_all(code.matching_buffer);
 					}
 			
-					if returned_id = global.matched_pl2 && global.matched_pl2_ready = 0 && code.check_winner = 1
+					if returned_id = global.matched_pl2 && global.matched_pl2_ready = 0 && code.check_winner = 2
 					{
+					global.waiting_choosing = 1
 					global.matched_pl2_ready = 1
+					code.ability_choosing_time = 1
 		
 					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
 					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
@@ -988,19 +992,48 @@ global.slow_motion += global.slow_motion*0.03
 					send_all(code.matching_buffer);
 					}
 				
-					if (code.check_winner = 1 && returned_id = global.matched_pl1) || (code.check_winner = 2 && returned_id = global.matched_pl2)
+					if (code.check_winner = 1 && returned_id = global.matched_pl2) || (code.check_winner = 2 && returned_id = global.matched_pl1)
 					{
-					code.ability_choosing_time ++
+					global.waiting_choosing = 0
+					
+					randomize()
+					global.choices[0] = irandom_range(0,13)
+					global.choices[1] = irandom_range(0,13)
+					global.choices[2] = irandom_range(0,13)
+					
+
+					global.choice += keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left)
+					
+					if global.choice > 2
+					{
+					global.choice = 0
+					}
+					
+					
+						if code.ability_choosing_time = 0
+						{
+						code.ability_choosing_time = 1
+						}
+
 						if code.ability_choosing_time > 600
 						{
 						global.matched_pl1_ready = 1
 						global.matched_pl2_ready = 1
+						global.ignore_falling_check = global.ignore_falling_plus
 						code.ability_choosing_time = 0
 		
 						buffer_seek(code.matching_buffer, buffer_seek_start, 0);
 						buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
 						buffer_write(code.matching_buffer, buffer_string, returned_id);
 						send_all(code.matching_buffer);
+						
+						buffer_seek(code.music__buffer, buffer_seek_start, 0);
+						buffer_write(code.music__buffer, buffer_u8, code.DATA.COMMAND);
+						buffer_write(code.music__buffer, buffer_u8, code.my_ID);
+						buffer_write(code.music__buffer, buffer_u8, code.COMM.P_DAMAGE);
+						buffer_write(code.music__buffer, buffer_string, floor(global.damage_plus));
+						buffer_write(code.music__buffer, buffer_string, floor(global.critical_plus));
+						send_all(code.music__buffer);
 						}
 					}
 				}
@@ -1012,8 +1045,14 @@ global.slow_motion += global.slow_motion*0.03
 			//재매치
 			if global.matched_pl1_ready = 1 && global.matched_pl2_ready = 1
 			{
+			var _match_round_set = 3
+				if global.gamemode_server = 5
+				{
+				_match_round_set = 5
+				}
+				
 				//둘의 승점이 모두 3 미만인 경우 재매치
-				if global.matched_pl1_won < 2 && global.matched_pl2_won < 2
+				if global.matched_pl1_won < _match_round_set && global.matched_pl2_won < _match_round_set
 				{
 				var _mes = instance_create_depth(x,y,-999,message_);
 				_mes.t_image_alpha = 1;
@@ -1046,6 +1085,14 @@ global.slow_motion += global.slow_motion*0.03
 				global.slow_motion = 0
 				global.t_b_alpha = -0.01
 				global.awakening = 0
+					if global.full_mental_plus > 0
+					{
+					global.rage_gauge = 100
+					}
+					else
+					{
+					global.rage_gauge = 0
+					}
 				}
 				else
 				{

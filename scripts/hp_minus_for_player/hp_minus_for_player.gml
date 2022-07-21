@@ -1,7 +1,7 @@
 function hp_minus_for_player(argument0,argument1) 
 {
 bloody(x,y,1)
-var random_val = choose(0,0,0,1)
+var random_val = percentage_k(25+global.critical_plus_multi*10)
 var img_bnd = c_white
 var argu_0 = argument0
 
@@ -120,5 +120,5 @@ var argu_0 = argument0
 	}
 
 	
-global.hp -= (calcul_damage)
+global.hp -= (calcul_damage)*(100-global.max_armor_plus*15+global.damage_plus_multi*10)/100
 }

@@ -253,3 +253,32 @@ if show_sound_list_alpha > 0
 	}
 }
 
+
+
+if instance_number(red_circle_effect) > 0 || instance_number(red_circle_effect_received) > 0
+{
+	if sepa_alpha <= 0
+	{
+	sepa_alpha = 1.3
+	sepa_power = 25
+	}
+}
+
+if global.awakening > 1
+{
+	if sepa_alpha <= 0
+	{
+	sepa_alpha = 1.3
+	sepa_power = 5
+	}
+}
+
+if global.slow_motion > 0 && global.slow_motion < 15
+{
+	if sepa_alpha <= 0
+	{
+	sepa_alpha = 1.3
+	sepa_power = 25
+	}
+}
+

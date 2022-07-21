@@ -64,12 +64,12 @@ var __alpha_set = 1-global.b_alpha_prt-global.b_alpha
 	
 		for(var i = 0; i < global.matched_pl1_won; i++)
 		{
-		draw_sprite_ext(spr_winning_point,0,camera_get_view_x(view_camera[0])+v_x_*(32+48*i),yy+170*v_x_,v_x_*0.6,v_x_*0.6,0,c_white,__alpha_set)
+		draw_sprite_ext(spr_winning_point,0,camera_get_view_x(view_camera[0])+v_x_*(32+20*i),yy+170*v_x_,v_x_*0.6,v_x_*0.6,0,c_white,__alpha_set)
 		}
 		
 		for(var i = 0; i < global.matched_pl2_won; i++)
 		{
-		draw_sprite_ext(spr_winning_point,1,camera_get_view_x(view_camera[0])+v_x_*(32+48*i),yy+210*v_x_,v_x_*0.6,v_x_*0.6,0,c_white,__alpha_set)
+		draw_sprite_ext(spr_winning_point,1,camera_get_view_x(view_camera[0])+v_x_*(32+20*i),yy+210*v_x_,v_x_*0.6,v_x_*0.6,0,c_white,__alpha_set)
 		}
 	}
 
@@ -146,6 +146,7 @@ draw_rectangle(xx,yy+yyy,xx+xxx,yy+yyy-global.playing_scene_black_bg*obj_camera.
 
 if code.ability_choosing_time > 0
 {
+code.ability_choosing_time ++
 ab_alpha += (0.5 - ab_alpha)*0.1
 var _xx = camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])*0.5
 var _yy = camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])*0.8
@@ -155,11 +156,40 @@ if _calc < 0
 {
 _calc = 0
 }
+
 draw_set_color(c_white)
 draw_set_alpha(ab_alpha)
 draw_line_width(_xx-_calc,_yy,_xx+_calc,_yy,24*v_x_)
+
+	if global.waiting_choosing = 1
+	{
+	draw_text_kl_scale(_xx,_yy-v_x_*250,"상대 플레이어 기다리는 중...",v_x*64,-1,ab_alpha*2,c_white,0,0,font0,v_x_*0.5,v_x_*0.5,0);
+	}
+	else
+	{
+	draw_text_kl_scale(_xx,_yy-v_x_*700,"좌/우 방향키를 통해 원하는 능력을 선택해주세요!",v_x*64,-1,ab_alpha*2,c_white,0,0,font0,v_x_*0.5,v_x_*0.5,0);
+	
+		for(var i = 0; i < 2; i++)
+		{
+		draw_sprite_ext(Sprite165,global.choices[i],_xx-_calc*225*(i-1),yy-v_x_*500,v_x_*2,v_x_*2,0,c_white,ab_alpha*2)
+		}
+	}
 }
 else
 {
 ab_alpha += (-0.01 - ab_alpha)*0.1
+}
+
+
+
+
+
+
+if surface_exists(surf_screen)
+{
+draw_screen_rgb_split(surf_screen,0.1)
+}
+else
+{
+surf_screen = surface_create(1280,720)
 }

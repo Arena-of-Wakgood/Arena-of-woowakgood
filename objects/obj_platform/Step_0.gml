@@ -111,11 +111,7 @@ global.p_floor = 903
 
 if b_on_platform != on_platform
 {
-	if time_s = 1 || time_s = 3
-	{
-	player.vspeed += _cal_plus*0.25
-	}
-	else
+	if time_s = 0 || time_s = 2
 	{
 	player.movement_speed += _cal_plus*0.25
 	}
