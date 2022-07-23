@@ -20,7 +20,8 @@
 #
 
 ### ▼ 게임 트레일러
-[![Video Label]](https://youtu.be/dbzp09Ly1CY)
+
+https://youtu.be/dbzp09Ly1CY
 
 
 
