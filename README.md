@@ -23,8 +23,6 @@
 
 https://youtu.be/dbzp09Ly1CY
 
-
-
 #
 
 ## - 대략적인 주요 코드
