@@ -20,8 +20,8 @@
 #
 
 ### ▼ 게임 트레일러
+<iframe width="956" height="538" src="https://youtu.be/dbzp09Ly1CY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-https://youtu.be/dbzp09Ly1CY
 
 #
 
