@@ -43,8 +43,8 @@ https://youtu.be/dbzp09Ly1CY
 이모티콘을 보내거나, 채팅을 보내거나, 플레이어를 서버에서 추방시키거나 하는
 부가적인 기능이 달린 멀티플레이 시스템
 
-![preview_5](preview_1.PNG)
+![preview_5](preview_1.gif)
 
-![preview_6](preview_2.PNG)
+![preview_6](preview_2.gif)
 
 
