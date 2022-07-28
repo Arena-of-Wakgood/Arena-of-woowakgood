@@ -58,7 +58,7 @@ https://cafe.naver.com/steamindiegame/3106704
 
 #
 
-## 개발 일지 (모든 개발일지는 아니고 일부만)
+- 개발 일지 (모든 개발일지는 아니고 일부만)
 -------------
 
 https://cafe.naver.com/steamindiegame/3113686
