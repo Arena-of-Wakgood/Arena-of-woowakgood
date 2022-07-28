@@ -25,6 +25,12 @@ https://youtu.be/dbzp09Ly1CY
 
 #
 
+### ▼ 게임 다운로드
+
+https://cafe.naver.com/steamindiegame/3106704
+
+#
+
 ## - 대략적인 주요 코드
 
 ### ▼ 초대 코드 시스템 (초대 코드를 통해 상대 서버로 접속하는 기능)
