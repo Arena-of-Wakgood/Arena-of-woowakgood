@@ -16,3 +16,8 @@ buffer_write(command_buffer, buffer_string, sprite_index);
 buffer_write(command_buffer, buffer_string, string(floor(image_angle*100)));
 send_all(command_buffer);
 }
+
+if instance_number(effect_spark) > 15
+{
+instance_destroy()
+}

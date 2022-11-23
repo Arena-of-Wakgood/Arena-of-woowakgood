@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "pl_move_skeleton_sting_skill_white",
   "bboxMode": 2,
   "collisionKind": 5,
   "type": 0,
@@ -14,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 180,
   "height": 128,
   "textureGroupId": {
@@ -24,57 +28,23 @@
   "gridX": 3,
   "gridY": 3,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"d40cb799-50f7-4b1e-b364-edb1f9dfc68f","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d40cb799-50f7-4b1e-b364-edb1f9dfc68f","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"d40cb799-50f7-4b1e-b364-edb1f9dfc68f","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"d40cb799-50f7-4b1e-b364-edb1f9dfc68f","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"f2c7a778-7c4b-4a56-a40c-5918d43124d3","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f2c7a778-7c4b-4a56-a40c-5918d43124d3","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"f2c7a778-7c4b-4a56-a40c-5918d43124d3","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"f2c7a778-7c4b-4a56-a40c-5918d43124d3","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"128039c3-f1d0-4f1d-b548-51200303b4d7","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"128039c3-f1d0-4f1d-b548-51200303b4d7","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"128039c3-f1d0-4f1d-b548-51200303b4d7","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"128039c3-f1d0-4f1d-b548-51200303b4d7","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"8bf43c64-6bef-4427-9064-c8b404a7c74b","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"8bf43c64-6bef-4427-9064-c8b404a7c74b","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"8bf43c64-6bef-4427-9064-c8b404a7c74b","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"8bf43c64-6bef-4427-9064-c8b404a7c74b","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"04fff136-98d0-4432-b7bb-290fe6745f66","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"04fff136-98d0-4432-b7bb-290fe6745f66","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"04fff136-98d0-4432-b7bb-290fe6745f66","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"04fff136-98d0-4432-b7bb-290fe6745f66","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"b834c7d3-b36b-4b28-99a7-3efcdffe7573","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b834c7d3-b36b-4b28-99a7-3efcdffe7573","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"b834c7d3-b36b-4b28-99a7-3efcdffe7573","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"b834c7d3-b36b-4b28-99a7-3efcdffe7573","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"d4707806-0e50-4b1f-a7ff-7a650186d4db","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d4707806-0e50-4b1f-a7ff-7a650186d4db","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"d4707806-0e50-4b1f-a7ff-7a650186d4db","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"d4707806-0e50-4b1f-a7ff-7a650186d4db","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"851fbf9e-6b16-41a0-a47e-83cbf5ca351a","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"851fbf9e-6b16-41a0-a47e-83cbf5ca351a","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"851fbf9e-6b16-41a0-a47e-83cbf5ca351a","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"851fbf9e-6b16-41a0-a47e-83cbf5ca351a","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"27ed4e9d-a489-42ae-b09e-62ab27e0f29c","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"27ed4e9d-a489-42ae-b09e-62ab27e0f29c","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"27ed4e9d-a489-42ae-b09e-62ab27e0f29c","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"27ed4e9d-a489-42ae-b09e-62ab27e0f29c","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"4f37504a-e1fe-4009-90ca-6313793d7997","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4f37504a-e1fe-4009-90ca-6313793d7997","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"4f37504a-e1fe-4009-90ca-6313793d7997","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"4f37504a-e1fe-4009-90ca-6313793d7997","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"7e7b8987-b835-4af8-8eb6-87dac8240a5f","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7e7b8987-b835-4af8-8eb6-87dac8240a5f","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"7e7b8987-b835-4af8-8eb6-87dac8240a5f","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"7e7b8987-b835-4af8-8eb6-87dac8240a5f","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"43dff21d-5e5a-494c-840a-c8ed0a58f3a3","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"43dff21d-5e5a-494c-840a-c8ed0a58f3a3","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"43dff21d-5e5a-494c-840a-c8ed0a58f3a3","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","name":"43dff21d-5e5a-494c-840a-c8ed0a58f3a3","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d40cb799-50f7-4b1e-b364-edb1f9dfc68f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f2c7a778-7c4b-4a56-a40c-5918d43124d3",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"128039c3-f1d0-4f1d-b548-51200303b4d7",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8bf43c64-6bef-4427-9064-c8b404a7c74b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"04fff136-98d0-4432-b7bb-290fe6745f66",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b834c7d3-b36b-4b28-99a7-3efcdffe7573",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d4707806-0e50-4b1f-a7ff-7a650186d4db",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"851fbf9e-6b16-41a0-a47e-83cbf5ca351a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"27ed4e9d-a489-42ae-b09e-62ab27e0f29c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4f37504a-e1fe-4009-90ca-6313793d7997",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7e7b8987-b835-4af8-8eb6-87dac8240a5f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"43dff21d-5e5a-494c-840a-c8ed0a58f3a3",},
   ],
   "sequence": {
-    "spriteId": {"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "pl_move_skeleton_sting_skill_white",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 10.0,
@@ -85,7 +55,7 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"2f6fbe7c-cfe5-4538-a342-8dd6ce48771d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d40cb799-50f7-4b1e-b364-edb1f9dfc68f","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"98fe681c-124c-45f1-a775-cf9c8a4972d0","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f2c7a778-7c4b-4a56-a40c-5918d43124d3","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"ae994858-0e1a-456f-91da-5aefc38e71d3","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"128039c3-f1d0-4f1d-b548-51200303b4d7","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
@@ -98,7 +68,7 @@
             {"id":"28f2b92b-b2e3-4326-8a2b-65c7bf9640a9","Key":9.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4f37504a-e1fe-4009-90ca-6313793d7997","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"59a951b4-47e3-412a-81de-aa098b0a06a5","Key":10.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7e7b8987-b835-4af8-8eb6-87dac8240a5f","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"719cc7ec-3b3c-445b-afca-42e28ef216ea","Key":11.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"43dff21d-5e5a-494c-840a-c8ed0a58f3a3","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -114,23 +84,14 @@
     "yorigin": 57,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"pl_move_skeleton_sting_skill_white","path":"sprites/pl_move_skeleton_sting_skill_white/pl_move_skeleton_sting_skill_white.yy",},
-    "resourceVersion": "1.4",
-    "name": "pl_move_skeleton_sting_skill_white",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"781808f4-ff89-44dd-83b7-e27af3a5474e","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"62456ec3-4abf-4558-a727-463648ee848d","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"781808f4-ff89-44dd-83b7-e27af3a5474e","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"62456ec3-4abf-4558-a727-463648ee848d","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "스프라이트",
     "path": "folders/스프라이트.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "pl_move_skeleton_sting_skill_white",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

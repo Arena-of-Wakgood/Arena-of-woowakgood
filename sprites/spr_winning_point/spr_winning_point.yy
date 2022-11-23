@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_winning_point",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -14,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 64,
   "height": 64,
   "textureGroupId": {
@@ -24,15 +28,13 @@
   "gridX": 3,
   "gridY": 3,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"14b748e0-3161-456d-b8b0-554a6cf4befb","path":"sprites/spr_winning_point/spr_winning_point.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"14b748e0-3161-456d-b8b0-554a6cf4befb","path":"sprites/spr_winning_point/spr_winning_point.yy",},"LayerId":{"name":"3f952d5d-54d0-4364-9bcc-f1f5d26545c0","path":"sprites/spr_winning_point/spr_winning_point.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_winning_point","path":"sprites/spr_winning_point/spr_winning_point.yy",},"resourceVersion":"1.0","name":"14b748e0-3161-456d-b8b0-554a6cf4befb","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"dbb84ba4-efac-4cef-bc62-83756d3561e9","path":"sprites/spr_winning_point/spr_winning_point.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"dbb84ba4-efac-4cef-bc62-83756d3561e9","path":"sprites/spr_winning_point/spr_winning_point.yy",},"LayerId":{"name":"3f952d5d-54d0-4364-9bcc-f1f5d26545c0","path":"sprites/spr_winning_point/spr_winning_point.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_winning_point","path":"sprites/spr_winning_point/spr_winning_point.yy",},"resourceVersion":"1.0","name":"dbb84ba4-efac-4cef-bc62-83756d3561e9","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"14b748e0-3161-456d-b8b0-554a6cf4befb",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"dbb84ba4-efac-4cef-bc62-83756d3561e9",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_winning_point","path":"sprites/spr_winning_point/spr_winning_point.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "spr_winning_point",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -43,10 +45,10 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"76014cae-0a25-4464-a08c-e9ea11427f86","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"14b748e0-3161-456d-b8b0-554a6cf4befb","path":"sprites/spr_winning_point/spr_winning_point.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"fd2e3a19-76d7-4729-ad08-ecec12627f5f","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"dbb84ba4-efac-4cef-bc62-83756d3561e9","path":"sprites/spr_winning_point/spr_winning_point.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -62,22 +64,13 @@
     "yorigin": 32,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_winning_point","path":"sprites/spr_winning_point/spr_winning_point.yy",},
-    "resourceVersion": "1.4",
-    "name": "spr_winning_point",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3f952d5d-54d0-4364-9bcc-f1f5d26545c0","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3f952d5d-54d0-4364-9bcc-f1f5d26545c0","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "스프라이트",
     "path": "folders/스프라이트.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_winning_point",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

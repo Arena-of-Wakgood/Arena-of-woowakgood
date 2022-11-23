@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "pl_move_skeleton_guard_beat_saber_white",
   "bboxMode": 2,
   "collisionKind": 5,
   "type": 0,
@@ -14,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 180,
   "height": 128,
   "textureGroupId": {
@@ -24,21 +28,14 @@
   "gridX": 3,
   "gridY": 3,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"f15ae653-1584-44c9-b834-705bcba51f45","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f15ae653-1584-44c9-b834-705bcba51f45","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"LayerId":{"name":"6bcc29a4-5ba4-4d60-80fd-262c0e28c8b4","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"f15ae653-1584-44c9-b834-705bcba51f45","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"LayerId":{"name":"0a5c4c34-8d06-49d7-accf-5b3d19b8ec74","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_guard_beat_saber_white","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"resourceVersion":"1.0","name":"f15ae653-1584-44c9-b834-705bcba51f45","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"f61e7ce2-2de8-4361-bdd6-c497a1932b39","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f61e7ce2-2de8-4361-bdd6-c497a1932b39","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"LayerId":{"name":"6bcc29a4-5ba4-4d60-80fd-262c0e28c8b4","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"f61e7ce2-2de8-4361-bdd6-c497a1932b39","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"LayerId":{"name":"0a5c4c34-8d06-49d7-accf-5b3d19b8ec74","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_guard_beat_saber_white","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"resourceVersion":"1.0","name":"f61e7ce2-2de8-4361-bdd6-c497a1932b39","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"df1f15a9-1846-44b2-826d-88614dcce4f5","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"df1f15a9-1846-44b2-826d-88614dcce4f5","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"LayerId":{"name":"6bcc29a4-5ba4-4d60-80fd-262c0e28c8b4","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"df1f15a9-1846-44b2-826d-88614dcce4f5","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"LayerId":{"name":"0a5c4c34-8d06-49d7-accf-5b3d19b8ec74","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_guard_beat_saber_white","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"resourceVersion":"1.0","name":"df1f15a9-1846-44b2-826d-88614dcce4f5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f15ae653-1584-44c9-b834-705bcba51f45",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f61e7ce2-2de8-4361-bdd6-c497a1932b39",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"df1f15a9-1846-44b2-826d-88614dcce4f5",},
   ],
   "sequence": {
-    "spriteId": {"name":"pl_move_skeleton_guard_beat_saber_white","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "pl_move_skeleton_guard_beat_saber_white",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 10.0,
@@ -49,11 +46,11 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"fc40894e-d3da-4f1c-a879-061feae1c463","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f15ae653-1584-44c9-b834-705bcba51f45","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"e69b03e4-7185-4bc2-94ac-0b71581dcd5d","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f61e7ce2-2de8-4361-bdd6-c497a1932b39","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"c7431b59-957b-4eb9-9936-517cad855283","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"df1f15a9-1846-44b2-826d-88614dcce4f5","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -69,23 +66,14 @@
     "yorigin": 57,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"pl_move_skeleton_guard_beat_saber_white","path":"sprites/pl_move_skeleton_guard_beat_saber_white/pl_move_skeleton_guard_beat_saber_white.yy",},
-    "resourceVersion": "1.4",
-    "name": "pl_move_skeleton_guard_beat_saber_white",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6bcc29a4-5ba4-4d60-80fd-262c0e28c8b4","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0a5c4c34-8d06-49d7-accf-5b3d19b8ec74","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6bcc29a4-5ba4-4d60-80fd-262c0e28c8b4","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0a5c4c34-8d06-49d7-accf-5b3d19b8ec74","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "스프라이트",
     "path": "folders/스프라이트.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "pl_move_skeleton_guard_beat_saber_white",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

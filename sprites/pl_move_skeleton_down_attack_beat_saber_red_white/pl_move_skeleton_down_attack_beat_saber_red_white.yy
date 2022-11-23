@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "pl_move_skeleton_down_attack_beat_saber_red_white",
   "bboxMode": 2,
   "collisionKind": 5,
   "type": 0,
@@ -14,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 180,
   "height": 128,
   "textureGroupId": {
@@ -24,29 +28,16 @@
   "gridX": 3,
   "gridY": 3,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"89e2dea3-cc92-4c16-83f2-e3960666f876","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"89e2dea3-cc92-4c16-83f2-e3960666f876","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"89e2dea3-cc92-4c16-83f2-e3960666f876","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_down_attack_beat_saber_red_white","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"89e2dea3-cc92-4c16-83f2-e3960666f876","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"504c20e7-4670-4780-a001-665391e7d718","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"504c20e7-4670-4780-a001-665391e7d718","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"504c20e7-4670-4780-a001-665391e7d718","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_down_attack_beat_saber_red_white","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"504c20e7-4670-4780-a001-665391e7d718","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"fa9345a3-6b90-4a19-b323-8af82962ea89","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"fa9345a3-6b90-4a19-b323-8af82962ea89","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"fa9345a3-6b90-4a19-b323-8af82962ea89","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_down_attack_beat_saber_red_white","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"fa9345a3-6b90-4a19-b323-8af82962ea89","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e49757ad-562f-419a-ac84-ac8e5bcf8df9","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e49757ad-562f-419a-ac84-ac8e5bcf8df9","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"e49757ad-562f-419a-ac84-ac8e5bcf8df9","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_down_attack_beat_saber_red_white","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"e49757ad-562f-419a-ac84-ac8e5bcf8df9","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"7a0d8c95-20f0-4f47-80e6-72a54405f613","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7a0d8c95-20f0-4f47-80e6-72a54405f613","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":{"name":"781808f4-ff89-44dd-83b7-e27af3a5474e","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"7a0d8c95-20f0-4f47-80e6-72a54405f613","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"LayerId":{"name":"62456ec3-4abf-4558-a727-463648ee848d","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_down_attack_beat_saber_red_white","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","name":"7a0d8c95-20f0-4f47-80e6-72a54405f613","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"89e2dea3-cc92-4c16-83f2-e3960666f876",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"504c20e7-4670-4780-a001-665391e7d718",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fa9345a3-6b90-4a19-b323-8af82962ea89",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e49757ad-562f-419a-ac84-ac8e5bcf8df9",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7a0d8c95-20f0-4f47-80e6-72a54405f613",},
   ],
   "sequence": {
-    "spriteId": {"name":"pl_move_skeleton_down_attack_beat_saber_red_white","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "pl_move_skeleton_down_attack_beat_saber_red_white",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 10.0,
@@ -57,13 +48,13 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"45b6f71a-1445-416e-b392-702ff0b8c969","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"89e2dea3-cc92-4c16-83f2-e3960666f876","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"f8d8ef3e-3969-4dff-8372-f9a2f63013b2","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"504c20e7-4670-4780-a001-665391e7d718","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"4e394952-99b2-42b1-9c74-17ccbe603c09","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fa9345a3-6b90-4a19-b323-8af82962ea89","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"91e85622-caed-4d10-b857-14ddbb9db826","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e49757ad-562f-419a-ac84-ac8e5bcf8df9","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"9330690f-cdd4-40f6-af98-84c8559a4a7c","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7a0d8c95-20f0-4f47-80e6-72a54405f613","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -79,23 +70,14 @@
     "yorigin": 57,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"pl_move_skeleton_down_attack_beat_saber_red_white","path":"sprites/pl_move_skeleton_down_attack_beat_saber_red_white/pl_move_skeleton_down_attack_beat_saber_red_white.yy",},
-    "resourceVersion": "1.4",
-    "name": "pl_move_skeleton_down_attack_beat_saber_red_white",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"781808f4-ff89-44dd-83b7-e27af3a5474e","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"62456ec3-4abf-4558-a727-463648ee848d","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"781808f4-ff89-44dd-83b7-e27af3a5474e","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"62456ec3-4abf-4558-a727-463648ee848d","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "스프라이트",
     "path": "folders/스프라이트.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "pl_move_skeleton_down_attack_beat_saber_red_white",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

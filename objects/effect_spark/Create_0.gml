@@ -21,7 +21,3 @@ image_yscale = 6/64
 color_1 = c_white
 color_2 = $FFB2DFFF
 
-if instance_number(effect_spark) > 15
-{
-instance_destroy()
-}

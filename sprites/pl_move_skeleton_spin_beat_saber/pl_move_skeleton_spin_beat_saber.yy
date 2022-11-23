@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "pl_move_skeleton_spin_beat_saber",
   "bboxMode": 2,
   "collisionKind": 1,
   "type": 0,
@@ -14,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 64,
   "height": 64,
   "textureGroupId": {
@@ -24,45 +28,20 @@
   "gridX": 3,
   "gridY": 3,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"64c20430-8e11-46d5-9b0c-afea03bcfda4","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"64c20430-8e11-46d5-9b0c-afea03bcfda4","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"38a9bc5f-350f-4524-9680-017295d257a9","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"64c20430-8e11-46d5-9b0c-afea03bcfda4","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"8a0425f5-2bdd-4c1e-9395-51b714034533","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_spin_beat_saber","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"64c20430-8e11-46d5-9b0c-afea03bcfda4","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"07258a43-cff5-4ab1-b49e-46c980dafe91","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"07258a43-cff5-4ab1-b49e-46c980dafe91","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"38a9bc5f-350f-4524-9680-017295d257a9","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"07258a43-cff5-4ab1-b49e-46c980dafe91","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"8a0425f5-2bdd-4c1e-9395-51b714034533","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_spin_beat_saber","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"07258a43-cff5-4ab1-b49e-46c980dafe91","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"28e733c4-9cd2-45b4-b466-66525150c495","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"28e733c4-9cd2-45b4-b466-66525150c495","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"38a9bc5f-350f-4524-9680-017295d257a9","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"28e733c4-9cd2-45b4-b466-66525150c495","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"8a0425f5-2bdd-4c1e-9395-51b714034533","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_spin_beat_saber","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"28e733c4-9cd2-45b4-b466-66525150c495","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"a0c6f597-d40b-4015-810e-5e33aed3207e","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a0c6f597-d40b-4015-810e-5e33aed3207e","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"38a9bc5f-350f-4524-9680-017295d257a9","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"a0c6f597-d40b-4015-810e-5e33aed3207e","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"8a0425f5-2bdd-4c1e-9395-51b714034533","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_spin_beat_saber","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"a0c6f597-d40b-4015-810e-5e33aed3207e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"b0d76b2b-dcbc-4b21-87f2-632c2970742a","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b0d76b2b-dcbc-4b21-87f2-632c2970742a","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"38a9bc5f-350f-4524-9680-017295d257a9","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"b0d76b2b-dcbc-4b21-87f2-632c2970742a","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"8a0425f5-2bdd-4c1e-9395-51b714034533","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_spin_beat_saber","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"b0d76b2b-dcbc-4b21-87f2-632c2970742a","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"addc615f-6b0c-44f5-a8d8-c2db99e1c41d","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"addc615f-6b0c-44f5-a8d8-c2db99e1c41d","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"38a9bc5f-350f-4524-9680-017295d257a9","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"addc615f-6b0c-44f5-a8d8-c2db99e1c41d","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"8a0425f5-2bdd-4c1e-9395-51b714034533","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_spin_beat_saber","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"addc615f-6b0c-44f5-a8d8-c2db99e1c41d","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"7bf00214-b7a4-499e-bc76-0a20ad67314c","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7bf00214-b7a4-499e-bc76-0a20ad67314c","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"38a9bc5f-350f-4524-9680-017295d257a9","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"7bf00214-b7a4-499e-bc76-0a20ad67314c","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"8a0425f5-2bdd-4c1e-9395-51b714034533","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_spin_beat_saber","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"7bf00214-b7a4-499e-bc76-0a20ad67314c","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"dc84bbf0-ef11-4634-9755-239b5d3e487c","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"dc84bbf0-ef11-4634-9755-239b5d3e487c","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"38a9bc5f-350f-4524-9680-017295d257a9","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"dc84bbf0-ef11-4634-9755-239b5d3e487c","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"8a0425f5-2bdd-4c1e-9395-51b714034533","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_spin_beat_saber","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"dc84bbf0-ef11-4634-9755-239b5d3e487c","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"a83e9221-2b3c-4d4d-b5f6-5fde328e4020","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a83e9221-2b3c-4d4d-b5f6-5fde328e4020","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"38a9bc5f-350f-4524-9680-017295d257a9","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"a83e9221-2b3c-4d4d-b5f6-5fde328e4020","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"LayerId":{"name":"8a0425f5-2bdd-4c1e-9395-51b714034533","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_spin_beat_saber","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","name":"a83e9221-2b3c-4d4d-b5f6-5fde328e4020","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"64c20430-8e11-46d5-9b0c-afea03bcfda4",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"07258a43-cff5-4ab1-b49e-46c980dafe91",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"28e733c4-9cd2-45b4-b466-66525150c495",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a0c6f597-d40b-4015-810e-5e33aed3207e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b0d76b2b-dcbc-4b21-87f2-632c2970742a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"addc615f-6b0c-44f5-a8d8-c2db99e1c41d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7bf00214-b7a4-499e-bc76-0a20ad67314c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"dc84bbf0-ef11-4634-9755-239b5d3e487c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a83e9221-2b3c-4d4d-b5f6-5fde328e4020",},
   ],
   "sequence": {
-    "spriteId": {"name":"pl_move_skeleton_spin_beat_saber","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "pl_move_skeleton_spin_beat_saber",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 10.0,
@@ -73,7 +52,7 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"60b3c3d5-ff50-4b1d-a28d-b0b24a343b9b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"64c20430-8e11-46d5-9b0c-afea03bcfda4","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"dc00cb17-1b85-4975-ad58-1ecfa96f4858","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"07258a43-cff5-4ab1-b49e-46c980dafe91","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"5256965f-1cf1-4acf-9e0d-58f782ef4b4a","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"28e733c4-9cd2-45b4-b466-66525150c495","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
@@ -83,7 +62,7 @@
             {"id":"0c70756d-3fc8-44c7-96a3-ba078f729392","Key":6.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7bf00214-b7a4-499e-bc76-0a20ad67314c","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"4c63de3f-649a-41d3-abdb-1dabe474d50f","Key":7.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"dc84bbf0-ef11-4634-9755-239b5d3e487c","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"20ea7e58-4fd3-4706-9fb7-6dc941610881","Key":8.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a83e9221-2b3c-4d4d-b5f6-5fde328e4020","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -99,23 +78,14 @@
     "yorigin": 25,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"pl_move_skeleton_spin_beat_saber","path":"sprites/pl_move_skeleton_spin_beat_saber/pl_move_skeleton_spin_beat_saber.yy",},
-    "resourceVersion": "1.4",
-    "name": "pl_move_skeleton_spin_beat_saber",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"38a9bc5f-350f-4524-9680-017295d257a9","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"8a0425f5-2bdd-4c1e-9395-51b714034533","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"38a9bc5f-350f-4524-9680-017295d257a9","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8a0425f5-2bdd-4c1e-9395-51b714034533","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "스프라이트",
     "path": "folders/스프라이트.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "pl_move_skeleton_spin_beat_saber",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

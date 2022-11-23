@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "pl_move_skeleton_attack_cancled_beatsaber_red",
   "bboxMode": 2,
   "collisionKind": 5,
   "type": 0,
@@ -14,6 +17,7 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+  "DynamicTexturePage": false,
   "width": 180,
   "height": 160,
   "textureGroupId": {
@@ -24,37 +28,18 @@
   "gridX": 3,
   "gridY": 3,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"78b589a2-eee1-4b69-afc5-57a0b348c34d","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"78b589a2-eee1-4b69-afc5-57a0b348c34d","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"8fe58433-e8a2-4d28-94cb-a82cff7de0a7","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"78b589a2-eee1-4b69-afc5-57a0b348c34d","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"Copied Layer 1","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_attack_cancled_beatsaber_red","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"78b589a2-eee1-4b69-afc5-57a0b348c34d","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"39570095-6548-4688-8493-fdbf99a69023","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"39570095-6548-4688-8493-fdbf99a69023","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"8fe58433-e8a2-4d28-94cb-a82cff7de0a7","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"39570095-6548-4688-8493-fdbf99a69023","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"Copied Layer 1","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_attack_cancled_beatsaber_red","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"39570095-6548-4688-8493-fdbf99a69023","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"3474650b-b3d6-4277-9a8a-436fbd227cf5","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3474650b-b3d6-4277-9a8a-436fbd227cf5","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"8fe58433-e8a2-4d28-94cb-a82cff7de0a7","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"3474650b-b3d6-4277-9a8a-436fbd227cf5","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"Copied Layer 1","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_attack_cancled_beatsaber_red","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"3474650b-b3d6-4277-9a8a-436fbd227cf5","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"8fcd3fc2-a121-4c7f-8d98-6473f4371b09","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"8fcd3fc2-a121-4c7f-8d98-6473f4371b09","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"8fe58433-e8a2-4d28-94cb-a82cff7de0a7","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"8fcd3fc2-a121-4c7f-8d98-6473f4371b09","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"Copied Layer 1","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_attack_cancled_beatsaber_red","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"8fcd3fc2-a121-4c7f-8d98-6473f4371b09","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"f76454c4-68aa-4446-b05a-5c0a36afa2ec","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f76454c4-68aa-4446-b05a-5c0a36afa2ec","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"8fe58433-e8a2-4d28-94cb-a82cff7de0a7","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"f76454c4-68aa-4446-b05a-5c0a36afa2ec","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"Copied Layer 1","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_attack_cancled_beatsaber_red","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"f76454c4-68aa-4446-b05a-5c0a36afa2ec","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"be041cc5-508b-4666-963d-60d00dd802c8","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"be041cc5-508b-4666-963d-60d00dd802c8","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"8fe58433-e8a2-4d28-94cb-a82cff7de0a7","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"be041cc5-508b-4666-963d-60d00dd802c8","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"Copied Layer 1","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_attack_cancled_beatsaber_red","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"be041cc5-508b-4666-963d-60d00dd802c8","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"d548a6d6-a29c-41e6-bc73-f8b19147424c","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d548a6d6-a29c-41e6-bc73-f8b19147424c","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"8fe58433-e8a2-4d28-94cb-a82cff7de0a7","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"d548a6d6-a29c-41e6-bc73-f8b19147424c","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"LayerId":{"name":"Copied Layer 1","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"pl_move_skeleton_attack_cancled_beatsaber_red","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","name":"d548a6d6-a29c-41e6-bc73-f8b19147424c","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"78b589a2-eee1-4b69-afc5-57a0b348c34d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"39570095-6548-4688-8493-fdbf99a69023",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3474650b-b3d6-4277-9a8a-436fbd227cf5",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8fcd3fc2-a121-4c7f-8d98-6473f4371b09",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f76454c4-68aa-4446-b05a-5c0a36afa2ec",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"be041cc5-508b-4666-963d-60d00dd802c8",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d548a6d6-a29c-41e6-bc73-f8b19147424c",},
   ],
   "sequence": {
-    "spriteId": {"name":"pl_move_skeleton_attack_cancled_beatsaber_red","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "pl_move_skeleton_attack_cancled_beatsaber_red",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -65,7 +50,7 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"dfa5e4ff-657e-4d4b-8b23-a561ac31ee37","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"78b589a2-eee1-4b69-afc5-57a0b348c34d","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"f1d7f180-8d93-4bb8-9671-54153781e39d","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"39570095-6548-4688-8493-fdbf99a69023","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"6e659763-58e1-4278-9fc4-8e9da7ffc490","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3474650b-b3d6-4277-9a8a-436fbd227cf5","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
@@ -73,7 +58,7 @@
             {"id":"cba8e3c1-e8e6-44da-9b82-869fdde43386","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f76454c4-68aa-4446-b05a-5c0a36afa2ec","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"9a5df3ef-3ac1-4651-b7f8-a719622ada78","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"be041cc5-508b-4666-963d-60d00dd802c8","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"72ba7dd6-b50d-4f7c-9b3b-8811eb55591f","Key":6.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d548a6d6-a29c-41e6-bc73-f8b19147424c","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -89,23 +74,14 @@
     "yorigin": 72,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"pl_move_skeleton_attack_cancled_beatsaber_red","path":"sprites/pl_move_skeleton_attack_cancled_beatsaber_red/pl_move_skeleton_attack_cancled_beatsaber_red.yy",},
-    "resourceVersion": "1.4",
-    "name": "pl_move_skeleton_attack_cancled_beatsaber_red",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"8fe58433-e8a2-4d28-94cb-a82cff7de0a7","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"Copied Layer 1","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8fe58433-e8a2-4d28-94cb-a82cff7de0a7","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"Copied Layer 1","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "스프라이트",
     "path": "folders/스프라이트.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "pl_move_skeleton_attack_cancled_beatsaber_red",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

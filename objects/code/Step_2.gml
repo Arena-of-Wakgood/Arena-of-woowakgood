@@ -26,7 +26,7 @@ gamemode_select ++
 		{
 			if global.gamemode = b_gamemode
 			{
-			global.gamemode = choose(1,1,2,3,4,5,6,7)
+			global.gamemode = choose(1,1,2,3,4,6)
 			}
 			else
 			{
@@ -37,7 +37,7 @@ gamemode_select ++
 				}
 				else
 				{
-				global.gamemode = choose(1,1,2,3,4,5,6,7)
+				global.gamemode = choose(1,1,2,3,4,6)
 				}
 			}
 		}
@@ -78,7 +78,7 @@ gamemode_select ++
 			{
 				if largely_before_gamemode = global.gamemode
 				{
-				global.gamemode = choose(1,1,2,3,4,5)
+				global.gamemode = choose(1,1,2,3,4,6)
 				}
 				else
 				{

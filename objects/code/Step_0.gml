@@ -36,17 +36,17 @@ if !instance_exists(obj_platform)
 		if global.now_map = 2
 		{
 		created_platfrom = 1
-		var random_val = percentage_k(35)
-			if random_val = 1
-			{
-			instance_create_depth(2048,768,999,obj_platform)
-			}
+		//var random_val = percentage_k(35)
+			//if random_val = 1
+			//{
+			//instance_create_depth(2048,768,999,obj_platform)
+			//}
 		}
 	
 		if global.now_map = 3
 		{
 		created_platfrom = 0
-		instance_create_depth(2048,768,999,obj_platform)
+		//instance_create_depth(2048,768,999,obj_platform)
 		}
 	}
 }

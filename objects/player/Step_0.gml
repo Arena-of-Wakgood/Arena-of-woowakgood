@@ -1823,15 +1823,15 @@ w_alpha += (-0.01 - w_alpha)*0.1
 		y = 903
 		if global.in_practice = 0
 		{
-			if global.now_map = 3
-			{
-			x = obj_platform.x+irandom_range(-64,64)
-			y = obj_platform.y-27
-			}
-			else
-			{
+			//if global.now_map = 3
+			//{
+			//x = obj_platform.x+irandom_range(-64,64)
+			//y = obj_platform.y-27
+			//}
+			//else
+			//{
 			x = 2040+irandom_range(-200,200)
-			}
+			//}
 		}
 		else
 		{
