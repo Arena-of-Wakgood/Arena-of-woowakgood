@@ -1,5 +1,6 @@
 # Arena-of-woowakgood
 
+<div align="center">
 
 우왁굳 팬게임
 
@@ -11,6 +12,19 @@
 
 테스트 진행할 당시엔 15명 정도로만 테스트했는데 당시에 테스터들이랑 재미지게 게임 했음
 
+</br></br>
+
+#### - 총 다운로드 수
+
+![](https://img.shields.io/github/downloads/ABER1047/Arena-of-woowakgood/total?color=74b0ff)
+
+</br>
+
+#### - 게임 다운로드 
+
+[![](https://img.shields.io/github/downloads/ABER1047/Arena-of-woowakgood/alpha-1.0/arena_of_panchi_v1.0.zip?color=2066ff&label=DOWNLOAD&style=for-the-badge)](https://github.com/ABER1047/Arena-of-woowakgood/releases/download/alpha-1.0/arena_of_panchi_v1.0.zip)
+
+</br></br>
 
 ### ▼ 미리 보기
 
@@ -25,11 +39,9 @@ https://youtu.be/dbzp09Ly1CY
 
 #
 
-### ▼ 게임 다운로드
+</div>
 
-https://cafe.naver.com/steamindiegame/3106704
 
-#
 
 ## - 대략적인 주요 코드
 
