@@ -1,6 +1,12 @@
+<div align="center">
+  
 # Arena-of-woowakgood
 
-<div align="center">
+</br>
+  
+<img src = "imgs/icon1.png" width = "96px">
+  
+</br>
 
 우왁굳 팬게임
 
