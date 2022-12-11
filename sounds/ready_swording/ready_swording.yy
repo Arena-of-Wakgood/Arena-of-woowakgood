@@ -1,4 +1,8 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "ready_swording",
+  "conversionMode": 0,
   "compression": 0,
   "volume": 1.0,
   "preload": false,
@@ -11,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "ready_swording.mp3",
-  "duration": 2.045,
+  "duration": 2.04,
   "parent": {
     "name": "소리",
     "path": "folders/소리.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "ready_swording",
-  "tags": [],
-  "resourceType": "GMSound",
 }

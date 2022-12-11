@@ -475,8 +475,8 @@ if dash_attack >= 4.6
 		if place_meeting(x,y+2,obj_floor) && hurt = 0 && hurt_little = 0
 		{
 		dash_attack = 0
-		double_pressed_left = 0
-		double_pressed_right = 0
+		double_pressed_run_key = 0
+		double_pressed_run_key = 0
 		cannot_move = 0
 		sprite_index = move_sprite
 		image_index = 0
@@ -555,8 +555,8 @@ if dash_attack >= 4.6
 					}
 					
 				dash_attack = 0
-				double_pressed_left = 0
-				double_pressed_right = 0
+				double_pressed_run_key = 0
+				double_pressed_run_key = 0
 				cannot_move = 0
 				sprite_index = move_sprite
 				image_index = 0
@@ -650,8 +650,8 @@ if guarding > 0
 {
 global.stemina_cooltime = 0
 movement_speed += (0 - movement_speed)*0.1
-double_pressed_left = 0
-double_pressed_right = 0
+double_pressed_run_key = 0
+double_pressed_run_key = 0
 cannot_move = 1
 sprite_index = guard_sprite
 image_index = guarding
@@ -769,8 +769,8 @@ if global.grabed > 0 || hurt > 0 || skill_combo >= 1
 	if dash_attack > 0
 	{
 	dash_attack = 0
-	double_pressed_left = 0
-	double_pressed_right = 0
+	double_pressed_run_key = 0
+	double_pressed_run_key = 0
 	cannot_move = 0
 	sprite_index = move_sprite
 	image_index = 0
@@ -875,8 +875,8 @@ pressing = 1
 
 if global.never_move = 0 && global.run_key != "Non" && pressing = 1
 {
-double_pressed_right = 2
-double_pressed_left = 2
+double_pressed_run_key = 2
+double_pressed_run_key = 2
 }
 
 
@@ -1226,7 +1226,7 @@ if !place_meeting(x,y+2,obj_floor)
 }
 else
 {
-	if (double_pressed_left >= 2 || double_pressed_right >= 2) && global.rage_gauge >= 27
+	if (double_pressed_run_key >= 2 || double_pressed_run_key >= 2) && global.rage_gauge >= 27
 	{
 		if gravity = 0 && dash_attack = 0 && cannot_move = 0 && cooltime = 0 && spin = 0 && down_attack_plusing = 0 && hurt = 0 && hurt_little = 0
 		{
@@ -1363,8 +1363,8 @@ if !place_meeting(x,y+10,obj_floor)
 
 if global.stemina <= 1 || global.nickname = "씹찐따"
 {
-double_pressed_left = 0
-double_pressed_right = 0
+double_pressed_run_key = 0
+double_pressed_run_key = 0
 }
 
 
@@ -2779,8 +2779,8 @@ image_index = dash_attack
 
 	if dash_attack > 10
 	{
-	double_pressed_left = 0
-	double_pressed_right = 0
+	double_pressed_run_key = 0
+	double_pressed_run_key = 0
 	dash_attack = 0
 	cannot_move = 0
 	sprite_index = move_sprite

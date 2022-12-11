@@ -133,7 +133,7 @@ if time = 13 && instance_number(draw_key_) <= 0 && p_mes = -1
 {
 global.never_move = 1
 p_mes = instance_create_depth(x,y,depth-1,player_message)
-p_mes.text = "가드를 성공했거나, 실패해서 처맞은 경우 멘탈 게이지가 차게 됩니다!"
+p_mes.text = "가드를 성공했거나, 실패해서 처맞은 경우 레이지 게이지가 차게 됩니다!"
 p_mes.target = player.id
 
 var sfx = audio_play_sound(gibungoa,0,0)
@@ -144,7 +144,7 @@ if time = 14 && p_mes = -1
 {
 global.never_move = 1
 p_mes = instance_create_depth(x,y,depth-1,player_message)
-p_mes.text = "이때 이 멘탈 게이지를 이용해 더욱 강력한 공격을 할 수 있습니다!"
+p_mes.text = "이때 이 레이지 게이지를 이용해 더욱 강력한 공격을 할 수 있습니다!"
 p_mes.target = player.id
 }
 

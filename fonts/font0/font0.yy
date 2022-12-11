@@ -1,8 +1,12 @@
 {
+  "resourceType": "GMFont",
+  "resourceVersion": "1.0",
+  "name": "font0",
   "hinting": 0,
   "glyphOperations": 0,
   "interpreter": 0,
   "pointRounding": 0,
+  "applyKerning": 0,
   "fontName": "배달의민족 한나체 Pro",
   "styleName": "Regular",
   "size": 36.0,
@@ -20,6 +24,7 @@
     "path": "texturegroups/Default",
   },
   "ascenderOffset": 0,
+  "ascender": 38,
   "glyphs": {
     "32": {"x":2,"y":2,"w":16,"h":54,"character":32,"shift":16,"offset":0,},
     "9": {"x":1360,"y":842,"w":0,"h":54,"character":9,"shift":16,"offset":0,},
@@ -3039,8 +3044,4 @@
     "name": "글꼴",
     "path": "folders/글꼴.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "font0",
-  "tags": [],
-  "resourceType": "GMFont",
 }

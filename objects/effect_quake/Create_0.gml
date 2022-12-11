@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+image_xscale = 1.5
+image_yscale = 2
 command_buffer = buffer_create(3, buffer_grow, 1);
 if !place_meeting(x,y+1,obj_floor) && !place_meeting(x,y+1,obj_platform)
 {

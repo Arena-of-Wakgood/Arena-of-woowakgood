@@ -10,9 +10,10 @@ dev_mes("Enter키를 눌러 채팅창을 열어보세요!")
 }
 
 global.guide_message_chat = 1
-
+keep_attack_timer = 0
 color_select = 0
 
+double_pressed_run_key = 0
 hp_bar_alpha = 0
 draw_hp = 0
 timer__ = 0
@@ -62,8 +63,8 @@ keep_attacking = 0
 attack_sfx_on = 0
 spin = 0
 dash_attack = 0
-double_pressed_left = 0
-double_pressed_right = 0
+double_pressed_run_key = 0
+double_pressed_run_key = 0
 guarding = 0
 fast_guarding = 0
 down_attack_motion_dilay = 0
@@ -85,7 +86,8 @@ check_d_press_e = 0
 charge_attack = 0
 charge_attack_effect = 0
 attack_charge_sfx = 0
-
+run_dir = 0
+running_time_delay = 0
 sting_attack = 0
 sting_attack_effect = 0
 attack_sting_sfx = 0
@@ -124,6 +126,7 @@ attack_laser_sprite_sec = pl_move_skeleton_laser_skill_sec
 guard_sprite = pl_move_skeleton_guard_beat_saber
 sting_sprite = pl_move_skeleton_sting_skill
 cancled_sprite = pl_move_skeleton_attack_cancled_beatsaber
+rush_slice = pl_move_skeleton_rush_slice
 
 
 alarm[8] = 10

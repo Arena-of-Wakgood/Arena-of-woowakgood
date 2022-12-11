@@ -35,7 +35,7 @@ gamemode_val_ = "1 vs 1"
 if gamemode_val_ = 2
 {
 gamemode_val_ = "외나무 다리 (1 vs 1)"
-setting_buff = "차지 밀치기 거리 400% 및 멘탈 게이지 충전 속도 200%"
+setting_buff = "차지 밀치기 거리 400% 및 레이지 게이지 충전 속도 200%"
 }
 
 if gamemode_val_ = 3
@@ -58,7 +58,7 @@ setting_buff = "매 라운드 마다 진 팀은 특수한 능력 하나를 획�
 if gamemode_val_ = 6
 {
 gamemode_val_ = "분조장 (1 vs 1)"
-setting_buff = "멘탈 게이지 지속적으로 참 (레이지 모드 상태 제외)"
+setting_buff = "레이지 게이지 지속적으로 참 (레이지 모드 상태 제외)"
 }
 
 if gamemode_val_ = 7
@@ -216,12 +216,12 @@ _playing_music_name = "Wakgood Records - Wak'rio"
 
 if audio_get_name(global.now_music) = audio_get_name(shake_it_bgm)
 {
-_playing_music_name = "Wakgood Records - Escape"
+_playing_music_name = "제이타지 - 왁굳향100% 첨가"
 }
 
 if audio_get_name(global.now_music) = audio_get_name(tong_tiring)
 {
-_playing_music_name = "Uoohbues - 붕붕붕 vs 빨리 접속하세요"
+_playing_music_name = "이세계아이돌(ISEGYE IDOL) - 리와인드 (RE:WIND)"
 }
 
 if audio_get_name(global.now_music) = audio_get_name(wak_surada)

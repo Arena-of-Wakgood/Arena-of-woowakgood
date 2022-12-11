@@ -1,4 +1,8 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "alzaltak",
+  "conversionMode": 0,
   "compression": 0,
   "volume": 1.0,
   "preload": false,
@@ -11,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "alzaltak.mp3",
-  "duration": 211.988678,
+  "duration": 211.98367,
   "parent": {
     "name": "소리",
     "path": "folders/소리.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "alzaltak",
-  "tags": [],
-  "resourceType": "GMSound",
 }

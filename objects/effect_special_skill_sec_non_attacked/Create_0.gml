@@ -13,6 +13,7 @@ image_xscale = 0
 image_yscale = 0
 image_alpha = 1.8
 xscale_shaker = 1
+w_alpha__ = 1.5
 shaker_time = 0
 
 view_shake(3,3,1)

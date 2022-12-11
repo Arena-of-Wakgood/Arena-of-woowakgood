@@ -29,9 +29,9 @@
   "gridY": 3,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"89e2dea3-cc92-4c16-83f2-e3960666f876",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a16618da-4790-4699-b752-6d746404fde3",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2c120b7d-9859-4a52-a5cf-b88cfbdc0706",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"dc787531-40fb-4f5a-b3ff-92efc9c8da71",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3f6c6672-2bc1-4cd7-8e76-ac554739dd16",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"aa75ef70-792d-46ff-9b27-fb48dd68f547",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d8125472-6302-44dd-8377-85ad264e01a4",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7a0d8c95-20f0-4f47-80e6-72a54405f613",},
   ],
   "sequence": {
@@ -50,9 +50,9 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"210f98c2-c8af-4c46-afe8-cf1d2d4d937b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"89e2dea3-cc92-4c16-83f2-e3960666f876","path":"sprites/pl_move_skeleton_down_attack_beat_saber/pl_move_skeleton_down_attack_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"1b106893-2b5f-482b-a57d-189d972cd791","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a16618da-4790-4699-b752-6d746404fde3","path":"sprites/pl_move_skeleton_down_attack_beat_saber/pl_move_skeleton_down_attack_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"e2e224aa-eb88-4520-8d15-b344a5dcd5d4","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2c120b7d-9859-4a52-a5cf-b88cfbdc0706","path":"sprites/pl_move_skeleton_down_attack_beat_saber/pl_move_skeleton_down_attack_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"51e1772b-eeff-46c4-8864-a84be0ff83a5","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"dc787531-40fb-4f5a-b3ff-92efc9c8da71","path":"sprites/pl_move_skeleton_down_attack_beat_saber/pl_move_skeleton_down_attack_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"3b7a46a3-fd2a-4d42-87f5-2c9c9aa71049","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3f6c6672-2bc1-4cd7-8e76-ac554739dd16","path":"sprites/pl_move_skeleton_down_attack_beat_saber/pl_move_skeleton_down_attack_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"c15aaf87-30a8-44f0-bd8f-83d341fbadbe","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"aa75ef70-792d-46ff-9b27-fb48dd68f547","path":"sprites/pl_move_skeleton_down_attack_beat_saber/pl_move_skeleton_down_attack_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"70c8dfa6-f540-4534-be4d-2877f05ced19","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d8125472-6302-44dd-8377-85ad264e01a4","path":"sprites/pl_move_skeleton_down_attack_beat_saber/pl_move_skeleton_down_attack_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"799fb5cf-6274-4525-b7ac-d5f24aac86f0","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7a0d8c95-20f0-4f47-80e6-72a54405f613","path":"sprites/pl_move_skeleton_down_attack_beat_saber/pl_move_skeleton_down_attack_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],

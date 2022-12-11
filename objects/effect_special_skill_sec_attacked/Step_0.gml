@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 alpha1 -= 0.1
+w_alpha__ += (-0.01 - w_alpha__)*0.2
 
 if image_xscale < 0.7 && time <= 58
 {

@@ -17,6 +17,3 @@ else
 alarm[1] = 30
 }
 
-
-var sfx = audio_play_sound(footstep_sfx,0,0)
-audio_sound_gain(sfx,0.03*global.master_volume*2*global.sfx_volume,0)

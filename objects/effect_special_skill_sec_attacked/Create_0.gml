@@ -9,6 +9,7 @@ laser_dis = 0
 time = 0
 effect_y = 0
 effect_index = 0
+w_alpha__ = 1.5
 image_xscale = 0
 image_yscale = 0
 image_alpha = 1.8

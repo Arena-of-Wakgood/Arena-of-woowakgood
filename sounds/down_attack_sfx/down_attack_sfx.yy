@@ -1,4 +1,8 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "down_attack_sfx",
+  "conversionMode": 0,
   "compression": 0,
   "volume": 1.0,
   "preload": false,
@@ -11,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "down_attack_sfx",
-  "duration": 0.581,
+  "duration": 0.576,
   "parent": {
     "name": "소리",
     "path": "folders/소리.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "down_attack_sfx",
-  "tags": [],
-  "resourceType": "GMSound",
 }

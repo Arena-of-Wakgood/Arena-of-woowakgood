@@ -9,20 +9,20 @@ if a = 0
 	
 	if sign(scale_dir) > 0
 	{
-		if image_xscale < 1*random_scale
+		if image_xscale < 0.7*random_scale
 		{
 		image_xscale += 0.1
 		}
 	}
 	else
 	{
-		if image_xscale > -1*random_scale
+		if image_xscale > -0.7*random_scale
 		{
 		image_xscale -= 0.1
 		}
 	}
 	
-	if image_yscale < 1*random_scale
+	if image_yscale < 0.7*random_scale
 	{
 	image_yscale += 0.05
 	}

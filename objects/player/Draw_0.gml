@@ -5,6 +5,8 @@ var cm_x = camera_get_view_x(view_camera[0])
 var xx = cm_x+v_x*16
 var yy = camera_get_view_y(view_camera[0])+v_x*16
 
+
+//draw_text(x,y,string(keep_attack_timer)+", "+string(keep_attack))
 if global.draw_partici = 1
 {
 var _img_ind = 0
@@ -53,7 +55,12 @@ p_floor = obj_platform.y-27
 }
 
 draw_sprite_ext(spr_shadow,0,x,p_floor+27,1-abs(y-p_floor)/48,1-abs(y-p_floor)/64,0,c_white,(1-abs(y-p_floor)/48)*0.3*image_alpha)
-draw_sprite_ext(sprite_index,image_index,floor(x),floor(y),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+var spr = sprite_index
+	if spr = move_sprite && abs(global.movement_speed) > 18
+	{
+	spr = spr_move_run
+	}
+draw_sprite_ext(spr,image_index,floor(x),floor(y),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 }
 
 if image_alpha > 0 && global.hp > 0
@@ -66,7 +73,7 @@ if image_alpha > 0 && global.hp > 0
 			{
 				if global.n_sword = 0
 				{
-				draw_text_kl_scale(x,y-120,"비트세이버 광선검",v_x*64,-1,show_my_sword,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);
+				draw_text_kl_scale(x,y-120,"양손 광선검",v_x*64,-1,show_my_sword,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);
 				}
 				
 				if global.n_sword = 1
@@ -76,7 +83,17 @@ if image_alpha > 0 && global.hp > 0
 				
 				if global.n_sword = 2
 				{
-				draw_text_kl_scale(x,y-120,"잃어버린 파란 광선검",v_x*64,-1,show_my_sword,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);
+				draw_text_kl_scale(x,y-120,"붉은 광선검",v_x*64,-1,show_my_sword,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);
+				}
+				
+				if global.n_sword = 3
+				{
+				draw_text_kl_scale(x,y-120,"푸른 광선검",v_x*64,-1,show_my_sword,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);
+				}
+				
+				if global.n_sword = 4
+				{
+				draw_text_kl_scale(x,y-120,"지옥참마도",v_x*64,-1,show_my_sword,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);
 				}
 				
 				if global.n_sword = -1

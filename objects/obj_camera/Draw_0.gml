@@ -17,7 +17,7 @@ var v_x_ = obj_camera.v_x/1280
 if global.shine_ef = 0
 {
 draw_set_color(c_white)
-draw_set_alpha(global.w_alpha)
+draw_set_alpha(global.w_alpha*0.4)
 draw_rectangle(0,0,room_width,room_height,0)
 draw_set_alpha(1)
 }
@@ -41,12 +41,33 @@ var __alpha_set = 1-global.b_alpha_prt-global.b_alpha
 	if global.slow_motion = 0 && global.show_challenger = 0 && global.matching != 2 && global.select_dev_setting = 0
 	{
 	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+40*v_x_,"HP",(v_x_)*76,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
-	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+72*v_x_,"Stemina",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
-	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+101*v_x_,"Mental",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
+	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+72*v_x_,"Stamina",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
+	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+101*v_x_,"Rage",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
 	
-	if global.n_sword = -1
+	draw_sprite_ext(item_sword,global.n_sword,camera_get_view_x(view_camera[0])+v_x_*32,yy+170*v_x_,v_x_*0.55,v_x_*0.55,0,c_white,__alpha_set)
+	if global.n_sword = 0
 	{
-	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+160*v_x_,"SA : 익스플로전 / 돌진 베기 사용 불가 및 일부 공격 판정이 작아짐",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.3,v_x_*0.3,0);
+	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*58,yy+160*v_x_,"특수 효과 없음",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.3,v_x_*0.3,0);
+	}
+	
+	if global.n_sword = 1
+	{
+	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*58,yy+160*v_x_,"기본 공격 공속 증가",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.3,v_x_*0.3,0);
+	}
+	
+	if global.n_sword = 2
+	{
+	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*58,yy+160*v_x_,"특수 효과 없음",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.3,v_x_*0.3,0);
+	}
+	
+	if global.n_sword = 3
+	{
+	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*58,yy+160*v_x_,"특수 효과 없음",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.3,v_x_*0.3,0);
+	}
+	
+	if global.n_sword = 4
+	{
+	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*58,yy+160*v_x_,"레이지(Rage)가 부족해도 체력을 소모하며 레이지 모드 사용 가능",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.3,v_x_*0.3,0);
 	}
 	
 	draw_text_kl_scale(camera_get_view_x(view_camera[0])+v_x_*16,yy+128*v_x_,"Rank : "+string(floor(global.draw_rank)),v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
@@ -96,7 +117,7 @@ var __alpha_set = 1-global.b_alpha_prt-global.b_alpha
 	draw_text_kl_scale(xx-v_x_*436,yy2-v_x_*170+v_x_*178,"가드 (위 방향키)",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
 
 	draw_text_kl_scale(xx-v_x_*8,yy2-v_x_*210,"(G키로 가이드 열고 닫기)",v_x_*64,-1,__alpha_set,c_white,0,1,font0,v_x_*0.3,v_x_*0.3,0);
-	draw_text_kl_scale(xx-v_x_*236,yy2-v_x_*170,"특수 스킬(멘탈 게이지 소모) : ",v_x_*64,-1,__alpha_set,$FF7D47EE,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
+	draw_text_kl_scale(xx-v_x_*236,yy2-v_x_*170,"특수 스킬(레이지 게이지 소모) : ",v_x_*64,-1,__alpha_set,$FF7D47EE,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
 	draw_text_kl_scale(xx-v_x_*236,yy2-v_x_*170+v_x_*50,"돌진 베기 (달리기 도중 S)",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
 	draw_text_kl_scale(xx-v_x_*236,yy2-v_x_*170+v_x_*82,"지진파 (E)",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);
 	draw_text_kl_scale(xx-v_x_*236,yy2-v_x_*170+v_x_*114,"익스플로전 (좌/우/하 방향키 + E)",v_x_*64,-1,__alpha_set,c_white,0,-1,font0,v_x_*0.35,v_x_*0.35,0);

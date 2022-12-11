@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if d_text > 0
-{
+
 a ++
 
 if a%10 = 1
@@ -18,5 +17,4 @@ b++
 	}
 }
 
-draw_text_kl_scale(x,y,d_text,16,999,image_alpha*real_alpha,image_blend,0,0,font0,1/3*abs(image_xscale),1/3*abs(image_yscale),image_angle)
-}
+draw_text_kl_scale(x,y,string(d_text),16,999,image_alpha*real_alpha,image_blend,0,0,font0,1/3*abs(image_xscale),1/3*abs(image_yscale),image_angle)

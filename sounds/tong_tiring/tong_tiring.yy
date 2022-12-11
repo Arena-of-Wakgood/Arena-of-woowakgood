@@ -1,4 +1,8 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "tong_tiring",
+  "conversionMode": 0,
   "compression": 0,
   "volume": 1.0,
   "preload": false,
@@ -11,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "tong_tiring.mp3",
-  "duration": 88.03765,
+  "duration": 274.41632,
   "parent": {
     "name": "소리",
     "path": "folders/소리.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tong_tiring",
-  "tags": [],
-  "resourceType": "GMSound",
 }

@@ -16,8 +16,8 @@
   "includeTTF": false,
   "TTFName": "",
   "textureGroupId": {
-    "name": "",
-    "path": "",
+    "name": "Default",
+    "path": "texturegroups/Default",
   },
   "ascenderOffset": 0,
   "glyphs": {
@@ -2518,7 +2518,7 @@
     {"lower":55195,"upper":55195,},
     {"lower":65039,"upper":65039,},
   ],
-  "regenerateBitmap": true,
+  "regenerateBitmap": false,
   "canGenerateBitmap": true,
   "maintainGms1Font": false,
   "parent": {

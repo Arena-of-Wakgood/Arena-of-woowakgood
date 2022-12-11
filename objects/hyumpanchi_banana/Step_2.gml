@@ -302,7 +302,7 @@ if place_meeting(x,y,effect_attack3)
 	}
 	
 	bloody(_attacker_ef.x,_attacker_ef.y,1)
-	movement_speed += __i*2.5
+	movement_speed += __i*4
 	hit_cooltime = 1
 	last_hit = 1
 	gravity = 0.2
@@ -316,6 +316,51 @@ if place_meeting(x,y,effect_attack3)
 		}
 	}
 }
+
+
+
+if place_meeting(x,y,effect_attack4)
+{
+	if hit_cooltime = 0
+	{
+	var _attacker_ef = instance_place(x,y,effect_attack4)
+	var sfx = audio_play_sound(choose(global.hit_sfx_1,global.hit_sfx_2,global.hit_sfx_3),0,0)
+	audio_sound_gain(sfx,0.2*global.master_volume*2*global.sfx_volume,0)
+	
+	var sfx = audio_play_sound(sparking_sound,0,0)
+	audio_sound_gain(sfx,0.2*global.master_volume*2*global.sfx_volume,0)
+	
+	
+	t_hp_bar_alpha = 1
+	alarm[5] = 90
+	
+	view_shake(7,60,4)
+	
+	hp_minus_for_mob(48)
+	
+	movement_speed = 0
+	var __i = sign(x - player.x)
+	if __i = 0
+	{
+	__i = choose(-1,1)
+	}
+	
+	bloody(_attacker_ef.x,_attacker_ef.y,1)
+	movement_speed += __i*2.5
+	hit_cooltime = 1
+	last_hit = 1
+	gravity = 0.2
+	vspeed += 3.5
+	alarm[1] = 10
+	cannot_move = 1
+	alarm[2] = 18
+		if hit_motion = 0
+		{
+		hit_motion = 1
+		}
+	}
+}
+
 
 
 

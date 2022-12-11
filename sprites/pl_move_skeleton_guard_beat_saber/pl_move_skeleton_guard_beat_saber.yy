@@ -28,8 +28,8 @@
   "gridX": 3,
   "gridY": 3,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f15ae653-1584-44c9-b834-705bcba51f45",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f61e7ce2-2de8-4361-bdd6-c497a1932b39",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"978b2683-eb3e-4c06-8572-5a7fe44d3fab",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"df1f15a9-1846-44b2-826d-88614dcce4f5",},
   ],
   "sequence": {
@@ -47,8 +47,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"65afea63-621e-4704-af20-b87bc7d0115f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f15ae653-1584-44c9-b834-705bcba51f45","path":"sprites/pl_move_skeleton_guard_beat_saber/pl_move_skeleton_guard_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"9dd62347-0263-49c1-b994-43d8c4fff451","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f61e7ce2-2de8-4361-bdd6-c497a1932b39","path":"sprites/pl_move_skeleton_guard_beat_saber/pl_move_skeleton_guard_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"9dd62347-0263-49c1-b994-43d8c4fff451","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f61e7ce2-2de8-4361-bdd6-c497a1932b39","path":"sprites/pl_move_skeleton_guard_beat_saber/pl_move_skeleton_guard_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"b952513b-b259-47b4-ae9a-011285a9b4d9","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"978b2683-eb3e-4c06-8572-5a7fe44d3fab","path":"sprites/pl_move_skeleton_guard_beat_saber/pl_move_skeleton_guard_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"89f5b4b9-356c-4521-9971-745e367381a0","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"df1f15a9-1846-44b2-826d-88614dcce4f5","path":"sprites/pl_move_skeleton_guard_beat_saber/pl_move_skeleton_guard_beat_saber.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],

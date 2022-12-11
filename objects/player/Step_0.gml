@@ -1,5 +1,15 @@
 
 
+if keep_attack_timer > 0
+{
+keep_attack_timer ++
+	if keep_attack_timer > 30
+	{
+	keep_attack = 0
+	keep_attack_timer = 0
+	}
+}
+
 
 if boss_alpha > 0
 {
@@ -102,29 +112,12 @@ if (global.nickname == name) && just_come_check = 0
 
 
 
-	if place_meeting(x,y,sword_attack_parents)
-	{
-		if sprite_index != move_sprite && sprite_index != spin_sprite && sprite_index != jump_sprite && sprite_index != attack_laser_sprite && sprite_index != attack_laser_sprite_sec && sprite_index != cancled_sprite && sprite_index != guard_sprite
-		{
-			if image_index > 4.5
-			{
-			cancled_attack = 1
-			}
-		}
-	}
+
 	
 	if cancled_attack > 0
 	{
-	sprite_index = cancled_sprite
-	cancled_attack += 0.24
-	guarding = 1
-	image_index = cancled_attack
-	
-		if cancled_attack > 5
-		{
-		cancled_attack = 0
-		sprite_index = move_sprite
-		}
+	cancled_attack = 0
+	sprite_index = move_sprite
 	}
 	
 	
@@ -277,7 +270,7 @@ returned_id = global.return_player_id;
 				global.w_alpha = 1.1
 				w_alpha = 1.1
 			
-					if global.n_sword != -1
+					if global.n_sword != 4
 					{
 					sfx_for_multiplayer(choose(swing_lightsaber_sfx1,swing_lightsaber_sfx2,swing_lightsaber_sfx3),0,0.1)
 					sfx_for_multiplayer(sparking_sound,0,0.1)
@@ -1257,6 +1250,72 @@ w_alpha += (-0.01 - w_alpha)*0.1
 			}
 		}
 		
+		if place_meeting(x,y,effect_attack4_attacked) && spin = 0
+		{
+		
+		var _placed_obj = instance_place(x,y,effect_attack4_attacked)
+		var guarding_now = 0
+		var check_guard = sign(x - _placed_obj.x)
+			
+		if check_guard = 0
+		{
+		check_guard = choose(-1,1)
+		}
+				
+			if guarding > 0 && global.stemina >= 2.3 && check_guard = sign(image_xscale)
+			{
+			guarding_now = 1
+			}
+				
+			if guarding_now = 1 || charge_attack > 0
+			{
+			global.stemina -= 1.3
+		
+				if guard_cool_time = 0
+				{
+				movement_speed = image_xscale*5
+				guarding = 2.5
+				w_alpha = 1
+				guard_cool_time = 10
+				sfx_for_multiplayer(guard,0,0.1)
+	
+				var random_dir = -image_xscale
+				if global.gamemode_server = 2
+				{
+				global.rage_gauge += 4
+				}
+				else
+				{
+				global.rage_gauge += 2
+				}
+					repeat(8)
+					{
+					var _ef = instance_create_depth(x-image_xscale*4,y+irandom_range(-13,0),depth-1,effect_spark)
+					_ef.hspeed = irandom_range(5,20)*random_dir
+					_ef.vspeed = irandom_range(-4,2)
+					}
+				}
+			}
+			else
+			{
+				if hurt_cooltime = 0
+				{
+				hurt = 1
+				hurt_cooltime = 10
+				movement_speed = check_guard*4
+				hp_minus_for_player(48,_placed_obj)
+				
+				
+					if place_meeting(x,y+1,obj_floor) || on_platform = 1
+					{
+					y -= 1
+					}
+				vspeed = 4.1
+				sfx_for_multiplayer(choose(global.hit_sfx_1,global.hit_sfx_2,global.hit_sfx_3),0,0.2)
+				}
+			}
+		}
+		
 		if place_meeting(x,y,ef_blood_dash_attack_attacked) && spin = 0
 		{
 		
@@ -1568,7 +1627,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 			jump_end_motion = 0
 			b_movement_speed = 0
 			global.stemina_cooltime = 0
-			y -= 1.2
+			y -= 3
 			jump = 1
 	
 			if image_xscale < 0 && global.movement_speed > 0
@@ -1650,14 +1709,14 @@ w_alpha += (-0.01 - w_alpha)*0.1
 	
 	if global.cannot_use_stemina = 0
 	{
-		if (player.sprite_index = player.move_sprite || player.sprite_index = player.attack_sprite)
+		if (player.sprite_index = player.move_sprite || player.sprite_index = player.attack_sprite || player.sprite_index = player.jump_sprite)
 		{
 		global.stemina_cooltime += 5
 		}
 
 		if global.stemina_cooltime > 70
 		{
-		global.stemina += 0.04
+		global.stemina += 0.2
 		}
 
 		if global.stemina > 11+global.max_stemina_plus
@@ -1748,10 +1807,6 @@ w_alpha += (-0.01 - w_alpha)*0.1
 	sprite_index = hurt_sprite
 	}
 
-	if dash_attack = 0
-	{
-	global.movement_speed += (0 - global.movement_speed)*0.1
-	}
 
 		if place_meeting(x,y+1,obj_floor) || on_platform = 1
 		{
@@ -1761,19 +1816,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 			{
 			sfx_for_multiplayer(down_attack_sfx,0,0.15)
 
-		
-			var random_val = choose(0,0,0,1)
-				if random_val = 1
-				{
-					if global.voice_option = 0
-					{
-					var a_s = choose(2,1,0)
-						if a_s = 1
-						{
-						sfx_for_multiplayer(choose(jyunne_a_i_upne,i_am_sorry,wait_plz),0,0.25)
-						}
-					}
-				}
+
 			}
 	
 		hurt++
@@ -1801,6 +1844,73 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				sprite_index = move_sprite
 				}
 			}
+		}
+		
+		if keyboard_check_pressed(vk_up) && gravity = 0 && vspeed = 0
+		{
+		hurt = 0
+		hurt_cooltime = 0
+					
+		sfx_for_multiplayer(critical_sfx,0,0.05)
+		var d_ef = instance_create_depth(player.x,player.y-64,depth-1,draw_hp_m)
+		var text__ = "일어남!"
+		d_ef.d_text = text__
+		d_ef.image_blend = c_white
+		d_ef.image_xscale = 1.2
+		d_ef.image_yscale = 1.2
+		d_ef.target = -4
+		w_alpha = 1
+		}
+		
+		if keyboard_check_pressed(vk_space) && gravity = 0 && vspeed = 0
+		{
+		hurt = 0
+		hurt_cooltime = 0
+					
+		sfx_for_multiplayer(critical_sfx,0,0.05)
+		var d_ef = instance_create_depth(player.x,player.y-64,depth-1,draw_hp_m)
+		var text__ = "일어남!"
+		d_ef.d_text = text__
+		d_ef.image_blend = c_white
+		d_ef.image_xscale = 1.2
+		d_ef.image_yscale = 1.2
+		d_ef.target = -4
+		w_alpha = 1
+
+
+			if instance_exists(obj_platform)
+			{
+			obj_platform.on_platform = 0
+			}
+		dash_attack = 0
+		double_pressed_run_key = 0
+		double_pressed_run_key = 0
+		cannot_move = 0
+		if cancled_attack = 0
+		{
+		sprite_index = move_sprite
+		}
+		image_index = 0
+		
+		sfx_for_multiplayer(jump_sfx,0,0.6)
+
+	
+		vspeed = -6-global.jump_plus
+		jump_end_motion = 0
+		global.stemina_cooltime = 0
+		y -= 3
+		jump = 1
+	
+		if image_xscale < 0 && global.movement_speed > 0
+		{
+		global.movement_speed = abs(global.movement_speed)
+		}
+		if image_xscale > 0 && global.movement_speed < 0
+		{
+		global.movement_speed = -abs(global.movement_speed)
+		}
+
+		cannot_move = 1
 		}
 	}
 	
@@ -2356,8 +2466,8 @@ if dash_attack >= 4.6
 		if (place_meeting(x,y+2,obj_floor) || on_platform = 1) && hurt = 0 && hurt_little = 0
 		{
 		dash_attack = 0
-		double_pressed_left = 0
-		double_pressed_right = 0
+		double_pressed_run_key = 0
+		double_pressed_run_key = 0
 		cannot_move = 0
 		if cancled_attack = 0
 		{
@@ -2435,8 +2545,8 @@ if dash_attack >= 4.6
 					obj_platform.on_platform = 0
 					}
 				dash_attack = 0
-				double_pressed_left = 0
-				double_pressed_right = 0
+				double_pressed_run_key = 0
+				double_pressed_run_key = 0
 				cannot_move = 0
 				if cancled_attack = 0
 				{
@@ -2461,7 +2571,7 @@ if dash_attack >= 4.6
 				vspeed = -6-global.jump_plus
 				jump_end_motion = 0
 				global.stemina_cooltime = 0
-				y -= 1.2
+				y -= 3
 				jump = 1
 	
 				if image_xscale < 0 && global.movement_speed > 0
@@ -2536,8 +2646,8 @@ if guarding > 0
 {
 global.stemina_cooltime = 0
 global.movement_speed += (0 - global.movement_speed)*0.1
-double_pressed_left = 0
-double_pressed_right = 0
+double_pressed_run_key = 0
+double_pressed_run_key = 0
 cannot_move = 1
 
 	if cancled_attack = 0
@@ -2610,11 +2720,7 @@ if hurt > 0 || skill_combo >= 1 || cancled_attack > 0
 	{
 	attack_in_air = 0
 	attack_sfx_on = 0
-	if cancled_attack = 0
-	{
-	sprite_index = move_sprite
-	image_index = 0
-	}
+
 		if skill_combo = 0
 		{
 		alarm[1] = 12
@@ -2723,8 +2829,8 @@ if hurt > 0 || skill_combo >= 1 || cancled_attack > 0
 	if dash_attack > 0
 	{
 	dash_attack = 0
-	double_pressed_left = 0
-	double_pressed_right = 0
+	double_pressed_run_key = 0
+	double_pressed_run_key = 0
 	cannot_move = 0
 	if cancled_attack = 0
 	{
@@ -2770,7 +2876,14 @@ skill_combo = 0
 }
 
 
-
+if keyboard_check(ord(string(global.a_key)))
+{
+	if attack_ > 0
+	{
+	keep_attack = 1
+	keep_attack_timer = 1
+	}
+}
 
 
 
@@ -2778,23 +2891,13 @@ if global.never_move = 0 && keyboard_check_pressed(ord(string(global.a_key))) &&
 {
 	if (attack_in_air < 7 && gravity > 0 && cooltime = 0 && hurt = 0 && hurt_little = 0 && attack_in_air_cool = 0 && ((!place_meeting(x,y+38,obj_floor) || vspeed < 0))) && charge_attack <= 0
 	{
-		if cancled_attack = 0
-		{
-		image_index = 0
-		}
 	attack_in_air = 2.92
 	attack_in_air_cool = 1
 	cooltime = 1
 	cannot_move = 1
 	}
 	
-	if attack_ > 0 && jump = 0
-	{
-	keep_attack = 1
-	alarm[2] = 14
-	}
-	
-	if (double_pressed_left < 2 && double_pressed_right < 2)
+	if (double_pressed_run_key < 2 && double_pressed_run_key < 2)
 	{
 		if (attack_ < 7 && cannot_move = 0 && cooltime = 0 && hurt = 0 && hurt_little = 0) && (gravity <= 0 || attack_in_air_cool = 1)
 		{
@@ -2861,8 +2964,8 @@ pressing = 1
 
 if global.never_move = 0 && global.run_key != "Non" && pressing = 1
 {
-double_pressed_right = 2
-double_pressed_left = 2
+double_pressed_run_key = 2
+double_pressed_run_key = 2
 }
 
 
@@ -2884,7 +2987,11 @@ if global.e_key = vk_up && keyboard_check(string(global.e_key)) && global.chat_a
 pressing = 1
 }
 
-
+if global.n_sword = 4 && global.rage_gauge != 100 && pressing = 1 && global.never_move = 0 && global.awakening < 1
+{
+global.rage_gauge += 10
+global.hp -= 50
+}
 
 
 if global.awakening = 0 && global.rage_gauge = 100 && pressing = 1 && global.never_move = 0
@@ -3038,9 +3145,9 @@ if global.never_move = 0 && keyboard_check_released(ord(string(global.e_key))) &
 					}
 				}
 			
-				if global.n_sword != -1 && keyboard_check(vk_down) && !keyboard_check(vk_left) && !keyboard_check(vk_right) && !keyboard_check(vk_up) && down_attack_with_rage = 0 && global.chat_activity = false && global.matching != 3
+				if keyboard_check(vk_up) && !keyboard_check(vk_left) && !keyboard_check(vk_right) && down_attack_with_rage = 0 && global.chat_activity = false && global.matching != 3
 				{
-					if attack_laser = 0 && cannot_move = 0 && cooltime = 0 && spin = 0 && hurt = 0 && hurt_little = 0 && global.rage_gauge >= 80
+					if attack_laser = 0 && cooltime = 0 && spin = 0 && hurt = 0 && hurt_little = 0 && global.rage_gauge >= 80
 					{
 					vspeed = 0
 					y -= 1
@@ -3317,11 +3424,11 @@ if global.never_move = 0 && keyboard_check_pressed(ord(string(global.s_key))) &&
 	}
 	else
 	{
-		if global.n_sword != -1 && (double_pressed_left >= 2 || double_pressed_right >= 2) && global.rage_gauge >= 27
+		if (double_pressed_run_key >= 2 || double_pressed_run_key >= 2) && global.stemina >= 10
 		{
 			if gravity = 0 && dash_attack = 0 && cannot_move = 0 && cooltime = 0 && spin = 0 && down_attack_plusing = 0 && hurt = 0 && hurt_little = 0
 			{
-			global.rage_gauge -= 27
+			global.stemina -= 10
 		
 				if global.awakening >= 1
 				{
@@ -3333,7 +3440,7 @@ if global.never_move = 0 && keyboard_check_pressed(ord(string(global.s_key))) &&
 		}
 		else
 		{
-			if global.rage_gauge < 27
+			if global.stemina < 10
 			{
 			var sfx = audio_play_sound(cannot_buy,0,0)
 			audio_sound_gain(sfx,0.2*global.master_volume*2*global.sfx_volume,0)
@@ -3429,8 +3536,8 @@ if !place_meeting(x,y+10,obj_floor)
 
 if global.stemina <= 1
 {
-double_pressed_left = 0
-double_pressed_right = 0
+double_pressed_run_key = 0
+double_pressed_run_key = 0
 }
 
 
@@ -3754,7 +3861,6 @@ if !place_meeting(x-(image_xscale)*48,y,obj_floor)
 
 if pressed_d_key+pressed_a_key = 0 && cannot_move = 0 && attack_ = 0 && dash_attack = 0 && sting_attack = 0
 {
-global.movement_speed += (0 - global.movement_speed)*0.23
 image_index += (0 - image_index)*0.1
 }
 
@@ -3803,8 +3909,8 @@ global.movement_speed = 0
 	
 	if spin >= 11
 	{
-	double_pressed_left = 0
-	double_pressed_right = 0
+	double_pressed_run_key = 0
+	double_pressed_run_key = 0
 	sprite_index = move_sprite
 	spin = 0
 	cooltime = 1
@@ -3930,10 +4036,7 @@ image_index = 7
 		alarm[11] = 18
 
 		
-		if global.voice_option = 0
-		{
-		sfx_for_multiplayer(aaang_,0,0.23)
-		}
+
 		spin_attack_sfx_on = 1
 		}
 	}
@@ -4037,15 +4140,15 @@ global.movement_speed = 0
 			var _ef = instance_create_depth(x,y,depth+1,effect_jump_attack)
 			if global.n_sword = 0
 			{
-			_ef.sprite_index = pl_move_skeleton_jump_attack_beat_saber1
+			_ef.sprite_index = pl_move_skeleton_jump_attack_beat_saber
 			}
 			if global.n_sword = 1
 			{
-			_ef.sprite_index = pl_move_skeleton_jump_attack_beat_saber_green1
+			_ef.sprite_index = pl_move_skeleton_jump_attack_beat_saber_green
 			}
 			if global.n_sword = 2
 			{
-			_ef.sprite_index = pl_move_skeleton_jump_attack_beat_saber_red1
+			_ef.sprite_index = pl_move_skeleton_jump_attack_beat_saber_red
 			}
 			_ef.image_index = image_index
 			_ef.image_xscale = image_xscale
@@ -4120,11 +4223,6 @@ sprite_index = down_attack_sprite
 	{
 		if down_attack_sfx_on != 1
 		{
-			if global.voice_option = 0
-			{
-			sfx_for_multiplayer(gae_sae_ggya_skill,0,0.24)
-			}
-	
 	
 		down_attack_sfx_on = 1
 		sfx_for_multiplayer(down_attack_sfx,0,0.5)
@@ -4161,12 +4259,8 @@ sprite_index = down_attack_sprite
 		if down_attack_motion_dilay > 4
 		{
 		var _effect = instance_create_depth(attack_target_x+down_attack_with_rage_dis,global.p_floor+27,player.depth-1,effect_quake)
-		_effect.image_xscale = 1.5
-		_effect.image_yscale = 2
 		
-		var _effect = instance_create_depth(attack_target_x-down_attack_with_rage_dis,global.p_floor+27,player.depth-1,effect_quake)
-		_effect.image_xscale = 1.5
-		_effect.image_yscale = 2
+		var _effect2 = instance_create_depth(attack_target_x-down_attack_with_rage_dis,global.p_floor+27,player.depth-1,effect_quake)
 		
 		down_attack_with_rage_dis += 64
 		down_attack_motion_dilay = 0
@@ -4328,7 +4422,7 @@ vspeed = 0
 cannot_move = 1
 global.never_move = 1
 global.movement_speed = 0
-attack_laser_sec += 0.12+(global.mental_attack_sp_plus)/2
+attack_laser_sec += 0.19
 
 if skill_red_ball_effect != -1
 {
@@ -4571,8 +4665,8 @@ sprite_index = pl_move_skeleton_charging
 image_index = charge_attack
 cannot_move = 1
 charge_attack += 0.025
-double_pressed_left = 0
-double_pressed_right = 0
+double_pressed_run_key = 0
+double_pressed_run_key = 0
 global.movement_speed = 0
 movement_speed += (0 - movement_speed)*0.015
 
@@ -4732,12 +4826,7 @@ global.movement_speed = 0
 		down_attack_sfx_on = 1
 		sfx_for_multiplayer(down_attack_sfx,0,0.5)
 		
-		
-		if global.voice_option = 0
-		{
-		sfx_for_multiplayer(gae_sae_ggya,0,0.2)
-		}
-		
+
 		view_shake(4,15+down_dis,4)
 		
 		var effect_ = instance_create_depth(x,global.p_floor+27,player.depth+1,down_effect)
@@ -4775,7 +4864,7 @@ global.movement_speed = 0
 
 if attack_in_air > 0
 {
-attack_in_air += 0.16
+attack_in_air += 0.14
 	if global.awakening > 1
 	{
 	attack_in_air += 0.03
@@ -4787,33 +4876,33 @@ image_index = floor(attack_in_air+2.88)
 cannot_move = 1
 cooltime = 1
 
-if dash_attack = 0 && sting_attack = 0
-{
-global.movement_speed += (0 - global.movement_speed)*0.1
-}
+	if dash_attack = 0 && sting_attack = 0
+	{
+	global.movement_speed += (0 - global.movement_speed)*0.1
+	}
 
 
-if attack_sfx_on = 0 && (floor(image_index) = 7)
-{
-sfx_for_multiplayer(swing_sfx2,0,0.4)
-sfx_for_multiplayer(swing_lightsaber_sfx2,0,0.1)
+	if attack_sfx_on = 0 && (floor(image_index) > 5)
+	{
+	sfx_for_multiplayer(swing_sfx2,0,0.4)
+	sfx_for_multiplayer(swing_lightsaber_sfx2,0,0.1)
 
 
-attack_sfx_on ++
+	attack_sfx_on ++
 
 	
-	if hurt = 0 && hurt_little = 0
-	{
-	var _ef = instance_create_depth(x,y,depth-1,effect_attack2)
-	_ef.image_index = 4+global.n_sword*3
-	_ef.image_xscale = image_xscale
-	_ef.image_alpha = 0.8
+		if hurt = 0 && hurt_little = 0
+		{
+		var _ef = instance_create_depth(x,y,depth-1,effect_attack2)
+		_ef.image_index = (global.n_sword*4)+1
+		_ef.image_xscale = image_xscale
+		_ef.image_alpha = 0.8
+		}
 	}
-}
 
 
 
-	if attack_in_air+2.88 > 7.5
+	if attack_in_air+2.88 > 6.5
 	{
 	paring = 0
 	attack_in_air = 0
@@ -4830,10 +4919,20 @@ attack_sfx_on ++
 
 if attack_ > 0
 {
-attack_ += 0.16
+attack_ += 0.15
 	if global.awakening > 1
 	{
-	attack_ += 0.03
+	attack_ += 0.01
+	}
+	
+	if image_index < 9
+	{
+	attack_ += 0.013
+	
+		if global.n_sword = 1
+		{
+		attack_ += 0.03
+		}
 	}
 sprite_index = attack_sprite
 image_index = attack_
@@ -4845,86 +4944,83 @@ cooltime = 1
 	global.movement_speed += (0 - global.movement_speed)*0.1
 	}
 
-if attack_sfx_on = 0 && (floor(image_index) = 2)
-{
-sfx_for_multiplayer(swing_sfx1,0,0.4)
-
-sfx_for_multiplayer(swing_lightsaber_sfx1,0,0.1)
-
-
-if global.voice_option = 0
-{
-sfx_for_multiplayer(ssip,0,0.3)
-}
-
-attack_sfx_on ++
-	if !place_meeting(x-image_xscale*32,y,obj_floor)
+	if attack_sfx_on = 0 && (floor(image_index) = 2)
 	{
-	global.movement_speed += (-image_xscale)*6.1
+	sfx_for_multiplayer(swing_sfx1,0,0.4)
+
+	sfx_for_multiplayer(swing_lightsaber_sfx1,0,0.1)
+	global.movement_speed += (-image_xscale)*6.1*2.5
+
+
+	attack_sfx_on ++
+
+		if hurt = 0 && hurt_little = 0
+		{
+		var _ef = instance_create_depth(x,y,depth-1,effect_attack1)
+		_ef.image_index = (global.n_sword*4)
+		_ef.image_xscale = image_xscale
+		_ef.image_alpha = 0.8
+		}
+	}
+
+	if attack_sfx_on = 0 && (floor(image_index) = 5)
+	{
+	sfx_for_multiplayer(swing_sfx2,0,0.4)
+	sfx_for_multiplayer(swing_lightsaber_sfx2,0,0.1)
+
+
+
+	attack_sfx_on ++
+	global.movement_speed += (-image_xscale)*4.2*2.5
+	
+		if hurt = 0 && hurt_little = 0
+		{
+		var _ef = instance_create_depth(x,y,depth-1,effect_attack2)
+		_ef.image_index = (global.n_sword*4)+1
+		_ef.image_xscale = image_xscale
+		_ef.image_alpha = 0.8
+		}
+	}
+
+	if attack_sfx_on = 0 && (floor(image_index) = 8)
+	{
+	sfx_for_multiplayer(swing_sfx3,0,0.4)
+	sfx_for_multiplayer(swing_lightsaber_sfx3,0,0.1)
+
+
+
+	attack_sfx_on ++
+	global.movement_speed += (-image_xscale)*5.5*2.5
+	
+		if hurt = 0 && hurt_little = 0
+		{
+		var _ef = instance_create_depth(x,y,depth-1,effect_attack3)
+		_ef.image_index = (global.n_sword*4)+2
+		_ef.image_xscale = image_xscale
+		_ef.image_alpha = 0.8
+		}
 	}
 	
-	if hurt = 0 && hurt_little = 0
+	if attack_sfx_on = 0 && (floor(image_index) = 14)//new
 	{
-	var _ef = instance_create_depth(x,y,depth-1,effect_attack1)
-	_ef.image_index = 3+global.n_sword*3
-	_ef.image_xscale = image_xscale
-	_ef.image_alpha = 0.8
-	}
-}
-
-if attack_sfx_on = 0 && (floor(image_index) = 6)
-{
-sfx_for_multiplayer(swing_sfx2,0,0.4)
-sfx_for_multiplayer(swing_lightsaber_sfx2,0,0.1)
+	sfx_for_multiplayer(swing_sfx3,0,0.4)
+	sfx_for_multiplayer(swing_lightsaber_sfx3,0,0.1)
 
 
 
-	if global.voice_option = 0
-	{
-	sfx_for_multiplayer(jjin,0,0.28)
-	}
-attack_sfx_on ++
-	if !place_meeting(x-image_xscale*32,y,obj_floor)
-	{
-	global.movement_speed += (-image_xscale)*4.2
-	}
+	attack_sfx_on ++
+	global.movement_speed += (-image_xscale)*7*2.5
 	
-	if hurt = 0 && hurt_little = 0
-	{
-	var _ef = instance_create_depth(x,y,depth-1,effect_attack2)
-	_ef.image_index = 4+global.n_sword*3
-	_ef.image_xscale = image_xscale
-	_ef.image_alpha = 0.8
+		if hurt = 0 && hurt_little = 0
+		{
+		var _ef = instance_create_depth(x,y,depth-1,effect_attack4)
+		_ef.image_index = (global.n_sword*4)+3
+		_ef.image_xscale = image_xscale
+		_ef.image_alpha = 0.8
+		}
 	}
-}
 
-if attack_sfx_on = 0 && (floor(image_index) = 11)
-{
-sfx_for_multiplayer(swing_sfx3,0,0.4)
-sfx_for_multiplayer(swing_lightsaber_sfx3,0,0.1)
-
-
-
-	if global.voice_option = 0
-	{
-	sfx_for_multiplayer(dda,0,0.28)
-	}
-attack_sfx_on ++
-	if !place_meeting(x-image_xscale*32,y,obj_floor)
-	{
-	global.movement_speed += (-image_xscale)*5.5
-	}
-	
-	if hurt = 0 && hurt_little = 0
-	{
-	var _ef = instance_create_depth(x,y,depth-1,effect_attack3)
-	_ef.image_index = 5+global.n_sword*3
-	_ef.image_xscale = image_xscale
-	_ef.image_alpha = 0.8
-	}
-}
-
-	if attack_ > 6.4 && attack_ < 7 && keep_attacking = 0
+	if attack_ > 4.25 && attack_ < 4.5 && keep_attacking = 0
 	{
 		if keep_attack = 0
 		{
@@ -4938,12 +5034,14 @@ attack_sfx_on ++
 		}
 		else
 		{
+		keep_attack_timer = 1
 		keep_attacking ++
 		attack_sfx_on = 0
+		keep_attack = 0
 		}
 	}
 	
-	if attack_ > 9.4 && attack_ < 10 && keep_attacking = 1
+	if attack_ > 6.2 && attack_ < 6.5 && keep_attacking = 1
 	{
 		if keep_attack = 0
 		{
@@ -4957,13 +5055,37 @@ attack_sfx_on ++
 		}
 		else
 		{
+		keep_attack_timer = 1
 		keep_attacking ++
 		attack_sfx_on = 0
+		keep_attack = 0
 		}
 	}
 	
-	if attack_ > 14.4 && keep_attacking = 2
+	if attack_ > 10.2 && attack_ < 10.5 && keep_attacking = 2
 	{
+		if keep_attack = 0
+		{
+		attack_ = 0
+		keep_attack = 0
+		keep_attacking = 0
+		attack_sfx_on = 0
+		sprite_index = move_sprite
+		alarm[1] = 12
+		alarm[3] = 13
+		}
+		else
+		{
+		keep_attack_timer = 1
+		keep_attacking ++
+		attack_sfx_on = 0
+		keep_attack = 0
+		}
+	}
+	
+	if attack_ > 16.1 && keep_attacking = 3
+	{
+	keep_attack_timer = 0
 	attack_ = 0
 	keep_attack = 0
 	keep_attacking = 0
@@ -4981,7 +5103,7 @@ attack_sfx_on ++
 
 if dash_attack > 0
 {
-sprite_index = pl_move_skeleton_rush_slice
+sprite_index = rush_slice
 dash_attack += 0.2
 
 
@@ -5062,8 +5184,8 @@ image_index = dash_attack
 
 	if dash_attack > 10
 	{
-	double_pressed_left = 0
-	double_pressed_right = 0
+	double_pressed_run_key = 0
+	double_pressed_run_key = 0
 	dash_attack = 0
 	cannot_move = 0
 	sprite_index = move_sprite
@@ -5073,33 +5195,51 @@ image_index = dash_attack
 
 	
 ////////////////////////////////////////////////////////////////////////////////////////////////
-if double_pressed_left > 2
-{
-double_pressed_left = 2
-}
+	var pressing = 0
+	if global.chat_activity = false
+	{
+		if (keyboard_check(vk_shift) || gamepad_button_check(0,gp_shoulderr))
+		{
+		double_pressed_run_key = 2
+		}
+	}
 
-if double_pressed_right > 2
-{
-double_pressed_right = 2
-}
+	if double_pressed_run_key > 2
+	{
+	double_pressed_run_key = 2
+	}
 
 
 	var press_l = 0
 	var press_r = 0
 	
-	if keyboard_check_pressed(vk_left) && global.chat_activity = false && global.matching != 3
+	if (keyboard_check_pressed(vk_left) || gamepad_button_check_pressed(0,gp_padl)) && global.chat_activity = false
 	{
-	double_pressed_left++
-	alarm[6] = 20
+		if run_dir = 1
+		{
+			if double_pressed_run_key = 1
+			{
+			double_pressed_run_key = 0
+			}
+		}
+	double_pressed_run_key++
+	run_dir = -1
 	}
 	
-	if keyboard_check_pressed(vk_right) && global.chat_activity = false && global.matching != 3
+	if (keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(0,gp_padr)) && global.chat_activity = false
 	{
-	double_pressed_right++
-	alarm[7] = 20
+		if run_dir = -1
+		{
+			if double_pressed_run_key = 1
+			{
+			double_pressed_run_key = 0
+			}
+		}
+	double_pressed_run_key++
+	run_dir = 1
 	}
 	
-	if keyboard_check(vk_left) && global.chat_activity = false && global.matching != 3
+	if (keyboard_check(vk_left) || gamepad_button_check(0,gp_padl)) && global.chat_activity = false
 	{
 	pressed_a_key = -1
 	press_l = 1
@@ -5107,13 +5247,9 @@ double_pressed_right = 2
 	else
 	{
 	pressed_a_key = 0
-		if double_pressed_left >= 2
-		{
-		double_pressed_left = 0
-		}
 	}
 	
-	if keyboard_check(vk_right) && global.chat_activity = false && global.matching != 3
+	if (keyboard_check(vk_right) || gamepad_button_check(0,gp_padr)) && global.chat_activity = false
 	{
 	pressed_d_key = 1
 	press_r = 1
@@ -5121,117 +5257,99 @@ double_pressed_right = 2
 	else
 	{
 	pressed_d_key = 0
-		if double_pressed_right >= 2
+	}
+	
+	if (press_l+press_r) = 0 && double_pressed_run_key > 0
+	{
+		if running_time_delay > 14
 		{
-		double_pressed_right = 0
+		double_pressed_run_key = 0
+		running_time_delay = 0
+		}
+		else
+		{
+		running_time_delay++
 		}
 	}
 	
+	
 	if (press_r-press_l) != 0 && hurt = 0 && hurt_little = 0 && global.never_move = 0
 	{
-		if press_l > 0 && (cannot_move = 0 || sprite_index = jump_sprite)
+		if press_l+press_r > 0 && (cannot_move = 0 || sprite_index = jump_sprite)
 		{
 			if (sprite_index = move_sprite || sprite_index = jump_sprite)
 			{
-			image_xscale = 1
+				if double_pressed_run_key >= 2
+				{
+				image_xscale = (press_l-press_r)
+				}
 			}
 			
-			if double_pressed_left < 2
+			if double_pressed_run_key < 2
 			{
-				if global.movement_speed > -5-global.movementspeed_plus && global.movement_speed <= 0
+			global.movement_speed += (4.3*2*(press_r-press_l) - global.movement_speed)*0.3
+				
+				if run_time <= 0
 				{
-				global.movement_speed -= 0.12
-				global.movement_speed += global.movement_speed*0.05
+				var dust = instance_create_depth(x,y+28,depth-1,obj_dust_ef)
+				dust.image_xscale = -image_xscale
+				run_time = 1
 				}
-				else
-				{
-					if global.movement_speed > 0
-					{
-					global.movement_speed = global.movement_speed/4
-					}
-				global.movement_speed += (-5-global.movementspeed_plus - global.movement_speed)*0.05
-				}
+			image_xscale = (press_l-press_r)
 			}
 			else
 			{
-				if global.movement_speed > -(8+global.movementspeed_plus+sign(floor(global.awakening))*0.5)
+			run_time ++
+
+				
+				if gravity <= 0
 				{
-				global.movement_speed -= 0.2
-					if global.movement_speed < 0
+					if run_time < 2
 					{
-					global.movement_speed += global.movement_speed*0.1
+					var dust = instance_create_depth(x,y+28,depth-1,obj_dust_ef)
+					dust.image_xscale = -image_xscale
+					}
+				
+					var cal___ = (40-run_time)/3
+					if cal___ > 6.5*3
+					{
+					global.movement_speed += (cal___*(press_r-press_l) - global.movement_speed)*0.3
+					}
+					else
+					{
+					global.movement_speed += (6.5*3*(press_r-press_l) - global.movement_speed)*0.3
 					}
 				}
 				else
 				{
-				global.movement_speed = -(8+global.movementspeed_plus+sign(floor(global.awakening))*0.5)
-				}
-			}
-		}
-		
-		if press_r > 0 && (cannot_move = 0 || sprite_index = jump_sprite)
-		{
-			if (sprite_index = move_sprite || sprite_index = jump_sprite)
-			{
-			image_xscale = -1
-			}
-			
-			if double_pressed_right < 2
-			{
-				if global.movement_speed < 5+global.movementspeed_plus && global.movement_speed >= 0
-				{
-				global.movement_speed += 0.12
-				global.movement_speed += global.movement_speed*0.05
-				}
-				else
-				{
-					if global.movement_speed < 0
-					{
-					global.movement_speed = global.movement_speed/4
-					}
-				global.movement_speed += (5+global.movementspeed_plus - global.movement_speed)*0.05
-				}
-			}
-			else
-			{
-				if global.movement_speed < (8+global.movementspeed_plus+sign(floor(global.awakening))*0.5)
-				{
-				global.movement_speed += 0.2
-					if global.movement_speed > 0
-					{
-					global.movement_speed += global.movement_speed*0.1
-					}
-				}
-				else
-				{
-				global.movement_speed = (8+global.movementspeed_plus+sign(floor(global.awakening))*0.5)
+				global.movement_speed += (7*3*(press_r-press_l) - global.movement_speed)*0.3
 				}
 			}
 		}
 	}
 	else
 	{
-		if sting_attack = 0
+	run_time = 0
+	global.movement_speed += (0 - global.movement_speed)*0.1;
+		if abs(global.movement_speed) <= 0.15 && (sprite_index = move_sprite) && global.show_challenger = 0
 		{
-		global.movement_speed += (0 - global.movement_speed)*0.1;
-			if abs(global.movement_speed) <= 0.15 && (sprite_index = move_sprite || sprite_index = jump_sprite) && global.show_challenger = 0
-			{
-			image_index = 0
-			global.movement_speed = 0
-			}
+		image_index = 0
+		global.movement_speed = 0
 		}
 	}
 	
 	if global.movement_speed != 0 && global.show_challenger = 0
 	{
-		if !place_meeting(x-image_xscale*32,y,obj_floor)
-		{
-		x += global.movement_speed*0.35
-		}
-		
 		if abs(global.movement_speed) > 0 && sprite_index = move_sprite
 		{
-		image_index += global.movement_speed*0.12
+			if abs(global.movement_speed) < 5
+			{
+			image_index += abs(global.movement_speed)*0.1
+			}
+			else
+			{
+			image_index += 0.5
+			}
 		}
 	}
 }

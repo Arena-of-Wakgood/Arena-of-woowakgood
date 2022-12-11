@@ -1,4 +1,8 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "shake_it_bgm",
+  "conversionMode": 0,
   "compression": 0,
   "volume": 1.0,
   "preload": false,
@@ -11,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "shake_it_bgm.mp3",
-  "duration": 195.087448,
+  "duration": 115.905304,
   "parent": {
     "name": "소리",
     "path": "folders/소리.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "shake_it_bgm",
-  "tags": [],
-  "resourceType": "GMSound",
 }

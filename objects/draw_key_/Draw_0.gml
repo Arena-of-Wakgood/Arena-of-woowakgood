@@ -47,7 +47,7 @@ string_ = "<-"
 }
 if image_index = 14
 {
-string_ = "->"
+string_ = "<-"
 }
 if image_index = 15
 {
@@ -117,7 +117,7 @@ draw_text_kl_scale(xx,yy+85*cm_vx,"올려 치기\n\n\n\n[스테미나 소모]",1
 
 if image_index = 5
 {
-draw_text_kl_scale(xx,yy+85*cm_vx,"레이지 모드\n\n\n\n(멘탈게이지 풀 상태로 E키 꾹)",16,9999,1,image_blend,0,0,font0,cm_vx*1/3,cm_vx*1/3,image_angle)
+draw_text_kl_scale(xx,yy+85*cm_vx,"레이지 모드\n\n\n\n(레이지게이지 풀 상태로 E키 꾹)",16,9999,1,image_blend,0,0,font0,cm_vx*1/3,cm_vx*1/3,image_angle)
 }
 
 if image_index = 6
@@ -137,12 +137,12 @@ draw_text_kl_scale(camera_get_view_x(view_camera[0])+camera_get_view_width(view_
 
 if image_index = 11
 {
-draw_text_kl_scale(xx,yy+85*cm_vx,"돌진베기\n\n\n\n(달리기 도중 "+string(global.s_key)+")\n\n\n\n[멘탈 게이지 일부 소비]",16,9999,1,image_blend,0,0,font0,cm_vx*1/3,cm_vx*1/3,image_angle)
+draw_text_kl_scale(xx,yy+85*cm_vx,"돌진베기\n\n\n\n(달리기 도중 "+string(global.s_key)+")\n\n\n\n[스테미나 대량 소비]",16,9999,1,image_blend,0,0,font0,cm_vx*1/3,cm_vx*1/3,image_angle)
 }
 
 if image_index = 12
 {
-draw_text_kl_scale(xx,yy+85*cm_vx,"지진파\n\n\n\n[멘탈 게이지 일부 소비]",16,9999,1,image_blend,0,0,font0,cm_vx*1/3,cm_vx*1/3,image_angle)
+draw_text_kl_scale(xx,yy+85*cm_vx,"지진파\n\n\n\n[레이지 게이지 일부 소비]",16,9999,1,image_blend,0,0,font0,cm_vx*1/3,cm_vx*1/3,image_angle)
 }
 
 if image_index = 13
@@ -152,7 +152,7 @@ draw_text_kl_scale(xx,yy+85*cm_vx,"가드",16,9999,1,image_blend,0,0,font0,cm_vx
 
 if image_index = 14
 {
-draw_text_kl_scale(camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])*0.665,yy+85*cm_vx,"익스플로전\n\n\n\n[멘탈 게이지 대량 소비]",16,9999,1,image_blend,0,0,font0,cm_vx*1/3,cm_vx*1/3,image_angle)
+draw_text_kl_scale(camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])*0.665,yy+85*cm_vx,"익스플로전\n\n\n\n[레이지 게이지 대량 소비]",16,9999,1,image_blend,0,0,font0,cm_vx*1/3,cm_vx*1/3,image_angle)
 }
 
 if image_index = 15
