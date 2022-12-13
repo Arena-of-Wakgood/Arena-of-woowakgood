@@ -7,7 +7,7 @@ keyboard_string = "!BT"
 
 if image_index = 1
 {
-keyboard_string = "!GZ"
+keyboard_string = "!GG"
 }
 
 if image_index = 2

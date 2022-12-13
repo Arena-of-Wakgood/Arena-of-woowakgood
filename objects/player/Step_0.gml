@@ -92,6 +92,7 @@ timer__ ++
 
 if (global.nickname == name) && just_come_check = 0
 {
+self_movement_speed = global.movement_speed
 	if hurt = 0 && sprite_index != pl_move_skeleton_charging
 	{
 	global.m_hp += (global.hp - global.m_hp)*0.1
@@ -1178,7 +1179,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 					{
 					y -= 1
 					}
-				vspeed = -1
+				vspeed = -2
 				sfx_for_multiplayer(choose(global.hit_sfx_1,global.hit_sfx_2,global.hit_sfx_3),0,0.2)
 				}
 			}
@@ -1207,7 +1208,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 		
 				if guard_cool_time = 0
 				{
-				movement_speed = image_xscale
+				movement_speed = image_xscale*0.7
 				guarding = 2.5
 				w_alpha = 1
 				guard_cool_time = 10
@@ -1236,7 +1237,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				{
 				hurt = 1
 				hurt_cooltime = 10
-				movement_speed = check_guard*2
+				movement_speed = check_guard
 				hp_minus_for_player(26,_placed_obj)
 				
 				
@@ -1302,8 +1303,8 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				{
 				hurt = 1
 				hurt_cooltime = 10
-				movement_speed = check_guard*4
-				hp_minus_for_player(48,_placed_obj)
+				movement_speed = check_guard*5
+				hp_minus_for_player(182,_placed_obj)
 				
 				
 					if place_meeting(x,y+1,obj_floor) || on_platform = 1
@@ -1652,7 +1653,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 		{
 			if place_meeting(x,y+2,obj_floor) || on_platform = 1
 			{
-				if spin = 0 && cannot_move = 0 && cooltime = 0 && down_attack = 0 && down_attack_plusing = 0 && hurt = 0 && hurt_little = 0 && abs(global.movement_speed) > 1
+				if spin = 0 && cannot_move = 0 && cooltime = 0 && down_attack = 0 && down_attack_plusing = 0 && hurt = 0 && hurt_little = 0
 				{
 				spin = 1
 				cannot_move = 1
@@ -1709,7 +1710,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 	
 	if global.cannot_use_stemina = 0
 	{
-		if (player.sprite_index = player.move_sprite || player.sprite_index = player.attack_sprite || player.sprite_index = player.jump_sprite)
+		if (player.sprite_index = player.move_sprite || player.sprite_index = player.jump_sprite)
 		{
 		global.stemina_cooltime += 5
 		}
@@ -1862,6 +1863,24 @@ w_alpha += (-0.01 - w_alpha)*0.1
 		w_alpha = 1
 		}
 		
+		if keyboard_check_pressed(vk_down) && gravity = 0 && vspeed = 0
+		{
+		hurt = 0
+		hurt_cooltime = 0
+		
+		spin = 1
+					
+		sfx_for_multiplayer(critical_sfx,0,0.05)
+		var d_ef = instance_create_depth(player.x,player.y-64,depth-1,draw_hp_m)
+		var text__ = "일어남!"
+		d_ef.d_text = text__
+		d_ef.image_blend = c_white
+		d_ef.image_xscale = 1.2
+		d_ef.image_yscale = 1.2
+		d_ef.target = -4
+		w_alpha = 1
+		}
+		
 		if keyboard_check_pressed(vk_space) && gravity = 0 && vspeed = 0
 		{
 		hurt = 0
@@ -1875,7 +1894,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 		d_ef.image_xscale = 1.2
 		d_ef.image_yscale = 1.2
 		d_ef.target = -4
-		w_alpha = 1
+		w_alpha = 20
 
 
 			if instance_exists(obj_platform)
@@ -2897,45 +2916,24 @@ if global.never_move = 0 && keyboard_check_pressed(ord(string(global.a_key))) &&
 	cannot_move = 1
 	}
 	
-	if (double_pressed_run_key < 2 && double_pressed_run_key < 2)
+
+	if (attack_ < 7 && cannot_move = 0 && cooltime = 0 && hurt = 0 && hurt_little = 0) && (gravity <= 0 || attack_in_air_cool = 1)
 	{
-		if (attack_ < 7 && cannot_move = 0 && cooltime = 0 && hurt = 0 && hurt_little = 0) && (gravity <= 0 || attack_in_air_cool = 1)
-		{
-		global.stemina_cooltime = 0
-		attack_ = 1
-		cooltime = 1
-		cannot_move = 1
-		if global.movement_speed*2 > 5
-		{
-		global.movement_speed = global.movement_speed*2
-		}
-		else
-		{
-		global.movement_speed = 5*sign(global.movement_speed)
-		}
-
-
-		vspeed += 2
-		}
+	global.stemina_cooltime = 0
+	attack_ = 1
+	cooltime = 1
+	cannot_move = 1
+	if abs(global.movement_speed*2) > 5
+	{
+	global.movement_speed = global.movement_speed*2
 	}
 	else
 	{
-		if global.stemina >= 7.7
-		{
-			if gravity = 0 && charge_attack = 0 && cannot_move = 0 && cooltime = 0 && spin = 0 && down_attack_plusing = 0 && hurt = 0 && hurt_little = 0
-			{
-			movement_speed = -image_xscale*13
-			global.stemina -= 6.7
-			global.stemina_cooltime = 0
-			charge_attack = 1
-			cannot_move = 1
-			}
-		}
-		else
-		{
-		var sfx = audio_play_sound(cannot_buy,0,0)
-		audio_sound_gain(sfx,0.2*global.master_volume*2*global.sfx_volume,0)
-		}
+	global.movement_speed = 5*sign(global.movement_speed)
+	}
+
+
+	vspeed += 2
 	}
 }
 
@@ -3898,7 +3896,7 @@ global.movement_speed = 0
 		{
 			if !place_meeting(x-image_xscale*16,y-16,obj_floor)
 			{
-			x += -sign(image_xscale)*0.7
+			x += -sign(image_xscale)
 			}
 			else
 			{
@@ -4138,18 +4136,7 @@ global.movement_speed = 0
 			if jump_attack_motion_dilay > 2
 			{
 			var _ef = instance_create_depth(x,y,depth+1,effect_jump_attack)
-			if global.n_sword = 0
-			{
-			_ef.sprite_index = pl_move_skeleton_jump_attack_beat_saber
-			}
-			if global.n_sword = 1
-			{
-			_ef.sprite_index = pl_move_skeleton_jump_attack_beat_saber_green
-			}
-			if global.n_sword = 2
-			{
-			_ef.sprite_index = pl_move_skeleton_jump_attack_beat_saber_red
-			}
+			_ef.sprite_index = jump_attack_sprite
 			_ef.image_index = image_index
 			_ef.image_xscale = image_xscale
 			_ef.image_alpha = 0.6
@@ -4949,7 +4936,7 @@ cooltime = 1
 	sfx_for_multiplayer(swing_sfx1,0,0.4)
 
 	sfx_for_multiplayer(swing_lightsaber_sfx1,0,0.1)
-	global.movement_speed += (-image_xscale)*6.1*2.5
+	global.movement_speed -= image_xscale*6.1*2.5
 
 
 	attack_sfx_on ++
@@ -4971,7 +4958,7 @@ cooltime = 1
 
 
 	attack_sfx_on ++
-	global.movement_speed += (-image_xscale)*4.2*2.5
+	global.movement_speed -= image_xscale*4.2*2.5
 	
 		if hurt = 0 && hurt_little = 0
 		{
@@ -4990,7 +4977,7 @@ cooltime = 1
 
 
 	attack_sfx_on ++
-	global.movement_speed += (-image_xscale)*5.5*2.5
+	global.movement_speed -= image_xscale*5.5*2.5
 	
 		if hurt = 0 && hurt_little = 0
 		{
@@ -5009,7 +4996,7 @@ cooltime = 1
 
 
 	attack_sfx_on ++
-	global.movement_speed += (-image_xscale)*7*2.5
+	global.movement_speed -= image_xscale*7*2.5
 	
 		if hurt = 0 && hurt_little = 0
 		{
@@ -5121,7 +5108,7 @@ image_index = dash_attack
 	
 	if dash_attack >= 2.3 && dash_attack < 2.83
 	{
-	global.movement_speed = -image_xscale*48
+	global.movement_speed = -image_xscale*48*2
 	dash_attack = 2.83
 	
 
@@ -5160,13 +5147,13 @@ image_index = dash_attack
 	{
 	dash_attack = 4.04
 	var __i = choose(-1,1)
-	var bl_ef = instance_create_depth(x-global.movement_speed*7,y-8,depth-1,ef_blood_dash_attack)
+	var bl_ef = instance_create_depth(x-global.movement_speed*4,y-8,depth-1,ef_blood_dash_attack)
 	bl_ef.image_xscale = 2
 	bl_ef.image_yscale = 0.42
 	bl_ef.t_x = __i
 	
 	var __i = -global.movement_speed/25
-	var bl_ef = instance_create_depth(x-global.movement_speed*7,y-8,depth-1,ef_blood)
+	var bl_ef = instance_create_depth(x-global.movement_speed*4,y-8,depth-1,ef_blood)
 	bl_ef.image_xscale = 2.3
 	bl_ef.image_yscale = 0.42
 	bl_ef.t_x = __i
@@ -5273,7 +5260,7 @@ image_index = dash_attack
 	}
 	
 	
-	if (press_r-press_l) != 0 && hurt = 0 && hurt_little = 0 && global.never_move = 0
+	if (press_r-press_l) != 0 && hurt = 0 && hurt_little = 0 && global.never_move = 0 && global.show_challenger = 0
 	{
 		if press_l+press_r > 0 && (cannot_move = 0 || sprite_index = jump_sprite)
 		{
@@ -5288,13 +5275,6 @@ image_index = dash_attack
 			if double_pressed_run_key < 2
 			{
 			global.movement_speed += (4.3*2*(press_r-press_l) - global.movement_speed)*0.3
-				
-				if run_time <= 0
-				{
-				var dust = instance_create_depth(x,y+28,depth-1,obj_dust_ef)
-				dust.image_xscale = -image_xscale
-				run_time = 1
-				}
 			image_xscale = (press_l-press_r)
 			}
 			else
@@ -5304,13 +5284,7 @@ image_index = dash_attack
 				
 				if gravity <= 0
 				{
-					if run_time < 2
-					{
-					var dust = instance_create_depth(x,y+28,depth-1,obj_dust_ef)
-					dust.image_xscale = -image_xscale
-					}
-				
-					var cal___ = (40-run_time)/3
+				var cal___ = (40-run_time)/3
 					if cal___ > 6.5*3
 					{
 					global.movement_speed += (cal___*(press_r-press_l) - global.movement_speed)*0.3
@@ -5389,7 +5363,7 @@ keep_winning_ = global.keep_winning
 	buffer_write(command_buffer, buffer_string, floor(image_angle*100));
 	buffer_write(command_buffer, buffer_string, floor(w_alpha*100));
 	buffer_write(command_buffer, buffer_string, floor(image_alpha*100));
-	buffer_write(command_buffer, buffer_string, floor(on_platform));
+	buffer_write(command_buffer, buffer_string, floor(global.movement_speed*100));
 	send_all(command_buffer);
 	}
 }
@@ -5426,4 +5400,20 @@ if gravity > 0 && (!place_meeting(x,y+1.5,obj_floor) && on_platform = 0) && atta
 	{
 	image_index = 5
 	}
+}
+
+if abs(self_movement_speed) > 10
+{
+	if n_dir_speed != sign(image_xscale) && sprite_index = move_sprite
+	{
+	var dust = instance_create_depth(x,y+28,depth-1,obj_dust_ef)
+	dust.image_xscale = -image_xscale
+	
+	n_dir_speed = sign(image_xscale)
+	global.movement_speed += 15*sign(global.movement_speed)
+	}
+}
+else
+{
+n_dir_speed = 0
 }

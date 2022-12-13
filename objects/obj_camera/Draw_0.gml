@@ -85,12 +85,12 @@ var __alpha_set = 1-global.b_alpha_prt-global.b_alpha
 	
 		for(var i = 0; i < global.matched_pl1_won; i++)
 		{
-		draw_sprite_ext(spr_winning_point,0,camera_get_view_x(view_camera[0])+v_x_*(32+20*i),yy+170*v_x_,v_x_*0.6,v_x_*0.6,0,c_white,__alpha_set)
+		draw_sprite_ext(spr_winning_point,0,camera_get_view_x(view_camera[0])+v_x_*(32+20*i),yy+230*v_x_,v_x_*0.6,v_x_*0.6,0,c_white,__alpha_set)
 		}
 		
 		for(var i = 0; i < global.matched_pl2_won; i++)
 		{
-		draw_sprite_ext(spr_winning_point,1,camera_get_view_x(view_camera[0])+v_x_*(32+20*i),yy+210*v_x_,v_x_*0.6,v_x_*0.6,0,c_white,__alpha_set)
+		draw_sprite_ext(spr_winning_point,1,camera_get_view_x(view_camera[0])+v_x_*(32+20*i),yy+270*v_x_,v_x_*0.6,v_x_*0.6,0,c_white,__alpha_set)
 		}
 	}
 

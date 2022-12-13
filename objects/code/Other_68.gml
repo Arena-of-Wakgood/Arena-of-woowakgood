@@ -159,6 +159,10 @@ else if (type == network_type_data)
 					chat_up(string(converted_text__)+"의 PVP 권한이 변경되었습니다",0,0)
 					}
 				}
+				else if string_pos("/dm",str) != 0
+				{
+				chat_up(str,_sender,1);
+				}
 				else
 				{
 					if global.matching > 0
@@ -173,13 +177,23 @@ else if (type == network_type_data)
 			}
 			else
 			{
-				if global.matching > 0
+				if string_pos("/dm",str) != 0
 				{
-				chat_up(str,_sender,-1);
+					if string_pos(global.nickname,str) != 0
+					{
+					chat_up(str,_sender,1);
+					}
 				}
 				else
 				{
-				chat_up(str,_sender,1);
+					if global.matching > 0
+					{
+					chat_up(str,_sender,-1);
+					}
+					else
+					{
+					chat_up(str,_sender,1);
+					}
 				}
 			}
 		break;
@@ -736,6 +750,7 @@ else if (type == network_type_data)
 				var _angle = buffer_read(buffer, buffer_string);
 				var _w_alpha = buffer_read(buffer, buffer_string);
 				var _img_alpha = buffer_read(buffer, buffer_string);
+				var _movement_speed___ = buffer_read(buffer, buffer_string);
 				if global.nickname != _check_who_send
 				{
 					with(player) 
@@ -749,6 +764,7 @@ else if (type == network_type_data)
 						image_angle = real(_angle)/100;
 						w_alpha = real(_w_alpha)/100;
 						image_alpha = real(_img_alpha)/100
+						self_movement_speed = real(_movement_speed___)/100
 						}
 					}
 				}

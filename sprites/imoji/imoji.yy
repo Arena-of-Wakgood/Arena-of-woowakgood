@@ -29,8 +29,8 @@
   "gridY": 0,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f9a0e775-cb44-46c9-b58d-29b4d35a0ea4",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"551d6eda-762b-480a-a8ed-1556025c334e",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"952aabde-b07c-4fb9-be3e-58a826c2f8f1",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c74a749d-0190-4184-ba50-f483b6f86bda",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7f3cf828-8472-4f32-aab1-3829fa456bc1",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9d11e83e-07ae-4862-8b32-97838610ce4f",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4794ebf6-3f30-44b4-85f4-5b9d3f8255aa",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"21de2369-1d17-4238-ba62-873bff15c5b4",},
@@ -53,8 +53,8 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"f20d5e8e-7090-40b3-9895-a44f09be56e9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f9a0e775-cb44-46c9-b58d-29b4d35a0ea4","path":"sprites/imoji/imoji.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"9fc1bbf1-7474-4105-b859-328d2ffbe91e","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"551d6eda-762b-480a-a8ed-1556025c334e","path":"sprites/imoji/imoji.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"a8be573f-6d81-4ccb-8df1-af271e0a4d26","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"952aabde-b07c-4fb9-be3e-58a826c2f8f1","path":"sprites/imoji/imoji.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"ecad4ba1-a374-40ff-922e-2e47563f02f8","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c74a749d-0190-4184-ba50-f483b6f86bda","path":"sprites/imoji/imoji.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"bb485c68-805a-4cab-8445-349f9eaf379f","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7f3cf828-8472-4f32-aab1-3829fa456bc1","path":"sprites/imoji/imoji.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"b099391b-7cdb-46ed-9262-25f78a4810ec","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9d11e83e-07ae-4862-8b32-97838610ce4f","path":"sprites/imoji/imoji.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"2b62180b-c5e5-48f7-87e9-8614287d3c8b","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4794ebf6-3f30-44b4-85f4-5b9d3f8255aa","path":"sprites/imoji/imoji.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"c70ee44f-2455-432e-b95c-ae1cb1645863","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"21de2369-1d17-4238-ba62-873bff15c5b4","path":"sprites/imoji/imoji.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},

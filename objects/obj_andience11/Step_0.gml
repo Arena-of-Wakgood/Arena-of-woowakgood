@@ -10,6 +10,11 @@ if global.matching <= 0
 instance_destroy()
 }
 
+if !place_meeting(x,y+96,obj_floor) && gravity = 0 && global.b_alpha >= 1
+{
+instance_destroy()
+}
+
 
 
 if instance_number(down_effect) > 0

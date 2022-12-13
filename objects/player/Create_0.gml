@@ -12,6 +12,7 @@ dev_mes("Enter키를 눌러 채팅창을 열어보세요!")
 global.guide_message_chat = 1
 keep_attack_timer = 0
 color_select = 0
+n_dir_speed = 0
 
 double_pressed_run_key = 0
 hp_bar_alpha = 0
@@ -24,6 +25,7 @@ p_mes = -1
 ping_kick_timer = 0
 fps_now = 0
 ping = 0
+self_movement_speed = 0
 room_sp_now = 0
 m_hp = 1000
 ping_checker = 0

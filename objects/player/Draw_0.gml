@@ -56,7 +56,7 @@ p_floor = obj_platform.y-27
 
 draw_sprite_ext(spr_shadow,0,x,p_floor+27,1-abs(y-p_floor)/48,1-abs(y-p_floor)/64,0,c_white,(1-abs(y-p_floor)/48)*0.3*image_alpha)
 var spr = sprite_index
-	if spr = move_sprite && abs(global.movement_speed) > 18
+	if spr = move_sprite && abs(self_movement_speed) > 14
 	{
 	spr = spr_move_run
 	}
@@ -172,11 +172,9 @@ if image_alpha > 0 && global.hp > 0
 
 	if w_alpha > 0
 	{
-	var sprite = asset_get_index(string(sprite_get_name(string(sprite_index)))+"_white")
-		if sprite_exists(sprite)
-		{
-		draw_sprite_ext(sprite,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,w_alpha)
-		}
+	shader_set(shFlash)
+	draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,w_alpha)
+	shader_reset()
 	}
 
 	if show_my_sword <= 0

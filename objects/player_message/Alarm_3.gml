@@ -14,7 +14,7 @@ _a.image_index = 0
 _a.target = target
 }
 
-if special_voice_chat = 0 && (string_pos("!GZ",text) != 0 || string_pos("!gz",text) != 0)
+if special_voice_chat = 0 && (string_pos("!GG",text) != 0 || string_pos("!gg",text) != 0)
 {
 var sfx = audio_play_sound(buy_item,0,0)
 audio_sound_gain(sfx,0.12*global.master_volume*2*global.sfx_volume,0)

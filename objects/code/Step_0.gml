@@ -16,6 +16,8 @@ if global.show_challenger > 0 && global.b_alpha >= 1
 {
 created_platfrom = 0
 global.now_map = choose(0,2,3)
+global.wind_dir = choose(-1,1)*irandom_range(0,12)
+global.rainy = irandom_range(0,2)
 }
 
 
@@ -326,31 +328,6 @@ global.w_alpha = 1.5
 b_map = global.now_map
 }
 
-if is_server = true && global.b_alpha >= 1
-{
-randomize()
-change_weather ++
-
-	if (global.now_music = wakrio_bgm || global.now_music = shake_it_bgm) && global.rainy != 1
-	{
-	change_weather_max = 0
-	}
-
-	if change_weather_max < change_weather
-	{
-	global.wind_dir = choose(-1,1)*irandom_range(0,12)
-		if global.now_music = wakrio_bgm || global.now_music = shake_it_bgm
-		{
-		global.rainy = 1
-		}
-		else
-		{
-		global.rainy = irandom_range(0,2)
-		}
-	change_weather_max = irandom_range(6000,8000)
-	change_weather = 0
-	}
-}
 
 if global.can_send_shake > 0
 {

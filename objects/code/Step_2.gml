@@ -1694,10 +1694,16 @@ show_debug_message(string(selected_p1)+" / "+string(selected_p2)+" / "+string(se
 	
 	for(var i = -6; i <= 6; i++)
 	{
-	var random_cre = percentage_k(60-(instance_number(obj_andience1)+instance_number(obj_andience11)+instance_number(obj_andience111))*5)
-		if random_cre = 1
+	var random_cre = choose(0,1,1)
+		if random_cre = 0
 		{
 		instance_create_depth(choose(2448,1648)+64*i,903-48,obj_floor.depth-2,choose(obj_andience1,obj_andience11,obj_andience111))
+		}
+		
+		if random_cre = 1 && instance_number(obj_andience1111) < 6
+		{
+		var _isedol_ = instance_create_depth(choose(2448,1648)+64*i,903-48,obj_floor.depth-2,obj_andience1111)
+		_isedol_.image_index = instance_number(obj_andience1111)
 		}
 	}
 		

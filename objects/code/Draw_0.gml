@@ -35,7 +35,7 @@ gamemode_val_ = "1 vs 1"
 if gamemode_val_ = 2
 {
 gamemode_val_ = "외나무 다리 (1 vs 1)"
-setting_buff = "차지 밀치기 거리 400% 및 레이지 게이지 충전 속도 200%"
+setting_buff = "레이지 게이지 충전 속도 200%"
 }
 
 if gamemode_val_ = 3
