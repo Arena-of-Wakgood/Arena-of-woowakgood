@@ -794,7 +794,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 		check_guard = choose(-1,1)
 		}
 				
-			if guarding > 0 && global.stemina >= 2.8 && check_guard = sign(image_xscale)
+			if guarding > 0 && global.stemina >= 2.8
 			{
 			guarding_now = 1
 			}
@@ -1710,14 +1710,21 @@ w_alpha += (-0.01 - w_alpha)*0.1
 	
 	if global.cannot_use_stemina = 0
 	{
-		if (player.sprite_index = player.move_sprite || player.sprite_index = player.jump_sprite)
+		if (player.sprite_index = player.move_sprite && abs(global.movement_speed) < 10) || player.sprite_index = player.jump_sprite || player.sprite_index = guard_sprite
 		{
 		global.stemina_cooltime += 5
 		}
 
 		if global.stemina_cooltime > 70
 		{
-		global.stemina += 0.2
+			if player.sprite_index = player.move_sprite
+			{
+			global.stemina += 0.2
+			}
+			else
+			{
+			global.stemina += 0.01
+			}
 		}
 
 		if global.stemina > 11+global.max_stemina_plus
@@ -1847,10 +1854,23 @@ w_alpha += (-0.01 - w_alpha)*0.1
 			}
 		}
 		
-		if keyboard_check_pressed(vk_up) && gravity = 0 && vspeed = 0
+		if keyboard_check_pressed(vk_up) && gravity = 0 && vspeed = 0 && global.hp > 0
 		{
 		hurt = 0
 		hurt_cooltime = 0
+		
+		attack_ = 0
+		keep_attack = 0
+		keep_attacking = 0
+		attack_sfx_on = 0
+		sprite_index = move_sprite
+
+		image_index = 0
+		cooltime = 0
+		cannot_move = 0
+		guarding = 1
+		fast_guarding = 1
+		global.stemina_cooltime = 0
 					
 		sfx_for_multiplayer(critical_sfx,0,0.05)
 		var d_ef = instance_create_depth(player.x,player.y-64,depth-1,draw_hp_m)
@@ -1863,7 +1883,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 		w_alpha = 1
 		}
 		
-		if keyboard_check_pressed(vk_down) && gravity = 0 && vspeed = 0
+		if keyboard_check_pressed(vk_down) && gravity = 0 && vspeed = 0 && global.hp > 0
 		{
 		hurt = 0
 		hurt_cooltime = 0
@@ -1881,7 +1901,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 		w_alpha = 1
 		}
 		
-		if keyboard_check_pressed(vk_space) && gravity = 0 && vspeed = 0
+		if keyboard_check_pressed(vk_space) && gravity = 0 && vspeed = 0 && global.hp > 0
 		{
 		hurt = 0
 		hurt_cooltime = 0
@@ -1978,8 +1998,6 @@ w_alpha += (-0.01 - w_alpha)*0.1
 			dust.hspeed = irandom_range(-50,50)/37
 			dust.image_alpha = 1
 			}
-	
-		sfx_for_multiplayer(mob_faint,0,0.1)
 
 
 		movement_speed += (0 - movement_speed)*0.1
@@ -2663,7 +2681,6 @@ else
 
 if guarding > 0
 {
-global.stemina_cooltime = 0
 global.movement_speed += (0 - global.movement_speed)*0.1
 double_pressed_run_key = 0
 double_pressed_run_key = 0
@@ -2673,6 +2690,16 @@ cannot_move = 1
 	{
 	sprite_index = guard_sprite
 	image_index = guarding
+	}
+	
+	if keyboard_check(vk_left)
+	{
+	image_xscale = 1
+	}
+	
+	if keyboard_check(vk_right)
+	{
+	image_xscale = -1
 	}
 }
 
@@ -5280,7 +5307,12 @@ image_index = dash_attack
 			else
 			{
 			run_time ++
-
+			global.stemina_cooltime = 0
+			
+				if abs(global.movement_speed) > 15
+				{
+				global.stemina -= 0.02
+				}
 				
 				if gravity <= 0
 				{

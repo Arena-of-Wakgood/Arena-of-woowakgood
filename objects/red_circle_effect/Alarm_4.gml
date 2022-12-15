@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.in_practice = 0
+if global.in_practice = 0 && instance_number(red_circle_effect) <= 3
 {
 buffer_seek(command_buffer, buffer_seek_start, 0);
 buffer_write(command_buffer, buffer_u8, code.DATA._RED_CIRCLE_EFFECT);

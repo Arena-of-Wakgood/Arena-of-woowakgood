@@ -18,7 +18,7 @@ server_ip = "192.168.0.5"//"211.192.230.184";//"208.67.222.222";
 server_port = 42524;
 is_server = false;
 sepa_power = 0
-
+now_recieving = 0
 sepa_alpha = 0
 check_winner = 0
 ability_choosing_time = 0

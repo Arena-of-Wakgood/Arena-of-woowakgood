@@ -115,7 +115,7 @@ if image_alpha > 0 && global.hp > 0
 			draw_sprite_ext(sprite20,0,xx+60*v_x,yy+32*v_x,5.2*v_x,2*v_x,0,c_white,hp_bar_alpha)
 				if global.hp/max_hp > 0 && global.hp <= max_hp
 				{
-				draw_sprite_ext(sprite20,5,xx+64*v_x,yy+32*v_x,(global.m_hp/max_hp)*5.5*v_x,2*v_x*1.5,0,c_white,hp_bar_alpha)
+				draw_sprite_ext(sprite20,6,xx+64*v_x,yy+32*v_x,(global.m_hp/max_hp)*5.5*v_x,2*v_x*1.5,0,c_white,hp_bar_alpha)
 				draw_sprite_ext(sprite20,1,xx+64*v_x,yy+32*v_x,(draw_hp/max_hp)*5.5*v_x,2*v_x*1.5,0,c_white,hp_bar_alpha)
 				}
 		
@@ -162,7 +162,7 @@ if image_alpha > 0 && global.hp > 0
 			draw_sprite_ext(sprite20,0,x-20,y+32,1,1,0,c_white,hp_bar_alpha)
 				if hp/max_hp > 0
 				{
-				draw_sprite_ext(sprite20,5,x-18,y+32,m_hp/max_hp,1,0,c_white,hp_bar_alpha)
+				draw_sprite_ext(sprite20,6,x-18,y+32,m_hp/max_hp,1,0,c_white,hp_bar_alpha)
 				draw_sprite_ext(sprite20,1,x-18,y+32,draw_hp/max_hp,1,0,c_white,hp_bar_alpha)
 				}
 			}

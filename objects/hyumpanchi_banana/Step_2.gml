@@ -336,7 +336,7 @@ if place_meeting(x,y,effect_attack4)
 	
 	view_shake(7,60,4)
 	
-	hp_minus_for_mob(48)
+	hp_minus_for_mob(182)
 	
 	movement_speed = 0
 	var __i = sign(x - player.x)

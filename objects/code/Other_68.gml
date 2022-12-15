@@ -225,19 +225,22 @@ else if (type == network_type_data)
 		
 		case DATA._RED_CIRCLE_EFFECT:
 			var _check_who_send = buffer_read(buffer, buffer_string);
-			var _x = real(buffer_read(buffer, buffer_string));
-			var _y = real(buffer_read(buffer, buffer_string));
-			var _xscale = real(buffer_read(buffer, buffer_string));
-			var _yscale = real(buffer_read(buffer, buffer_string));
-			var _t_scale = real(buffer_read(buffer, buffer_string));
-				if global.nickname != string(_check_who_send)
+				if global.nickname != string(_check_who_send) && now_recieving = 0
 				{
+				var _x = real(buffer_read(buffer, buffer_string));
+				var _y = real(buffer_read(buffer, buffer_string));
+				var _xscale = real(buffer_read(buffer, buffer_string));
+				var _yscale = real(buffer_read(buffer, buffer_string));
+				var _t_scale = real(buffer_read(buffer, buffer_string));
+			
 				var skill_red_ball_effect_rage = instance_create_depth((_x)/100,(_y)/100,player.depth-2,red_circle_effect_received);
 				skill_red_ball_effect_rage.image_xscale = (_xscale)/100;
 				skill_red_ball_effect_rage.image_yscale = (_yscale)/100;
 				skill_red_ball_effect_rage.t_scale = (_t_scale)/100;
 				skill_red_ball_effect_rage.alarm[11] = 7;
+				now_recieving = 1
 				}
+			now_recieving = 0
 		break;
 		
 		case DATA.GAMEMODE_SELECTING:
@@ -1007,6 +1010,9 @@ else if (type == network_type_data)
 				
 				case COMM.SPARK_EFFECT:
 				var _check_who_send = buffer_read(buffer, buffer_string);
+				if now_recieving = 0 && global.nickname != string(_check_who_send)
+				{
+				now_recieving = 1
 				var _x = buffer_read(buffer, buffer_string);
 				var _y = buffer_read(buffer, buffer_string);
 				var _vspeed = buffer_read(buffer, buffer_string);
@@ -1014,24 +1020,27 @@ else if (type == network_type_data)
 				var _obj_ind = buffer_read(buffer, buffer_string);
 				var _spr_ind = buffer_read(buffer, buffer_string);
 				var _angle = buffer_read(buffer, buffer_string);
-				if global.nickname != string(_check_who_send)
-				{
 				var _obj_get_ = asset_get_index(string(_obj_ind)+"_received");
 				
-					if object_exists(_obj_get_)
+					if object_exists(_obj_get_) && now_recieving <= 1
 					{
 					var _attack_ef = instance_create_depth(real(_x)/100,real(_y)/100,player.depth+choose(-1,1),_obj_get_);
 					_attack_ef.vspeed = real(_vspeed)/100;
 					_attack_ef.hspeed = real(_hspeed)/100;
 					_attack_ef.sprite_index = _spr_ind;
 					_attack_ef.image_angle = real(_angle)/100;
+					now_recieving = 2
 					}
+				now_recieving = 0
 				}
 				break;
 				
 				
 				case COMM.BUBLE_EFFECT:
 				var _check_who_send = buffer_read(buffer, buffer_string);
+				
+				if global.nickname != string(_check_who_send)
+				{
 				var _a1 = buffer_read(buffer, buffer_string);
 				var _a2 = buffer_read(buffer, buffer_string);
 				var _a3 = buffer_read(buffer, buffer_string);
@@ -1044,24 +1053,21 @@ else if (type == network_type_data)
 				var _a10 = buffer_read(buffer, buffer_string);
 				var _a11 = buffer_read(buffer, buffer_string);
 				var _a12 = buffer_read(buffer, buffer_string);
-				
-				if global.nickname != string(_check_who_send)
-				{
 				cre_buble_ef(_a1/100,_a2/100,string(_a3),string(_a4),_a5/100,_a6/100,_a7/100,_a8/100,_a9/100,_a10/100,_a11/100,_a12/100,0)
 				}
 				break;
 				
 				case COMM.ATTACKER_GET_RAGE:
 				var _check_who_send = buffer_read(buffer, buffer_string);
+				
+				if global.nickname = _check_who_send
+				{
 				var _rage_gage = buffer_read(buffer, buffer_string);
 				var _damage = buffer_read(buffer, buffer_string);
 				var _ori_damage = buffer_read(buffer, buffer_string);
 				var img_bnd = c_white
 				var _xscale = 1
 				var _yscale = 1
-				
-				if global.nickname = _check_who_send
-				{
 				var _my_p = get_my_player();
 				
 					if _damage <= _ori_damage
@@ -1120,14 +1126,14 @@ else if (type == network_type_data)
 						{
 						global.hp -= 18
 						global.movement_speed = 0
-						if abs(movement_speed) > 2.6
-						{
-						movement_speed = image_xscale*2
-						}
-						else
-						{
-						movement_speed = -movement_speed*1.3
-						}
+							if abs(movement_speed) > 2.6
+							{
+							movement_speed = image_xscale*2
+							}
+							else
+							{
+							movement_speed = -movement_speed*1.3
+							}
 						y -= 1
 						gravity = -0.1
 						vspeed = -4

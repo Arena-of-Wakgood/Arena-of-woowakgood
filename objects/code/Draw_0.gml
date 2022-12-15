@@ -202,7 +202,7 @@ draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy+100*v_x,aaa_t
 draw_text_kl_scale(camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])-v_x*16,camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])-40*v_x,"* "+string(global.dev_message),32,-1,global.dev_message_alpha,c_gray,0,1,font0,1/3*v_x,1/3*v_x,0)
 
 var _playing_music_name = ""
-
+var __now_playing_text = "Now playing"
 
 if audio_get_name(global.now_music) = audio_get_name(maser_bgm)
 {
@@ -244,11 +244,18 @@ if audio_get_name(global.now_music) = audio_get_name(bamguy_bgm)
 _playing_music_name = "badassgatsby - 밤가이!!"
 }
 
+if (floor(global.matching) = 2) || (global.matching > 0 && global.hp <= 0 && global.gamemode_server = 4)
+{
+var _playing_music_name = "관전중"
+var __now_playing_text = "'Enter'키를 눌러 채팅으로 응원하거나, 방향키로 카메라 전환 가능"
+show_sound_list = 1
+}
+
 if show_sound_list_alpha > 0
 {
 	if _playing_music_name != ""
 	{
-	draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy+(show_sound_list_y)*v_x*1.5,"Now playing",32,-1,show_sound_list_alpha,c_yellow,0,0,font0,1/3.5*v_x,1/3.5*v_x,0)
+	draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy+(show_sound_list_y)*v_x*1.5,string(__now_playing_text),32,-1,show_sound_list_alpha,c_yellow,0,0,font0,1/3.5*v_x,1/3.5*v_x,0)
 	draw_text_kl_scale(xx+camera_get_view_width(view_camera[0])*0.5,yy+(show_sound_list_y+35)*v_x*1.5,string(_playing_music_name),32,-1,show_sound_list_alpha,c_white,0,0,font0,1/2*v_x,1/2*v_x,0)
 	}
 }

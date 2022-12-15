@@ -24,7 +24,6 @@ if instance_number(down_effect) > 0
 	gravity = 0.3
 	vspeed = -irandom_range(30,50)/10
 	time = 0
-	image_index = 0
 	max_time = 9099999
 	}
 }
@@ -36,7 +35,6 @@ y --
 gravity = 0.3
 vspeed = -irandom_range(30,50)/10
 time = 0
-image_index = 0
 max_time = 9099999
 }
 
@@ -52,7 +50,6 @@ image_xscale = 1
 
 if y >= 903-48
 {
-image_index = 1
 gravity = 0
 y = 903-48
 	if time = 0
@@ -64,7 +61,6 @@ y = 903-48
 
 if y < 903-48
 {
-image_index = 0
 gravity = 0.3
 }
 

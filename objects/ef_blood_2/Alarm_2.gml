@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.in_practice = 0
+if global.in_practice = 0 && instance_number(ef_blood_2_received) < 10
 {
 buffer_seek(command_buffer, buffer_seek_start, 0);
 buffer_write(command_buffer, buffer_u8, code.DATA.COMMAND);

@@ -275,7 +275,6 @@ if global.matching = 3
 						dust.image_alpha = 1
 						}
 								
-					sfx_for_multiplayer(mob_faint,0,0.1)
 					}
 			
 					if global.matched_pl2 = global.return_player_id
@@ -296,7 +295,6 @@ if global.matching = 3
 						dust.image_alpha = 1
 						}
 								
-					sfx_for_multiplayer(mob_faint,0,0.1)
 					}
 				}
 	
@@ -441,7 +439,6 @@ if global.matching = 3
 									dust.image_alpha = 1
 									}
 								
-								sfx_for_multiplayer(mob_faint,0,0.1)
 								}
 			
 								if global.matched_pl4 = global.return_player_id
@@ -462,7 +459,6 @@ if global.matching = 3
 									dust.image_alpha = 1
 									}
 								
-								sfx_for_multiplayer(mob_faint,0,0.1)
 								}
 							}
 	
