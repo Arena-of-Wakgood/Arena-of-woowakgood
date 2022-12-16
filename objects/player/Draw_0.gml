@@ -106,6 +106,13 @@ if image_alpha > 0 && global.hp > 0
 				draw_sprite_ext(item_sword,global.n_sword,x-image_xscale*2,y-64,0.75,0.75,0,c_white,show_my_sword)
 				}
 			}
+			else
+			{
+				if hurt > 0
+				{
+				draw_text_kl_scale(x,y-120,"(Space키를 눌러 일어나기)",v_x*64,-1,show_my_sword,c_white,0,0,font0,v_x*0.35,v_x*0.35,0);
+				}
+			}
 		
 		//체력바
 		hp_bar_alpha += (1 - hp_bar_alpha)*0.1

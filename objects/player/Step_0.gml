@@ -1854,7 +1854,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 			}
 		}
 		
-		if keyboard_check_pressed(vk_up) && gravity = 0 && vspeed = 0 && global.hp > 0
+		if keyboard_check_pressed(vk_up) && gravity = 0 && vspeed = 0 && global.hp > 0 && hurt > 2
 		{
 		hurt = 0
 		hurt_cooltime = 0
@@ -1883,7 +1883,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 		w_alpha = 1
 		}
 		
-		if keyboard_check_pressed(vk_down) && gravity = 0 && vspeed = 0 && global.hp > 0
+		if keyboard_check_pressed(vk_down) && gravity = 0 && vspeed = 0 && global.hp > 0 && hurt > 2
 		{
 		hurt = 0
 		hurt_cooltime = 0
@@ -1901,7 +1901,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 		w_alpha = 1
 		}
 		
-		if keyboard_check_pressed(vk_space) && gravity = 0 && vspeed = 0 && global.hp > 0
+		if keyboard_check_pressed(vk_space) && gravity = 0 && vspeed = 0 && global.hp > 0 && hurt > 2
 		{
 		hurt = 0
 		hurt_cooltime = 0
@@ -5442,7 +5442,10 @@ if abs(self_movement_speed) > 10
 	dust.image_xscale = -image_xscale
 	
 	n_dir_speed = sign(image_xscale)
-	global.movement_speed += 15*sign(global.movement_speed)
+		if (global.nickname == name) && just_come_check = 0
+		{
+		global.movement_speed += 15*sign(global.movement_speed)
+		}
 	}
 }
 else

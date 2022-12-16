@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if start = 1
 {
-	if string_length(global.nickname) < 2 || global.nickname = "아버"
+	if string_length(global.nickname) < 2// || global.nickname = "아버"
 	{
 	cannot_select_name = 1
 	}
@@ -30,7 +30,7 @@ if start = 1
 
 if start = 0
 {
-	if string_length(global.nickname) < 2 || global.nickname = "아버"
+	if string_length(global.nickname) < 2 //|| global.nickname = "아버"
 	{
 	cannot_select_name = 1
 	}

@@ -87,9 +87,6 @@ if activate = 1
 	}
 	
 global.nickname = keyboard_string;
-
-keyboard_string = string_replace(keyboard_string," ","");
-global.nickname = string_replace(global.nickname," ","");
 }
 
 cannot_select_name -= 0.08

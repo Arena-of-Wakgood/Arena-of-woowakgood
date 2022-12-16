@@ -690,7 +690,6 @@ else if (type == network_type_data)
 				var _kw_ = buffer_read(buffer, buffer_string);
 				var _s_sword_ = buffer_read(buffer, buffer_string);
 				var _m_hp = buffer_read(buffer, buffer_string);
-				var _on_platform = buffer_read(buffer, buffer_string);
 				if global.nickname != _check_who_send
 				{
 					with(player) 
@@ -712,10 +711,6 @@ else if (type == network_type_data)
 
 						n_sword_ = real(string(_s_sword_))/100;
 						returned_id = real(_real_id_);
-						if is_real(_on_platform)
-						{
-						on_platform = real(string(_on_platform));
-						}
 						}
 					}
 				}
