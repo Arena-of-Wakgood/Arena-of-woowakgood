@@ -28,7 +28,7 @@
 
 #### - 게임 다운로드 
 
-[![](https://img.shields.io/github/downloads/ABER1047/Arena-of-woowakgood/alpha-1.0/arena_of_panchi_v1.0.zip?color=2066ff&label=DOWNLOAD&style=for-the-badge)](https://github.com/ABER1047/Arena-of-woowakgood/releases/download/alpha-1.0/arena_of_panchi_v1.0.zip)
+[![](https://img.shields.io/github/downloads/ABER1047/Arena-of-woowakgood/alpha-2.0/Arena_of_Woowakgood.zip?color=2066ff&label=DOWNLOAD&style=for-the-badge)](https://github.com/ABER1047/Arena-of-woowakgood/releases/download/alpha-2.0/Arena_of_Woowakgood.zip)
 
 </br></br>
 
