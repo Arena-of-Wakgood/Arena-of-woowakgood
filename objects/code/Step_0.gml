@@ -20,6 +20,16 @@ global.wind_dir = choose(-1,1)*irandom_range(0,12)
 global.rainy = irandom_range(0,2)
 }
 
+if global.nickname = "" || global.nickname = " " || string_pos(" ",global.nickname) != 0
+{
+global.nickname = "아기뺑띠"+string(irandom_range(0,1000))
+}
+
+if string_length(global.nickname) < 2
+{
+global.nickname = "아기뺑띠"+string(irandom_range(0,1000))
+}
+
 
 
 if global.matching = 0
