@@ -49,9 +49,15 @@ https://youtu.be/dbzp09Ly1CY
 
 
 
-## - 대략적인 주요 코드
+<details>
+<summary>코드 관련 설명글 (click)</summary>
 
-### ▼ 초대 코드 시스템 (초대 코드를 통해 상대 서버로 접속하는 기능)
+---------------------------------
+
+
+<details>
+<summary>초대 코드 시스템 (초대 코드를 통해 상대 서버로 접속하는 기능)</summary>
+
 -------------
 
 서버 오픈한 사람쪽에서 초대코드를 게임 내에서 발급한뒤에,
@@ -62,7 +68,11 @@ https://youtu.be/dbzp09Ly1CY
 
 #
 
-### ▼ 멀티 플레이 시스템
+
+
+<details>
+<summary>멀티 플레이 시스템</summary>
+
 -------------
 
 이모티콘을 보내거나, 채팅을 보내거나, 플레이어를 서버에서 추방시키거나 채팅 금지 시키는 등등...
@@ -74,11 +84,20 @@ https://youtu.be/dbzp09Ly1CY
 ![preview_6](preview_2.gif)
 
 
-#
+---------------------------------
 
-## - 개발 일지 (모든 개발일지는 아니고 일부만)
+</details>
+
+
+<details>
+<summary>개발 일지 (모든 개발일지는 아니고 일부만)</summary>
+
+---------------------------------
 
 
 https://cafe.naver.com/steamindiegame/3113686
 
 https://cafe.naver.com/steamindiegame/3143541
+
+
+---------------------------------
