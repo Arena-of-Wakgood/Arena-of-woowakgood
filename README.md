@@ -67,6 +67,8 @@ https://youtu.be/dbzp09Ly1CY
 ![preview_4](preview_0.gif)
 
 #
+  
+</details>
 
 
 
@@ -86,9 +88,9 @@ https://youtu.be/dbzp09Ly1CY
 
 ---------------------------------
 
-</details></details></details>
+</details></details>
 
----------------------------------
+
 
 
 <details>
