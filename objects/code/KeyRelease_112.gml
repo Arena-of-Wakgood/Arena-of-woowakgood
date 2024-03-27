@@ -165,7 +165,7 @@ if is_server = true && auto_des <= 0
 		for(var i = 1; i <= 20; i++)
 		{
 		buffer_seek(code.kick_buffer, buffer_seek_start, 0);
-		buffer_write(code.kick_buffer, buffer_u8, code.DATA.KICK_PLAYER);
+		buffer_write(code.kick_buffer, buffer_u8, global.DATA_KICK_PLAYER);
 		buffer_write(code.kick_buffer, buffer_string, real(i));
 		buffer_write(code.kick_buffer, buffer_string, string("Server restarting"));
 		send_all(code.kick_buffer);

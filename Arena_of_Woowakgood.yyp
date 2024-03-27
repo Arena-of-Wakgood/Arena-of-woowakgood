@@ -1,46 +1,46 @@
 {
-  "resourceType": "GMProject",
-  "resourceVersion": "1.7",
-  "name": "Arena_of_Woowakgood",
-  "AudioGroups": [
-    {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},
+  "$GMProject":"",
+  "%Name":"Arena_of_Woowakgood",
+  "AudioGroups":[
+    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
-  "configs": {
-    "children": [],
-    "name": "Default",
+  "configs":{
+    "children":[],
+    "name":"Default",
   },
-  "defaultScriptType": 1,
-  "Folders": [
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Animation Curves","folderPath":"folders/Animation Curves.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sequences","folderPath":"folders/Sequences.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"객체","folderPath":"folders/객체.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"attack_effect","folderPath":"folders/객체/attack_effect.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"BG_UI","folderPath":"folders/객체/BG_UI.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"for_credit","folderPath":"folders/객체/for_credit.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"mob","folderPath":"folders/객체/mob.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"attck__effect","folderPath":"folders/객체/mob/attck__effect.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"경로","folderPath":"folders/경로.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"글꼴","folderPath":"folders/글꼴.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"룸","folderPath":"folders/룸.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"소리","folderPath":"folders/소리.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"쉐이더","folderPath":"folders/쉐이더.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"스크립트","folderPath":"folders/스크립트.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"스프라이트","folderPath":"folders/스프라이트.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"타일 세트","folderPath":"folders/타일 세트.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"타임라인","folderPath":"folders/타임라인.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"필기","folderPath":"folders/필기.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"확장 기능","folderPath":"folders/확장 기능.yy",},
+  "defaultScriptType":1,
+  "Folders":[
+    {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Sequences","folderPath":"folders/Sequences.yy","name":"Sequences","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"객체","folderPath":"folders/객체.yy","name":"객체","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"attack_effect","folderPath":"folders/객체/attack_effect.yy","name":"attack_effect","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"BG_UI","folderPath":"folders/객체/BG_UI.yy","name":"BG_UI","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"for_credit","folderPath":"folders/객체/for_credit.yy","name":"for_credit","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"mob","folderPath":"folders/객체/mob.yy","name":"mob","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"attck__effect","folderPath":"folders/객체/mob/attck__effect.yy","name":"attck__effect","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"경로","folderPath":"folders/경로.yy","name":"경로","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"글꼴","folderPath":"folders/글꼴.yy","name":"글꼴","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"룸","folderPath":"folders/룸.yy","name":"룸","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"소리","folderPath":"folders/소리.yy","name":"소리","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"쉐이더","folderPath":"folders/쉐이더.yy","name":"쉐이더","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"스크립트","folderPath":"folders/스크립트.yy","name":"스크립트","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"스프라이트","folderPath":"folders/스프라이트.yy","name":"스프라이트","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"타일 세트","folderPath":"folders/타일 세트.yy","name":"타일 세트","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"타임라인","folderPath":"folders/타임라인.yy","name":"타임라인","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"필기","folderPath":"folders/필기.yy","name":"필기","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"확장 기능","folderPath":"folders/확장 기능.yy","name":"확장 기능","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "IncludedFiles": [
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"1573455682_com.SamuelVenable.ExecuteSystem.yymp","CopyToMask":-1,"filePath":"datafiles",},
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"example.txt","CopyToMask":202375362,"filePath":"datafiles",},
+  "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"1573455682_com.SamuelVenable.ExecuteSystem.yymp","CopyToMask":-1,"filePath":"datafiles","name":"1573455682_com.SamuelVenable.ExecuteSystem.yymp","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"example.txt","CopyToMask":202375362,"filePath":"datafiles","name":"example.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
-  "isEcma": false,
-  "LibraryEmitters": [],
-  "MetaData": {
-    "IDEVersion": "2023.11.1.129",
+  "isEcma":false,
+  "LibraryEmitters":[],
+  "MetaData":{
+    "IDEVersion":"2024.2.0.132",
   },
-  "resources": [
+  "name":"Arena_of_Woowakgood",
+  "resources":[
     {"id":{"name":"effect_special_skill_sec_non_attacked","path":"objects/effect_special_skill_sec_non_attacked/effect_special_skill_sec_non_attacked.yy",},},
     {"id":{"name":"bamguy_bgm","path":"sounds/bamguy_bgm/bamguy_bgm.yy",},},
     {"id":{"name":"master_volume_setting","path":"objects/master_volume_setting/master_volume_setting.yy",},},
@@ -449,13 +449,15 @@
     {"id":{"name":"effect_attack2_attacked","path":"objects/effect_attack2_attacked/effect_attack2_attacked.yy",},},
     {"id":{"name":"ExecuteShell","path":"extensions/ExecuteShell/ExecuteShell.yy",},},
   ],
-  "RoomOrderNodes": [
+  "resourceType":"GMProject",
+  "resourceVersion":"2.0",
+  "RoomOrderNodes":[
     {"roomId":{"name":"menu","path":"rooms/menu/menu.yy",},},
     {"roomId":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
     {"roomId":{"name":"fight_room","path":"rooms/fight_room/fight_room.yy",},},
   ],
-  "templateType": null,
-  "TextureGroups": [
-    {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
+  "templateType":null,
+  "TextureGroups":[
+    {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
   ],
 }

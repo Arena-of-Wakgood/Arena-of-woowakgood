@@ -602,7 +602,7 @@ else if (type == network_type_data)
 
 				
 			buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-			buffer_write(code.matching_buffer, buffer_u8, code.DATA.SAVE_PLAYERS_RANK);
+			buffer_write(code.matching_buffer, buffer_u8, global.DATA_SAVE_PLAYERS_RANK);
 			buffer_write(code.matching_buffer, buffer_string, global.return_player_id);
 			buffer_write(code.matching_buffer, buffer_string, global.rank);
 			send_all(code.matching_buffer);
@@ -785,7 +785,7 @@ else if (type == network_type_data)
 				
 				case COMM.PING_CHECK:
 				buffer_seek(code.ping_buffer, buffer_seek_start, 0);
-				buffer_write(ping_buffer, buffer_u8, code.DATA.COMMAND);
+				buffer_write(ping_buffer, buffer_u8, global.DATA_COMMAND);
 				buffer_write(ping_buffer, buffer_u8, code.my_ID);
 				buffer_write(code.ping_buffer, buffer_u8, COMM.PING_CHECK_RECEIVED_SERVER);
 				buffer_write(code.ping_buffer, buffer_string, global.return_player_id);
@@ -800,7 +800,7 @@ else if (type == network_type_data)
 				ping_checker_start[_check_who_send] = 0;
 				
 				buffer_seek(code.ping_buffer, buffer_seek_start, 0);
-				buffer_write(ping_buffer, buffer_u8, code.DATA.COMMAND);
+				buffer_write(ping_buffer, buffer_u8, global.DATA_COMMAND);
 				buffer_write(ping_buffer, buffer_u8, code.my_ID);
 				buffer_write(code.ping_buffer, buffer_u8, COMM.PING_CHECK_RECEIVED_CLI);
 				buffer_write(code.ping_buffer, buffer_string, real(_check_who_send));
@@ -827,9 +827,9 @@ else if (type == network_type_data)
 						room_sp_now = real(_rnfps);
 						
 						buffer_seek(code.ping_buffer, buffer_seek_start, 0);
-						buffer_write(code.ping_buffer, buffer_u8, code.DATA.COMMAND);
+						buffer_write(code.ping_buffer, buffer_u8, global.DATA_COMMAND);
 						buffer_write(code.ping_buffer, buffer_u8, code.my_ID);
-						buffer_write(code.ping_buffer, buffer_u8, code.COMM.PING_CHECK_RECEIVED_SERVER_AC);
+						buffer_write(code.ping_buffer, buffer_u8, global.COMM_PING_CHECK_RECEIVED_SERVER_AC);
 						buffer_write(code.ping_buffer, buffer_string, real(playerID));
 						buffer_write(code.ping_buffer, buffer_string, real(_ping));
 						buffer_write(code.ping_buffer, buffer_string, real(_nfps));

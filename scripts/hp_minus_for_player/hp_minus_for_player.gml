@@ -109,9 +109,9 @@ var argu_0 = argument0
 	if argument1.attack_owner != -4
 	{
 	buffer_seek(command_buffer, buffer_seek_start, 0);
-	buffer_write(command_buffer, buffer_u8, code.DATA.COMMAND);
+	buffer_write(command_buffer, buffer_u8, global.DATA_COMMAND);
 	buffer_write(command_buffer, buffer_u8, code.my_ID);
-	buffer_write(command_buffer, buffer_u8, code.COMM.ATTACKER_GET_RAGE);
+	buffer_write(command_buffer, buffer_u8, global.COMM_ATTACKER_GET_RAGE);
 	buffer_write(command_buffer, buffer_string, argument1.attack_owner);
 	buffer_write(command_buffer, buffer_string, string(floor((calcul_damage)*4)));
 	buffer_write(command_buffer, buffer_string, string(floor((calcul_damage)*100)));

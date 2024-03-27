@@ -218,7 +218,7 @@ if global.matching = 3
 						global.matched_pl1_ready = 1
 			
 						buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-						buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+						buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 						buffer_write(code.matching_buffer, buffer_string, global.return_player_id);
 						send_all(code.matching_buffer);
 						}
@@ -232,7 +232,7 @@ if global.matching = 3
 						global.matched_pl2_ready = 1
 			
 						buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-						buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+						buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 						buffer_write(code.matching_buffer, buffer_string, global.return_player_id);
 						send_all(code.matching_buffer);
 						}
@@ -343,12 +343,12 @@ if global.matching = 3
 					global.matched_pl2_ready = 1
 					
 					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 					buffer_write(code.matching_buffer, buffer_string, global.matched_pl1);
 					send_all(code.matching_buffer);
 					
 					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 					buffer_write(code.matching_buffer, buffer_string, global.matched_pl2);
 					send_all(code.matching_buffer);
 					
@@ -382,7 +382,7 @@ if global.matching = 3
 									global.matched_pl3_ready = 1
 			
 									buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-									buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+									buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 									buffer_write(code.matching_buffer, buffer_string, global.return_player_id);
 									send_all(code.matching_buffer);
 									}
@@ -396,7 +396,7 @@ if global.matching = 3
 									global.matched_pl4_ready = 1
 			
 									buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-									buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+									buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 									buffer_write(code.matching_buffer, buffer_string, global.return_player_id);
 									send_all(code.matching_buffer);
 									}
@@ -482,12 +482,12 @@ if global.matching = 3
 					global.matched_pl4_ready = 1
 					
 					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 					buffer_write(code.matching_buffer, buffer_string, global.matched_pl3);
 					send_all(code.matching_buffer);
 					
 					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 					buffer_write(code.matching_buffer, buffer_string, global.matched_pl4);
 					send_all(code.matching_buffer);
 						
@@ -520,7 +520,7 @@ if global.matching = 3
 									global.matched_pl1_ready = 1
 			
 									buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-									buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+									buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 									buffer_write(code.matching_buffer, buffer_string, global.return_player_id);
 									send_all(code.matching_buffer);
 									}
@@ -534,7 +534,7 @@ if global.matching = 3
 									global.matched_pl2_ready = 1
 			
 									buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-									buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+									buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 									buffer_write(code.matching_buffer, buffer_string, global.return_player_id);
 									send_all(code.matching_buffer);
 									}
@@ -644,7 +644,7 @@ if global.matching = 3
 							global.matched_pl1_ready = 1
 			
 							buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-							buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+							buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 							buffer_write(code.matching_buffer, buffer_string, global.return_player_id);
 							send_all(code.matching_buffer);
 							}
@@ -658,7 +658,7 @@ if global.matching = 3
 							global.matched_pl2_ready = 1
 			
 							buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-							buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+							buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 							buffer_write(code.matching_buffer, buffer_string, global.return_player_id);
 							send_all(code.matching_buffer);
 							}
@@ -672,7 +672,7 @@ if global.matching = 3
 							global.matched_pl3_ready = 1
 			
 							buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-							buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+							buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 							buffer_write(code.matching_buffer, buffer_string, global.return_player_id);
 							send_all(code.matching_buffer);
 							}
@@ -686,7 +686,7 @@ if global.matching = 3
 							global.matched_pl4_ready = 1
 			
 							buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-							buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+							buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 							buffer_write(code.matching_buffer, buffer_string, global.return_player_id);
 							send_all(code.matching_buffer);
 							}
@@ -944,7 +944,7 @@ global.slow_motion += global.slow_motion*0.03
 					global.matched_pl1_ready = 1
 		
 					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 					buffer_write(code.matching_buffer, buffer_string, returned_id);
 					send_all(code.matching_buffer);
 					}
@@ -954,7 +954,7 @@ global.slow_motion += global.slow_motion*0.03
 					global.matched_pl2_ready = 1
 		
 					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 					buffer_write(code.matching_buffer, buffer_string, returned_id);
 					send_all(code.matching_buffer);
 					}
@@ -971,7 +971,7 @@ global.slow_motion += global.slow_motion*0.03
 					global.matched_pl1_ready = 1
 		
 					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 					buffer_write(code.matching_buffer, buffer_string, returned_id);
 					send_all(code.matching_buffer);
 					}
@@ -983,7 +983,7 @@ global.slow_motion += global.slow_motion*0.03
 					code.ability_choosing_time = 1
 		
 					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 					buffer_write(code.matching_buffer, buffer_string, returned_id);
 					send_all(code.matching_buffer);
 					}
@@ -1019,14 +1019,14 @@ global.slow_motion += global.slow_motion*0.03
 						code.ability_choosing_time = 0
 		
 						buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-						buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+						buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 						buffer_write(code.matching_buffer, buffer_string, returned_id);
 						send_all(code.matching_buffer);
 						
 						buffer_seek(code.music__buffer, buffer_seek_start, 0);
-						buffer_write(code.music__buffer, buffer_u8, code.DATA.COMMAND);
+						buffer_write(code.music__buffer, buffer_u8, global.DATA_COMMAND);
 						buffer_write(code.music__buffer, buffer_u8, code.my_ID);
-						buffer_write(code.music__buffer, buffer_u8, code.COMM.P_DAMAGE);
+						buffer_write(code.music__buffer, buffer_u8, global.COMM_P_DAMAGE);
 						buffer_write(code.music__buffer, buffer_string, floor(global.damage_plus));
 						buffer_write(code.music__buffer, buffer_string, floor(global.critical_plus));
 						send_all(code.music__buffer);
@@ -1180,7 +1180,7 @@ global.slow_motion += global.slow_motion*0.03
 				global.matched_pl1_ready = 1
 		
 				buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-				buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+				buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 				buffer_write(code.matching_buffer, buffer_string, returned_id);
 				send_all(code.matching_buffer);
 				}
@@ -1193,7 +1193,7 @@ global.slow_motion += global.slow_motion*0.03
 				global.matched_pl2_ready = 1
 		
 				buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-				buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+				buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 				buffer_write(code.matching_buffer, buffer_string, returned_id);
 				send_all(code.matching_buffer);
 				}
@@ -1206,7 +1206,7 @@ global.slow_motion += global.slow_motion*0.03
 				global.matched_pl3_ready = 1
 		
 				buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-				buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+				buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 				buffer_write(code.matching_buffer, buffer_string, returned_id);
 				send_all(code.matching_buffer);
 				}
@@ -1219,7 +1219,7 @@ global.slow_motion += global.slow_motion*0.03
 				global.matched_pl4_ready = 1
 		
 				buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-				buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+				buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 				buffer_write(code.matching_buffer, buffer_string, returned_id);
 				send_all(code.matching_buffer);
 				}
@@ -1261,12 +1261,12 @@ global.slow_motion += global.slow_motion*0.03
 						global.t_b_alpha = -0.01
 					
 						buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-						buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+						buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 						buffer_write(code.matching_buffer, buffer_string, global.matched_pl1);
 						send_all(code.matching_buffer);
 					
 						buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-						buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+						buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 						buffer_write(code.matching_buffer, buffer_string, global.matched_pl2);
 						send_all(code.matching_buffer);
 						}
@@ -1293,12 +1293,12 @@ global.slow_motion += global.slow_motion*0.03
 					global.matched_pl4_ready = 1
 					
 					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 					buffer_write(code.matching_buffer, buffer_string, global.matched_pl3);
 					send_all(code.matching_buffer);
 					
 					buffer_seek(code.matching_buffer, buffer_seek_start, 0);
-					buffer_write(code.matching_buffer, buffer_u8, code.DATA.READY_TO_FIGHT);
+					buffer_write(code.matching_buffer, buffer_u8, global.DATA_READY_TO_FIGHT);
 					buffer_write(code.matching_buffer, buffer_string, global.matched_pl4);
 					send_all(code.matching_buffer);
 					}

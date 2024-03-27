@@ -385,7 +385,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 			sfx_for_multiplayer(choose(wakgood_hurt,wakgood_hurt2,gumseong_woowakgood,kiyahou),0,0.2)
 
 			buffer_seek(match_buffer, buffer_seek_start, 0);
-			buffer_write(match_buffer, buffer_u8, code.DATA.SLOW_MOTION);
+			buffer_write(match_buffer, buffer_u8, global.DATA_SLOW_MOTION);
 			send_all(match_buffer);
 	
 				if code.is_server = true
@@ -424,7 +424,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 						sfx_for_multiplayer(choose(wakgood_hurt,wakgood_hurt2,gumseong_woowakgood,kiyahou),0,0.2)
 			
 						buffer_seek(match_buffer, buffer_seek_start, 0);
-						buffer_write(match_buffer, buffer_u8, code.DATA.SLOW_MOTION);
+						buffer_write(match_buffer, buffer_u8, global.DATA_SLOW_MOTION);
 						send_all(match_buffer);
 						}
 					}
@@ -458,7 +458,7 @@ w_alpha += (-0.01 - w_alpha)*0.1
 				sfx_for_multiplayer(choose(wakgood_hurt,wakgood_hurt2,gumseong_woowakgood,kiyahou),0,0.2)
 				
 				buffer_seek(match_buffer, buffer_seek_start, 0);
-				buffer_write(match_buffer, buffer_u8, code.DATA.SLOW_MOTION);
+				buffer_write(match_buffer, buffer_u8, global.DATA_SLOW_MOTION);
 				send_all(match_buffer);
 				}
 			}
@@ -2922,7 +2922,7 @@ skill_combo = 0
 }
 
 
-if keyboard_check(ord(string(global.a_key)))
+if keyboard_check_pressed(ord(string(global.a_key)))
 {
 	if attack_ > 0
 	{
@@ -3258,34 +3258,6 @@ if global.never_move = 0 && keyboard_check_released(ord(string(global.e_key))) &
 
 			
 					sfx_for_multiplayer(choose(swing_lightsaber_sfx2,swing_lightsaber_sfx3),0,0.1)
-					}
-					else
-					{
-					var sfx = audio_play_sound(cannot_buy,0,0)
-					audio_sound_gain(sfx,0.2*global.master_volume*2*global.sfx_volume,0)
-					}
-				}
-			}
-			
-			if gravity > 0 && ((!place_meeting(x,y+38,obj_floor) || vspeed < 0))
-			{
-				if down_attack_with_rage = 0 && global.chat_activity = false && global.matching != 3
-				{
-					if attack_in_air = 0 && cooltime = 0 && spin = 0 && hurt = 0 && hurt_little = 0 && global.rage_gauge >= 25
-					{
-					image_index = 0
-					attack_in_air = 2.92
-					attack_in_air_cool = 1
-					cooltime = 1
-					cannot_move = 1
-					global.stemina_cooltime = 0
-					global.rage_gauge -= 25
-					
-						if global.awakening >= 1
-						{
-						global.awakening -= 0.25
-						}
-					alarm[5] = 10
 					}
 					else
 					{
@@ -5053,6 +5025,22 @@ cooltime = 1
 		attack_sfx_on = 0
 		keep_attack = 0
 		}
+		
+		var press_l = 0, press_r = 0;
+		if (keyboard_check(vk_left) || gamepad_button_check(0,gp_padl)) && global.chat_activity = false
+		{
+			press_l = 1
+		}
+	
+		if (keyboard_check(vk_right) || gamepad_button_check(0,gp_padr)) && global.chat_activity = false
+		{
+			press_r = 1
+		}
+	
+		if (press_l-press_r != 0)
+		{
+			image_xscale = (press_l-press_r)
+		}
 	}
 	
 	if attack_ > 6.2 && attack_ < 6.5 && keep_attacking = 1
@@ -5073,6 +5061,22 @@ cooltime = 1
 		keep_attacking ++
 		attack_sfx_on = 0
 		keep_attack = 0
+		}
+		
+		var press_l = 0, press_r = 0;
+		if (keyboard_check(vk_left) || gamepad_button_check(0,gp_padl)) && global.chat_activity = false
+		{
+			press_l = 1
+		}
+	
+		if (keyboard_check(vk_right) || gamepad_button_check(0,gp_padr)) && global.chat_activity = false
+		{
+			press_r = 1
+		}
+	
+		if (press_l-press_r != 0)
+		{
+			image_xscale = (press_l-press_r)
 		}
 	}
 	
@@ -5095,18 +5099,50 @@ cooltime = 1
 		attack_sfx_on = 0
 		keep_attack = 0
 		}
+		
+		var press_l = 0, press_r = 0;
+		if (keyboard_check(vk_left) || gamepad_button_check(0,gp_padl)) && global.chat_activity = false
+		{
+			press_l = 1
+		}
+	
+		if (keyboard_check(vk_right) || gamepad_button_check(0,gp_padr)) && global.chat_activity = false
+		{
+			press_r = 1
+		}
+	
+		if (press_l-press_r != 0)
+		{
+			image_xscale = (press_l-press_r)
+		}
 	}
 	
 	if attack_ > 16.1 && keep_attacking = 3
 	{
-	keep_attack_timer = 0
-	attack_ = 0
-	keep_attack = 0
-	keep_attacking = 0
-	attack_sfx_on = 0
-	sprite_index = move_sprite
-	alarm[1] = 12
-	alarm[3] = 13
+		keep_attack_timer = 0
+		attack_ = 0
+		keep_attack = 0
+		keep_attacking = 0
+		attack_sfx_on = 0
+		sprite_index = move_sprite
+		alarm[1] = 12
+		alarm[3] = 13
+	
+		var press_l = 0, press_r = 0;
+		if (keyboard_check(vk_left) || gamepad_button_check(0,gp_padl)) && global.chat_activity = false
+		{
+			press_l = 1
+		}
+	
+		if (keyboard_check(vk_right) || gamepad_button_check(0,gp_padr)) && global.chat_activity = false
+		{
+			press_r = 1
+		}
+	
+		if (press_l-press_r != 0)
+		{
+			image_xscale = (press_l-press_r)
+		}
 	}
 }
 
@@ -5252,7 +5288,7 @@ image_index = dash_attack
 	double_pressed_run_key++
 	run_dir = 1
 	}
-	
+
 	if (keyboard_check(vk_left) || gamepad_button_check(0,gp_padl)) && global.chat_activity = false
 	{
 	pressed_a_key = -1
@@ -5309,11 +5345,7 @@ image_index = dash_attack
 			run_time ++
 			global.stemina_cooltime = 0
 			
-				if abs(global.movement_speed) > 15
-				{
-				global.stemina -= 0.02
-				}
-				
+
 				if gravity <= 0
 				{
 				var cal___ = (40-run_time)/3
@@ -5370,9 +5402,9 @@ keep_winning_ = global.keep_winning
 	if global.in_practice = 0
 	{
 	buffer_seek(command_buffer, buffer_seek_start, 0);
-	buffer_write(command_buffer, buffer_u8, code.DATA.COMMAND);
+	buffer_write(command_buffer, buffer_u8, global.DATA_COMMAND);
 	buffer_write(command_buffer, buffer_u8, code.my_ID);
-	buffer_write(command_buffer, buffer_u8, code.COMM.POSITION);
+	buffer_write(command_buffer, buffer_u8, global.COMM_POSITION);
 	buffer_write(command_buffer, buffer_string, name);
 	buffer_write(command_buffer, buffer_string, real(floor(x*10)));
 	buffer_write(command_buffer, buffer_string, real(floor(y*10)));
@@ -5384,9 +5416,9 @@ keep_winning_ = global.keep_winning
 	send_all(command_buffer);
 
 	buffer_seek(command_buffer, buffer_seek_start, 0);
-	buffer_write(command_buffer, buffer_u8, code.DATA.COMMAND);
+	buffer_write(command_buffer, buffer_u8, global.DATA_COMMAND);
 	buffer_write(command_buffer, buffer_u8, code.my_ID);
-	buffer_write(command_buffer, buffer_u8, code.COMM.IMAGE);
+	buffer_write(command_buffer, buffer_u8, global.COMM_IMAGE);
 	buffer_write(command_buffer, buffer_string, name);
 	buffer_write(command_buffer, buffer_string, sprite_index);
 	buffer_write(command_buffer, buffer_string, floor(image_xscale*100));
@@ -5409,7 +5441,7 @@ check_discon ++
 		if code.is_server = true
 		{
 		buffer_seek(code.kick_buffer, buffer_seek_start, 0);
-		buffer_write(code.kick_buffer, buffer_u8, code.DATA.KICK_PLAYER);
+		buffer_write(code.kick_buffer, buffer_u8, global.DATA_KICK_PLAYER);
 		buffer_write(code.kick_buffer, buffer_string, real(playerID));
 		buffer_write(code.kick_buffer, buffer_string, string("Server disconnetction"));
 		send_all(code.kick_buffer);

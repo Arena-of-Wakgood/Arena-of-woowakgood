@@ -3,9 +3,9 @@
 image_alpha = -10
 
 buffer_seek(command_buffer, buffer_seek_start, 0);
-buffer_write(command_buffer, buffer_u8, code.DATA.COMMAND);
+buffer_write(command_buffer, buffer_u8, global.DATA_COMMAND);
 buffer_write(command_buffer, buffer_u8, code.my_ID);
-buffer_write(command_buffer, buffer_u8, code.COMM.IMAGE);
+buffer_write(command_buffer, buffer_u8, global.COMM_IMAGE);
 buffer_write(command_buffer, buffer_string, name);
 buffer_write(command_buffer, buffer_string, sprite_index);
 buffer_write(command_buffer, buffer_string, floor(image_xscale*100));

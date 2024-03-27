@@ -107,7 +107,7 @@ ping_c_timer ++
 		}
 	
 	buffer_seek(code.ping_buffer, buffer_seek_start, 0);
-	buffer_write(ping_buffer, buffer_u8, code.DATA.COMMAND);
+	buffer_write(ping_buffer, buffer_u8, global.DATA_COMMAND);
 	buffer_write(ping_buffer, buffer_u8, code.my_ID);
 	buffer_write(code.ping_buffer, buffer_u8, COMM.PING_CHECK);
 	send_all(code.ping_buffer);

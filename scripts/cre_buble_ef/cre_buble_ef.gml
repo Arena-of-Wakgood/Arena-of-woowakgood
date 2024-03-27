@@ -35,9 +35,9 @@ function cre_buble_ef(argument0,argument1,argument2,argument3,argument4,argument
 	if argument12 = 1
 	{
 	buffer_seek(code.effect_buffer, buffer_seek_start, 0);
-	buffer_write(code.effect_buffer, buffer_u8, code.DATA.COMMAND);
+	buffer_write(code.effect_buffer, buffer_u8, global.DATA_COMMAND);
 	buffer_write(code.effect_buffer, buffer_u8, code.my_ID);
-	buffer_write(code.effect_buffer, buffer_u8, code.COMM.BUBLE_EFFECT);
+	buffer_write(code.effect_buffer, buffer_u8, global.COMM_BUBLE_EFFECT);
 	buffer_write(code.effect_buffer, buffer_string, global.nickname);
 	buffer_write(code.effect_buffer, buffer_string, (floor(argument0*100)));
 	buffer_write(code.effect_buffer, buffer_string, (floor(argument1*100)));

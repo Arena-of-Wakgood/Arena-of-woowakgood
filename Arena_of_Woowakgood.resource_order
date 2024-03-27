@@ -1,5 +1,5 @@
 {
-  "FolderOrderSettings": [
+  "FolderOrderSettings":[
     {"name":"Animation Curves","order":2,"path":"folders/Animation Curves.yy",},
     {"name":"Sequences","order":1,"path":"folders/Sequences.yy",},
     {"name":"객체","order":10,"path":"folders/객체.yy",},
@@ -18,7 +18,7 @@
     {"name":"필기","order":12,"path":"folders/필기.yy",},
     {"name":"확장 기능","order":13,"path":"folders/확장 기능.yy",},
   ],
-  "ResourceOrderSettings": [
+  "ResourceOrderSettings":[
     {"name":"effect_special_skill_sec_non_attacked","order":56,"path":"objects/effect_special_skill_sec_non_attacked/effect_special_skill_sec_non_attacked.yy",},
     {"name":"bamguy_bgm","order":67,"path":"sounds/bamguy_bgm/bamguy_bgm.yy",},
     {"name":"master_volume_setting","order":26,"path":"objects/master_volume_setting/master_volume_setting.yy",},
